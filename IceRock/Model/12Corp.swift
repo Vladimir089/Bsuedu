@@ -17,7 +17,7 @@ import Vision
 func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIImageView, numb: Int)  {
     
     
-    
+    sdfsdfs
     
     let animation = CABasicAnimation(keyPath: "strokeEnd")
     animation.fromValue = 0.0
