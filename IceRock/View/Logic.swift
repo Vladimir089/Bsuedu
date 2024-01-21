@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+//MARK: -12
+
+func twelveCorp(image: UIImage) {
+    
+}
