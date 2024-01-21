@@ -11,7 +11,7 @@ import Vision
 
 
 
-
+//проверка
 
 
 func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIImageView, numb: Int)  {
