@@ -50,6 +50,7 @@ class MainMenuView: UIView {
     let nextView: UIButton = {
         let buttom = UIButton()
         buttom.setTitle("дальше", for: .normal)
+        buttom.titleLabel?.font = .systemFont(ofSize: 16, weight: .light)
         buttom.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
         buttom.layer.cornerRadius = 15
         buttom.setTitleColor(.black, for: .normal)
@@ -61,6 +62,7 @@ class MainMenuView: UIView {
         let buttom = UIButton()
         
         buttom.setTitle("назад", for: .normal)
+        buttom.titleLabel?.font = .systemFont(ofSize: 16, weight: .light)
         buttom.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
         buttom.layer.cornerRadius = 15
         buttom.setTitleColor(.black, for: .normal)
