@@ -31,6 +31,13 @@ class MainMenuView: UIView {
         return view
     }()
     
+    let midView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+        view.layer.cornerRadius = 40
+        return view
+    }()
+    
     let profileButton: UIButton = {
         let buttom = UIButton()
         buttom.setTitle(" Профиль", for: .normal)
@@ -43,16 +50,21 @@ class MainMenuView: UIView {
     let nextView: UIButton = {
         let buttom = UIButton()
         buttom.setTitle("дальше", for: .normal)
-        buttom.backgroundColor = UIColor(red: 0.8235, green: 0.7686, blue: 0.9961, alpha: 1)
+        buttom.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
         buttom.layer.cornerRadius = 15
+        buttom.setTitleColor(.black, for: .normal)
+        
         return buttom
     }()
     
     let prevView: UIButton = {
         let buttom = UIButton()
+        
         buttom.setTitle("назад", for: .normal)
-        buttom.backgroundColor = UIColor(red: 0.8235, green: 0.7686, blue: 0.9961, alpha: 1)
+        buttom.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
         buttom.layer.cornerRadius = 15
+        buttom.setTitleColor(.black, for: .normal)
+        
         return buttom
     }()
     
@@ -162,6 +174,13 @@ class MainMenuView: UIView {
         view.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
        // view.backgroundColor = .red
         view.layer.cornerRadius = 15
+        return view
+    }()
+    
+    let topMiddleView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 0.8235, green: 0.7686, blue: 0.9961, alpha: 1)
+        view.layer.cornerRadius = 30
         return view
     }()
     
@@ -294,7 +313,7 @@ class MainMenuView: UIView {
         return label
     }()
     
-    
+    //MARK: -Add view
     
     func addComponents() {
         backgroundColor = .white
@@ -303,7 +322,7 @@ class MainMenuView: UIView {
         addSubview(bottomView)
         bottomView.addSubview(profileButton)
         bottomView.addSubview(createButton)
-        
+        addSubview(midView)
         
         topView.translatesAutoresizingMaskIntoConstraints = false
         topView.clipsToBounds = true
@@ -358,6 +377,8 @@ class MainMenuView: UIView {
         selectVhodButton.translatesAutoresizingMaskIntoConstraints = false
         
         picker = pickerView()
+        picker.layer.borderColor = UIColor(red: 0.8235, green: 0.7686, blue: 0.9961, alpha: 1).cgColor
+        picker.layer.borderWidth = 1
         picker.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
         picker.layer.cornerRadius = 30
         picker.translatesAutoresizingMaskIntoConstraints = false
@@ -381,16 +402,21 @@ class MainMenuView: UIView {
         scrollView = ScrollViewPlan()
         scrollView.backgroundColor = .red
         
-        addSubview(scrollView)
+//        addSubview(scrollView)
         
-        addSubview(nextView)
+        topMiddleView.addSubview(nextView)
         
-        addSubview(prevView)
+        topMiddleView.addSubview(prevView)
+        
+        midView.addSubview(topMiddleView)
+        
+        topMiddleView.addSubview(scrollView)
         
         
         
     }
     
+    //MARK: -Add constr
     
     func addConstrints() {
         topView.topAnchor.constraint(equalTo: topAnchor, constant: 50).isActive = true
@@ -491,6 +517,7 @@ class MainMenuView: UIView {
         
         
         
+        
         botViewOne.translatesAutoresizingMaskIntoConstraints = false
         
         botViewOne.topAnchor.constraint(equalTo: labelInBotView.bottomAnchor, constant: 7.5).isActive = true
@@ -570,20 +597,39 @@ class MainMenuView: UIView {
         createButton.rightAnchor.constraint(equalTo: bottomView.rightAnchor, constant: -20).isActive = true
         createButton.bottomAnchor.constraint(equalTo: profileButton.topAnchor, constant: -10).isActive = true
         
+        midView.translatesAutoresizingMaskIntoConstraints = false
+        midView.topAnchor.constraint(equalTo: topView.bottomAnchor, constant: 10).isActive = true
+        midView.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
+        midView.rightAnchor.constraint(equalTo: rightAnchor, constant: -10).isActive = true
+        midView.bottomAnchor.constraint(equalTo: bottomView.topAnchor, constant: -10).isActive = true
         
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.topAnchor.constraint(equalTo: topView.bottomAnchor, constant: 20).isActive = true
-        scrollView.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
-        scrollView.rightAnchor.constraint(equalTo: rightAnchor, constant: -10).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: bottomView.topAnchor, constant: -250).isActive = true
+        
+        
         
         nextView.translatesAutoresizingMaskIntoConstraints = false
-        nextView.topAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 10).isActive = true
-        nextView.rightAnchor.constraint(equalTo: rightAnchor, constant: -20).isActive = true
+        nextView.bottomAnchor.constraint(equalTo: topMiddleView.bottomAnchor, constant: -5).isActive = true
+        nextView.rightAnchor.constraint(equalTo: topMiddleView.rightAnchor, constant: -15).isActive = true
+        nextView.leftAnchor.constraint(equalTo: midView.centerXAnchor, constant: 5).isActive = true
         
         prevView.translatesAutoresizingMaskIntoConstraints = false
-        prevView.leftAnchor.constraint(equalTo: leftAnchor, constant: 20).isActive = true
-        prevView.topAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 10).isActive = true
+        prevView.leftAnchor.constraint(equalTo: topMiddleView.leftAnchor, constant: 15).isActive = true
+        prevView.rightAnchor.constraint(equalTo: midView.centerXAnchor, constant: -5).isActive = true
+        prevView.bottomAnchor.constraint(equalTo: topMiddleView.bottomAnchor, constant: -5).isActive = true
+        
+        topMiddleView.translatesAutoresizingMaskIntoConstraints = false
+        topMiddleView.topAnchor.constraint(equalTo: midView.topAnchor, constant: 10).isActive = true
+        topMiddleView.leftAnchor.constraint(equalTo: midView.leftAnchor, constant: 10).isActive = true
+        topMiddleView.rightAnchor.constraint(equalTo: midView.rightAnchor, constant: -10).isActive = true
+        topMiddleView.bottomAnchor.constraint(equalTo: midView.bottomAnchor, constant: -230).isActive = true
+        
+        
+        
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.topAnchor.constraint(equalTo: topMiddleView.topAnchor, constant: 0).isActive = true
+        scrollView.leftAnchor.constraint(equalTo: topMiddleView.leftAnchor, constant: 0).isActive = true
+        scrollView.rightAnchor.constraint(equalTo: topMiddleView.rightAnchor, constant: 0).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: nextView.topAnchor, constant: -5).isActive = true
+        scrollView.layer.cornerRadius = 30
         
         
     }

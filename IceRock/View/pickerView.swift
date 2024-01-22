@@ -17,6 +17,8 @@ class pickerView: UIView {
     var arrName = ["ds"]
     let selectedRow = 0
     
+    
+    
     func setting() {
         pickerView.delegate = self
         pickerView.dataSource = self
@@ -88,6 +90,8 @@ class pickerView: UIView {
     
     
     func addConstr() {
+        
+        
         pickerView.translatesAutoresizingMaskIntoConstraints = false
         pickerView.topAnchor.constraint(equalTo: topAnchor, constant: 30).isActive = true
         pickerView.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
