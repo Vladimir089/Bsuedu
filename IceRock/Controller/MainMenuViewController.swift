@@ -48,6 +48,12 @@ class MainMenuViewController: UIViewController {
         settingsBotView()
         animateButtons()
         settingBottonBotView()
+       
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        mainMenuView.scrollView.createNav(but1: mainMenuView.prevView, but2: mainMenuView.nextView)
     }
     
     func settingBottonBotView() {
@@ -131,19 +137,20 @@ class MainMenuViewController: UIViewController {
         
         if sender == mainMenuView.createButton {
             mainMenuView.createButton.tag = 222
-            mainMenuView.scrollView.createNav()
+            numbImage = 1
+            mainMenuView.scrollView.createNav(but1: mainMenuView.prevView, but2: mainMenuView.nextView)
             return
         }
         
         if sender == mainMenuView.nextView {
             numbImage += 1
-            mainMenuView.scrollView.createNav()
+            mainMenuView.scrollView.createNav(but1: mainMenuView.prevView, but2: mainMenuView.nextView)
             mainMenuView.setNeedsLayout()
             return
         }
         if sender == mainMenuView.prevView {
             numbImage -= 1
-            mainMenuView.scrollView.createNav()
+            mainMenuView.scrollView.createNav(but1: mainMenuView.prevView, but2: mainMenuView.nextView)
             mainMenuView.setNeedsLayout()
             return
         }

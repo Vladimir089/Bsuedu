@@ -9,14 +9,16 @@ import Foundation
 import UIKit
 import Vision
 
-
+var mainMenuView: MainMenuView!
 
 //проверка
 
 
-func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIImageView, numb: Int)  {
+func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIImageView, numb: Int, but1: UIButton, but2: UIButton)  {
     
     
+    
+    imageView.contentMode = .scaleAspectFill
    
     
     let animation = CABasicAnimation(keyPath: "strokeEnd")
@@ -30,6 +32,11 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
     
     
     if vhod == "вход 12 корпус" && numbImage == 1 {
+        
+        but1.isEnabled = false
+        but1.backgroundColor = .systemGray5
+        but2.isEnabled = true
+        but2.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
         
         imageView.image = UIImage(named: "12corpHoll")
 
@@ -65,6 +72,12 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
     }
     
     if corpGo == "12" && numbImage == 2 {
+        
+        but1.isEnabled = true
+        but1.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+        but2.isEnabled = false
+        but2.backgroundColor = .systemGray5
+        
         imageView.image = UIImage(named: "12corp59")
         
         DispatchQueue.global().async {

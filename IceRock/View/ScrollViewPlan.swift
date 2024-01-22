@@ -8,14 +8,19 @@ class ScrollViewPlan: UIScrollView, UIScrollViewDelegate {
     
     
     
-    func createNav() {
+    func createNav(but1: UIButton, but2: UIButton) {
         
         // let planImage = UIImage(named: "12corpHoll")
+        var planImage = UIImage()
         
-        let planImage = UIImage()
+        
         imageView = UIImageView(image: planImage)
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
+        
+        
         addSubview(imageView)
+        
+       
         
         linesLayer = CAShapeLayer()
         linesLayer.strokeColor = UIColor.systemBlue.cgColor
@@ -30,7 +35,23 @@ class ScrollViewPlan: UIScrollView, UIScrollViewDelegate {
         
         isScrollEnabled = true
         contentSize = imageView.frame.size
+        
+        if cabGo == 0 && corpGo == " " {
+            planImage = UIImage(systemName: "map.fill")!
+            imageView.image = planImage
+            but1.isEnabled = false
+            but2.isEnabled = false
+            imageView.tintColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+            but2.backgroundColor = .systemGray5
+            but1.backgroundColor = .systemGray5
+            
+            
+        }
         imageView.frame = CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height)
+        
+        
+        
+        
         
         // Настройка масштабирования
         minimumZoomScale = 1.0
@@ -40,7 +61,7 @@ class ScrollViewPlan: UIScrollView, UIScrollViewDelegate {
         
         self.delegate = self
         adjustContentInset()
-        drawLines()
+        drawLines(but1: but1, but2: but2)
         zoomScale = 1.0
         
         
@@ -52,7 +73,7 @@ class ScrollViewPlan: UIScrollView, UIScrollViewDelegate {
         return imageView
     }
     
-    func drawLines() {
+    func drawLines(but1: UIButton, but2: UIButton) {
         let path = UIBezierPath()
         let greenPath = UIBezierPath()
         // Относительные координаты в процентах от размеров изображения
@@ -61,7 +82,7 @@ class ScrollViewPlan: UIScrollView, UIScrollViewDelegate {
         
         
         if vhod == "вход 12 корпус" {
-            twelverCorpus(path: path, greenPath: greenPath, imageView: imageView, numb: numbImage)
+            twelverCorpus(path: path, greenPath: greenPath, imageView: imageView, numb: numbImage, but1: but1, but2: but2)
         }
         
         
