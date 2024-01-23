@@ -23,11 +23,13 @@ class ScrollViewPlan: UIScrollView, UIScrollViewDelegate {
        
         
         linesLayer = CAShapeLayer()
-        linesLayer.strokeColor = UIColor.systemBlue.cgColor
+        linesLayer.fillColor = .none
+        linesLayer.strokeColor = UIColor.red.cgColor
         linesLayer.lineWidth = 2.0
         imageView.layer.addSublayer(linesLayer)
         
         greenLinesLayer = CAShapeLayer()
+        greenLinesLayer.fillColor = .none
         greenLinesLayer.strokeColor = UIColor.green.cgColor
         greenLinesLayer.lineWidth = 2.0
         imageView.layer.addSublayer(greenLinesLayer)
@@ -35,8 +37,8 @@ class ScrollViewPlan: UIScrollView, UIScrollViewDelegate {
         
         isScrollEnabled = true
         contentSize = imageView.frame.size
-        
-        if cabGo == 0 && corpGo == " " {
+        imageView.frame = CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height)
+        if cabGo == 0 && corpGo == " " && etazGo == 0  {
             planImage = UIImage(systemName: "map.fill")!
             imageView.image = planImage
             but1.isEnabled = false
@@ -45,9 +47,9 @@ class ScrollViewPlan: UIScrollView, UIScrollViewDelegate {
             but2.backgroundColor = .systemGray5
             but1.backgroundColor = .systemGray5
             
-            
+            return
         }
-        imageView.frame = CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height)
+        
         
         
         

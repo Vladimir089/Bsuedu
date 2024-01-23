@@ -16,6 +16,8 @@ var corpGo = " "
 var cabGo = Int()
 var etazGo = Int()
 
+var isOnlyVhod = 0 //проверка на то будет ли вход только с входов
+
 var numbImage = 1
 
 
@@ -36,9 +38,9 @@ class MainMenuViewController: UIViewController {
         mainMenuView.addConstrints()
         mainMenuView.picker.setting()
         view = mainMenuView
-
+        
     }
-
+    
     
     
     override func viewDidLoad() {
@@ -48,7 +50,7 @@ class MainMenuViewController: UIViewController {
         settingsBotView()
         animateButtons()
         settingBottonBotView()
-       
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -123,16 +125,40 @@ class MainMenuViewController: UIViewController {
             sender.transform = .identity
         }
     }
-
+    
     @objc func buttonTouchDown(_ sender: UIButton) {
         UIView.animate(withDuration: 0.1) {
             sender.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
         }
     }
-
+    
     @objc func buttonTouchUp(_ sender: UIButton) {
         UIView.animate(withDuration: 0.1) {
             sender.transform = .identity
+        }
+        let constraintTop = mainMenuView.topPickerContraints
+        
+        
+        
+        
+        
+        if sender == mainMenuView.picker.buttonClose {
+            
+            mainMenuView.picker.buttonOK.tag = 0
+            
+            constraintTop.constant = 0
+            botPickerView = 0
+            
+            UIView.animate(withDuration: 0.5) { [self] in
+                
+                mainMenuView.selectVhodButton.isEnabled = true
+                mainMenuView.selectVhodButton.backgroundColor = .white
+                isOnlyVhod = 0
+                
+                self.view.layoutIfNeeded()
+                self.onButtons()
+            }
+            return
         }
         
         if sender == mainMenuView.createButton {
@@ -144,18 +170,16 @@ class MainMenuViewController: UIViewController {
         
         if sender == mainMenuView.nextView {
             numbImage += 1
-            mainMenuView.scrollView.createNav(but1: mainMenuView.prevView, but2: mainMenuView.nextView)
-            mainMenuView.setNeedsLayout()
+            del()
             return
         }
         if sender == mainMenuView.prevView {
             numbImage -= 1
-            mainMenuView.scrollView.createNav(but1: mainMenuView.prevView, but2: mainMenuView.nextView)
-            mainMenuView.setNeedsLayout()
+            del()
             return
         }
         
-        let constraintTop = mainMenuView.topPickerContraints
+        
         
         if botPickerView == 0  {
             constraintTop.constant = -250
@@ -212,6 +236,9 @@ class MainMenuViewController: UIViewController {
         if sender == mainMenuView.selectCampusButton {
             mainMenuView.picker.buttonOK.tag = 999
             mainMenuView.picker.getID(id: "corp")
+            
+            
+            
         }
         if sender == mainMenuView.selectCabinetButton {
             mainMenuView.picker.buttonOK.tag = 888
@@ -222,6 +249,10 @@ class MainMenuViewController: UIViewController {
             mainMenuView.picker.getID(id: "etaz")
         }
         if sender == mainMenuView.selectVhodButton {
+            UIView.animate(withDuration: 0.5) {
+                self.offButtons()
+            }
+            isOnlyVhod = 1
             mainMenuView.picker.buttonOK.tag = 666
             mainMenuView.picker.getID(id: "vhod")
         }
@@ -238,33 +269,44 @@ class MainMenuViewController: UIViewController {
             mainMenuView.picker.buttonOK.tag = 333
             mainMenuView.picker.getID(id: "etazGo")
             
-        }
-        if sender == mainMenuView.picker.buttonClose {
-            constraintTop.constant = 0
-            botPickerView = 0
             
         }
         
-       
+        if sender == mainMenuView.selectCabinetButton || sender == mainMenuView.selectEtazButton || sender == mainMenuView.selectCampusButton {
+            isOnlyVhod = 0
+            UIView.animate(withDuration: 0.5) { [self] in
+                mainMenuView.selectVhodButton.isEnabled = false
+                mainMenuView.selectVhodButton.backgroundColor = .systemGray5
+            }
+        }
         
         
-        
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+        }
         print(mainMenuView.picker.buttonOK.tag)
-           
+        
     }
     
     
+    func offButtons() {
+        mainMenuView.selectCampusButton.isEnabled = false
+        mainMenuView.selectCabinetButton.isEnabled = false
+        mainMenuView.selectEtazButton.isEnabled = false
+        mainMenuView.selectCampusButton.backgroundColor = .systemGray5
+        mainMenuView.selectCabinetButton.backgroundColor = .systemGray5
+        mainMenuView.selectEtazButton.backgroundColor = .systemGray5
+    }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    func onButtons() {
+        mainMenuView.selectCampusButton.isEnabled = true
+        mainMenuView.selectCabinetButton.isEnabled = true
+        mainMenuView.selectEtazButton.isEnabled = true
+        mainMenuView.selectCampusButton.backgroundColor = .white
+        mainMenuView.selectCabinetButton.backgroundColor = .white
+        mainMenuView.selectEtazButton.backgroundColor = .white
+    }
+
     @objc func viewTopTapped() {
         
         let constraintBoat = mainMenuView.topViewBotContraints
@@ -283,7 +325,7 @@ class MainMenuViewController: UIViewController {
             self.mainMenuView.layoutIfNeeded()
         }
         mainMenuView.updateConstraintsIfNeeded()
- 
+        
     }
     
     
@@ -291,17 +333,17 @@ class MainMenuViewController: UIViewController {
     @objc func viewBotTapped() {
         let constraintBoat = mainMenuView.topViewBotContraints
         let constraintTopBotView = mainMenuView.botViewToContraints
-
+        
         if botView == 0  {
             
             constraintBoat.constant = -270
             constraintTopBotView.constant = -197
-           
+            
             botView = 1
         } else {
             constraintBoat.constant = -110
             constraintTopBotView.constant = -100
-
+            
             botView = 0
         }
         
@@ -311,7 +353,25 @@ class MainMenuViewController: UIViewController {
         }
         
     }
-  
+    
+    
+    
+    func del() {
+        mainMenuView.scrollView.imageView.image = nil
+        if let sublayers = mainMenuView.scrollView.imageView.layer.sublayers {
+                for sublayer in sublayers {
+                    if let shapeLayer = sublayer as? CAShapeLayer, shapeLayer.strokeColor == UIColor.red.cgColor {
+                        shapeLayer.removeFromSuperlayer()
+                    }
+                    if let shapeLayerGreen = sublayer as? CAShapeLayer, shapeLayerGreen.strokeColor == UIColor.green.cgColor {
+                        shapeLayerGreen.removeFromSuperlayer()
+                    }
+                }
+            }
+        mainMenuView.scrollView.createNav(but1: mainMenuView.prevView, but2: mainMenuView.nextView)
+        mainMenuView.setNeedsLayout()
+    }
+    
 }
 
 

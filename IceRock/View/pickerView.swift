@@ -15,7 +15,7 @@ class pickerView: UIView {
     var ID: String = " "
     var selectedValue: String?
     var arrName = ["ds"]
-    let selectedRow = 0
+
     
     
     
@@ -48,6 +48,10 @@ class pickerView: UIView {
     func getID(id: String) {
         ID = id
         
+        if ID == "no" {
+            arrName.removeAll()
+            return
+        }
         
         if ID == "corp" {
             arrName.removeAll()
@@ -78,13 +82,17 @@ class pickerView: UIView {
             buttonOK.tag = 333
             arrName = (1...10).map { String($0) }
         }
+   
         
         
         DispatchQueue.main.async { [self] in
             
             pickerView.reloadAllComponents()
-            pickerView.selectRow(0, inComponent: 0, animated: true)
-            self.pickerView(pickerView, didSelectRow: 0, inComponent: 0)
+            if ID != "no" {
+                pickerView.selectRow(0, inComponent: 0, animated: true)
+                self.pickerView(pickerView, didSelectRow: 0, inComponent: 0)
+            }
+           
         }
     }
     

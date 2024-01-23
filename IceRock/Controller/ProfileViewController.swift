@@ -21,7 +21,36 @@ class ProfileViewController: UIViewController {
         return view
     }()
     
+    let infoImage: UIImageView = {
+        let imageView = UIImageView()
+        let image = UIImage(systemName: "info.circle")
+        imageView.image = image
+        imageView.tintColor = .systemGray4
+        return imageView
+    }()
+    
+    let labelinfo: UILabel = {
+        let label = UILabel()
+        label.text = "Если вы заблудились в стенах университета и не знаете куда идти - подойдите к работнику университета и покажите ему эту страницу"
+        label.font = .systemFont(ofSize: 16, weight: .light)
+        label.textAlignment = .left
+        label.textColor = .systemGray4
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    
+    
     let FIOTextField: UITextField = {
+        let text = UITextField()
+        text.borderStyle = .none
+        text.backgroundColor = .white
+        text.textColor = .black
+        text.layer.cornerRadius = 10
+        return text
+    }()
+    
+    let phoneTextField: UITextField = {
         let text = UITextField()
         text.borderStyle = .none
         text.backgroundColor = .white
@@ -39,6 +68,17 @@ class ProfileViewController: UIViewController {
         return text
     }()
     
+    
+    let rukTextField: UITextField = {
+        let text = UITextField()
+        text.borderStyle = .none
+        text.backgroundColor = .white
+        text.textColor = .black
+        text.layer.cornerRadius = 10
+        return text
+    }()
+    
+    
 
     
     
@@ -55,17 +95,26 @@ class ProfileViewController: UIViewController {
         let label = UILabel()
         label.text = "Номер группы "
         label.font = .systemFont(ofSize: 16, weight: .light)
-        label.textAlignment = .left
+        label.textAlignment = .right
+        label.numberOfLines = 1
+        return label
+    }()
+    
+    let phoneRukovodGroup: UILabel = {
+        let label = UILabel()
+        label.text = "Номер телефона руководителя "
+        label.font = .systemFont(ofSize: 16, weight: .light)
+        label.textAlignment = .right
         label.numberOfLines = 1
         return label
     }()
     
     
-    let labelRukovod: UILabel = {
+    var labelRukovod: UILabel = {
         let label = UILabel()
         label.text = "Руководитель: "
         label.font = .systemFont(ofSize: 16, weight: .light)
-        label.textAlignment = .center
+        label.textAlignment = .right
         label.numberOfLines = 3
         return label
     }()
@@ -149,6 +198,14 @@ class ProfileViewController: UIViewController {
                 UserDefaults.standard.set(groupTextField.text, forKey: "Group")
                 labelGroup.text = "Номер группы: \(groupText)"
             }
+            if let rukText = rukTextField.text {
+                UserDefaults.standard.set(rukTextField.text, forKey: "Ruk")
+                labelRukovod.text = "Руководитель: \(rukText)"
+            }
+            if let phoneText = phoneTextField.text {
+                UserDefaults.standard.set(phoneTextField.text, forKey: "phone")
+                labelRukovod.text = "Номер телефона руководителя: \(phoneText)"
+            }
             
             
         } else {
@@ -188,6 +245,9 @@ class ProfileViewController: UIViewController {
         view.addSubview(labelFIO)
         view.addSubview(labelGroup)
         view.addSubview(labelRukovod)
+        view.addSubview(phoneRukovodGroup)
+        view.addSubview(infoImage)
+        view.addSubview(labelinfo)
         
     }
     
@@ -205,6 +265,12 @@ class ProfileViewController: UIViewController {
         }
         if let gtoupText = UserDefaults.standard.string(forKey: "Group") {
             labelGroup.text = "Номер группы: \(gtoupText)"
+        }
+        if let rukText = UserDefaults.standard.string(forKey: "Ruk") {
+            labelRukovod.text = "Руководитель: \(rukText)"
+        }
+        if let phoneText = UserDefaults.standard.string(forKey: "phone") {
+            phoneRukovodGroup.text = "Номер телефона руководителя: \(phoneText)"
         }
     }
     
@@ -247,14 +313,24 @@ class ProfileViewController: UIViewController {
         labelGroup.topAnchor.constraint(equalTo: labelFIO.bottomAnchor, constant: 30).isActive = true
         labelGroup.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
         
-        //доделать лэйбл и текстфилд для группы в bottomView
-        
         labelRukovod.translatesAutoresizingMaskIntoConstraints = false
         labelRukovod.topAnchor.constraint(equalTo: labelGroup.bottomAnchor, constant: 10).isActive = true
         labelRukovod.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
         
+        phoneRukovodGroup.translatesAutoresizingMaskIntoConstraints = false
+        phoneRukovodGroup.topAnchor.constraint(equalTo: labelRukovod.bottomAnchor, constant: 10).isActive = true
+        phoneRukovodGroup.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
         
+        infoImage.translatesAutoresizingMaskIntoConstraints = false
+        infoImage.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        infoImage.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        infoImage.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -200).isActive = true
+        infoImage.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
         
+        labelinfo.translatesAutoresizingMaskIntoConstraints = false
+        labelinfo.topAnchor.constraint(equalTo: infoImage.topAnchor, constant: 0).isActive = true
+        labelinfo.leftAnchor.constraint(equalTo: infoImage.rightAnchor, constant: 5).isActive = true
+        labelinfo.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
     }
     
     func addBotViews() {
@@ -331,6 +407,43 @@ class ProfileViewController: UIViewController {
         groupTextField.rightAnchor.constraint(equalTo: viewTwoBot.rightAnchor, constant: -20).isActive = true
         groupTextField.bottomAnchor.constraint(equalTo: viewTwoBot.bottomAnchor, constant: -5).isActive = true
         
+        let labelRukBot: UILabel = {
+            let label = UILabel()
+            label.font = .systemFont(ofSize: 16, weight: .ultraLight)
+            label.text = "Руководитель:"
+            return label
+        }()
+        
+        viewThreeBot.addSubview(labelRukBot)
+        labelRukBot.translatesAutoresizingMaskIntoConstraints = false
+        labelRukBot.leftAnchor.constraint(equalTo: viewThreeBot.leftAnchor, constant: 25).isActive = true
+        labelRukBot.topAnchor.constraint(equalTo: viewThreeBot.topAnchor, constant: 5).isActive = true
+        
+        viewThreeBot.addSubview(rukTextField)
+        rukTextField.translatesAutoresizingMaskIntoConstraints = false
+        rukTextField.topAnchor.constraint(equalTo: labelRukBot.bottomAnchor, constant: 1).isActive = true
+        rukTextField.leftAnchor.constraint(equalTo: viewThreeBot.leftAnchor, constant: 20).isActive = true
+        rukTextField.rightAnchor.constraint(equalTo: viewThreeBot.rightAnchor, constant: -20).isActive = true
+        rukTextField.bottomAnchor.constraint(equalTo: viewThreeBot.bottomAnchor, constant: -5).isActive = true
+        
+        let labelRukPhoneBot: UILabel = {
+            let label = UILabel()
+            label.font = .systemFont(ofSize: 16, weight: .ultraLight)
+            label.text = "Номер телефона руководителя:"
+            return label
+        }()
+        
+        viewFourBot.addSubview(labelRukPhoneBot)
+        labelRukPhoneBot.translatesAutoresizingMaskIntoConstraints = false
+        labelRukPhoneBot.leftAnchor.constraint(equalTo: viewFourBot.leftAnchor, constant: 25).isActive = true
+        labelRukPhoneBot.topAnchor.constraint(equalTo: viewFourBot.topAnchor, constant: 5).isActive = true
+        
+        viewFourBot.addSubview(phoneTextField)
+        phoneTextField.translatesAutoresizingMaskIntoConstraints = false
+        phoneTextField.topAnchor.constraint(equalTo: labelRukPhoneBot.bottomAnchor, constant: 1).isActive = true
+        phoneTextField.leftAnchor.constraint(equalTo: viewFourBot.leftAnchor, constant: 20).isActive = true
+        phoneTextField.rightAnchor.constraint(equalTo: viewFourBot.rightAnchor, constant: -20).isActive = true
+        phoneTextField.bottomAnchor.constraint(equalTo: viewFourBot.bottomAnchor, constant: -5).isActive = true
         
     }
 }
