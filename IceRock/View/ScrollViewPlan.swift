@@ -24,7 +24,7 @@ class ScrollViewPlan: UIScrollView, UIScrollViewDelegate {
         
         linesLayer = CAShapeLayer()
         linesLayer.fillColor = .none
-        linesLayer.strokeColor = UIColor.red.cgColor
+        linesLayer.strokeColor = UIColor.systemGreen.cgColor
         linesLayer.lineWidth = 2.0
         imageView.layer.addSublayer(linesLayer)
         

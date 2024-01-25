@@ -44,32 +44,37 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
             imageView.image = UIImage(named: "12corpHoll")
             
             
-            path.addArc(withCenter: CGPoint(x: 0.63 * imageWidth, y: 0.9 * imageHeight), radius: 10, startAngle: 0, endAngle: CGFloat(2 * Double.pi), clockwise: true)
+            path.addArc(withCenter: CGPoint(x: 0.498 * imageWidth, y: 0.95 * imageHeight), radius: 10, startAngle: 0, endAngle: CGFloat(2 * Double.pi), clockwise: true)
+            path.move(to: CGPoint(x: 0.498 * imageWidth, y: 0.9 * imageHeight))
+            path.addLine(to: CGPoint(x: 0.498 * imageWidth, y: 0.8 * imageHeight))
+            path.move(to: CGPoint(x: 0.498 * imageWidth, y: 0.8 * imageHeight))
+            path.addQuadCurve(to: CGPoint(x: 0.3 * imageWidth, y: 0.6 * imageHeight),
+                              controlPoint: CGPoint(x: 0.498 * imageWidth, y: 0.6 * imageHeight))
+            path.move(to: CGPoint(x: 0.3 * imageWidth, y: 0.6 * imageHeight))
+            path.addLine(to: CGPoint(x: 0.2 * imageWidth, y: 0.6 * imageHeight))
+            path.move(to: CGPoint(x: 0.2 * imageWidth, y: 0.6 * imageHeight))
+            
+            path.addQuadCurve(to: CGPoint(x: 0.12 * imageWidth, y: 0.8 * imageHeight),
+                              controlPoint: CGPoint(x: 0.15 * imageWidth, y: 0.6 * imageHeight))
+            
+            path.addArc(withCenter: CGPoint(x: 0.12 * imageWidth, y: 0.83 * imageHeight), radius: 5, startAngle: 0, endAngle: CGFloat(2 * Double.pi), clockwise: true)
             
             
-            path.move(to: CGPoint(x: 0.63 * imageWidth, y: 0.86 * imageHeight))
-            path.addLine(to: CGPoint(x: 0.63 * imageWidth, y: 0.54 * imageHeight))
+            greenPath.move(to: CGPoint(x: 0.3 * imageWidth, y: 0.6 * imageHeight))
             
-            path.move(to: CGPoint(x: 0.63 * imageWidth, y: 0.54 * imageHeight))
-            path.addLine(to: CGPoint(x: 0.2 * imageWidth, y: 0.54 * imageHeight))
+            greenPath.addQuadCurve(to: CGPoint(x: 0.2 * imageWidth, y: 0.4 * imageHeight),
+                                   controlPoint: CGPoint(x: 0.2 * imageWidth, y: 0.55 * imageHeight))
             
-            path.move(to: CGPoint(x: 0.2 * imageWidth, y: 0.54 * imageHeight))
-            path.addLine(to: CGPoint(x: 0.2 * imageWidth, y: 0.66 * imageHeight))
+            greenPath.move(to: CGPoint(x: 0.2 * imageWidth, y: 0.4 * imageHeight))
             
-            path.move(to: CGPoint(x: 0.2 * imageWidth, y: 0.7 * imageHeight))
-            path.addArc(withCenter: CGPoint(x: 0.2 * imageWidth, y: 0.7 * imageHeight), radius: 10, startAngle: 0, endAngle: CGFloat(2 * Double.pi), clockwise: true)
+            greenPath.addQuadCurve(to: CGPoint(x: 0.15 * imageWidth, y: 0.35 * imageHeight),
+                                   controlPoint: CGPoint(x: 0.2 * imageWidth, y: 0.35 * imageHeight))
             
-            greenPath.move(to: CGPoint(x: 0.4 * imageWidth, y: 0.54 * imageHeight))
-            greenPath.addLine(to: CGPoint(x: 0.4 * imageWidth, y: 0.1 * imageHeight))
+            greenPath.move(to: CGPoint(x: 0.15 * imageWidth, y: 0.35 * imageHeight))
             
-            greenPath.move(to: CGPoint(x: 0.4 * imageWidth, y: 0.1 * imageHeight))
-            greenPath.addLine(to: CGPoint(x: 0.15 * imageWidth, y: 0.1 * imageHeight))
-            
-            greenPath.move(to: CGPoint(x: 0.15 * imageWidth, y: 0.1 * imageHeight))
-            greenPath.addLine(to: CGPoint(x: 0.15 * imageWidth, y: 0.3 * imageHeight))
-            
-            greenPath.move(to: CGPoint(x: 0.15 * imageWidth, y: 0.3 * imageHeight))
-            greenPath.addArc(withCenter: CGPoint(x: 0.15 * imageWidth, y: 0.3 * imageHeight), radius: 10, startAngle: 0, endAngle: CGFloat(2 * Double.pi), clockwise: true)
+            greenPath.addQuadCurve(to: CGPoint(x: 0.12 * imageWidth, y: 0.38 * imageHeight),
+                                   controlPoint: CGPoint(x: 0.12 * imageWidth, y: 0.36 * imageHeight))
+           
             
             
         }
