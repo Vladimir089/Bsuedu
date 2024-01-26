@@ -8,12 +8,12 @@
 import UIKit
 
 var corp = " "
-var cab = Int()
+var cab = " "
 var etaz = Int()
 var vhod = " "
 
 var corpGo = " "
-var cabGo = Int()
+var cabGo = " "
 var etazGo = Int()
 
 var isOnlyVhod = 0 //проверка на то будет ли вход только с входов
@@ -50,6 +50,10 @@ class MainMenuViewController: UIViewController {
         settingsBotView()
         animateButtons()
         settingBottonBotView()
+        mainMenuView.selectCabinetButtonGo.isEnabled = false
+        mainMenuView.selectCabinetButtonGo.backgroundColor = .systemGray5
+        mainMenuView.selectEtazButtonGo.isEnabled = false
+        mainMenuView.selectEtazButtonGo.backgroundColor = .systemGray5
         
     }
     
@@ -202,7 +206,7 @@ class MainMenuViewController: UIViewController {
         }
         if mainMenuView.picker.buttonOK.tag == 888 {
             
-            cab = Int(mainMenuView.picker.selectedValue ?? "0") ?? 0
+            cab = String(mainMenuView.picker.selectedValue ?? "0") 
             mainMenuView.labelCabinetNumber.text = "\(cab) кабинет"
             print(cab)
         }
@@ -219,16 +223,26 @@ class MainMenuViewController: UIViewController {
         if mainMenuView.picker.buttonOK.tag == 555 {
             corpGo = mainMenuView.picker.selectedValue ?? " "
             mainMenuView.labelCampusNumberGo.text = "\(corpGo) корпус"
+            UIView.animate(withDuration: 0.5) { [self] in
+                mainMenuView.selectEtazButtonGo.isEnabled = true
+                mainMenuView.selectEtazButtonGo.backgroundColor = .white
+            }
+            
             print(corpGo)
         }
         if mainMenuView.picker.buttonOK.tag == 444 {
-            cabGo = Int(mainMenuView.picker.selectedValue ?? "0") ?? 0
+            cabGo = String(mainMenuView.picker.selectedValue ?? "0")
             mainMenuView.labelCabinetNumberGo.text = "\(cabGo) кабинет"
             print(cabGo)
         }
         if mainMenuView.picker.buttonOK.tag == 333 {
             etazGo = Int(mainMenuView.picker.selectedValue ?? "0") ?? 0
             mainMenuView.labelEtazNumbeGo.text = "\(etazGo) этаж"
+            UIView.animate(withDuration: 0.5) { [self] in
+                mainMenuView.selectCabinetButtonGo.isEnabled = true
+                mainMenuView.selectCabinetButtonGo.backgroundColor = .white
+            }
+            
             print(etaz)
         }
         

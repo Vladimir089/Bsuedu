@@ -93,9 +93,9 @@ func recognizeDigits(imageView: UIImageView, path: UIBezierPath ) -> CGPoint? {
             
             
             
-            let recognizedDigit = RecognizedDigit(digit: Int(recognizedText) ?? 0, boundingBox: boundingBox, coordinates: CGPoint(x: boundingBox.midX * imageWidth, y: (1.0 - boundingBox.midY) * imageHeight))
+            let recognizedDigit = RecognizedDigit(digit: String(recognizedText) , boundingBox: boundingBox, coordinates: CGPoint(x: boundingBox.midX * imageWidth, y: (1.0 - boundingBox.midY) * imageHeight))
 
-            print("Recognized digit: \(recognizedDigit.coordinates)")
+            print("Recognized digit: \(recognizedDigit.digit)")
             
             if recognizedDigit.digit == cabGo {
 
@@ -127,7 +127,7 @@ func recognizeDigits(imageView: UIImageView, path: UIBezierPath ) -> CGPoint? {
 
 
 struct RecognizedDigit {
-    var digit: Int
+    var digit: String
     var boundingBox: CGRect
     var coordinates: CGPoint
 }

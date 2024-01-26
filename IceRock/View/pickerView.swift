@@ -76,7 +76,12 @@ class pickerView: UIView {
         } else if ID == "cabGo" {
             arrName.removeAll()
             buttonOK.tag = 444
-            arrName = (1...100).map { String($0) }
+            if corpGo == "12" && etazGo == 2 {
+                arrName = ["2-2", "2-4", "2-6", "2-7", "2-8", "2-9", "2-10","2-10A", "2-10Б", "2-10B", "2-10Г", "2-11", "2-13", "2-17", "2-26"]
+            } else {
+                arrName = ["test", "test", "test"]
+            }
+            
         } else if ID == "etazGo" {
             arrName.removeAll()
             buttonOK.tag = 333
