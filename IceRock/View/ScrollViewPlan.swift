@@ -19,7 +19,8 @@ class ScrollViewPlan: UIScrollView, UIScrollViewDelegate {
         
         
         addSubview(imageView)
-        
+        showsHorizontalScrollIndicator = false
+        showsVerticalScrollIndicator = false
        
         
         linesLayer = CAShapeLayer()

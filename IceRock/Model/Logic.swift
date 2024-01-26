@@ -105,6 +105,10 @@ func recognizeDigits(imageView: UIImageView, path: UIBezierPath ) -> CGPoint? {
                 coordinates = recognizedDigit.coordinates
                 break
             }
+            if recognizedDigit.digit == "2-105" && cabGo == "2-10Б" {
+                coordinates = recognizedDigit.coordinates
+                break
+            }
         }
     })
     

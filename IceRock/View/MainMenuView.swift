@@ -380,7 +380,7 @@ class MainMenuView: UIView {
         
         picker = pickerView()
         picker.layer.borderColor = UIColor(red: 0.8235, green: 0.7686, blue: 0.9961, alpha: 1).cgColor
-        picker.layer.borderWidth = 1
+        picker.layer.borderWidth = 3
         picker.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
         picker.layer.cornerRadius = 30
         picker.translatesAutoresizingMaskIntoConstraints = false
