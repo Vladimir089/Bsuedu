@@ -255,6 +255,70 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
                         }
                         
                         
+                        if cabGo == "3-16" || cabGo == "3-18" || cabGo == "3-20" || cabGo == "3-14" {
+                            path.addQuadCurve(to: CGPoint(x: 0.25 * imageWidth, y: 0.5 * imageHeight),
+                                              controlPoint: CGPoint(x: 0.17 * imageWidth, y: 0.52 * imageHeight))
+                            path.move(to: CGPoint(x: 0.25 * imageWidth, y: 0.5 * imageHeight))
+                            
+                            path.addQuadCurve(to: CGPoint(x: 0.36 * imageWidth, y: 0.7 * imageHeight),
+                                              controlPoint: CGPoint(x: 0.36 * imageWidth, y: 0.5 * imageHeight))
+                            
+                            path.move(to: CGPoint(x: 0.36 * imageWidth, y: 0.7 * imageHeight))
+                            
+                            
+                           
+                            if cabGo != "3-16" && cabGo != "3-14"  {
+                                path.addQuadCurve(to: CGPoint(x: 0.38 * imageWidth, y: 0.78 * imageHeight),
+                                                  controlPoint: CGPoint(x: 0.36 * imageWidth, y: 0.77 * imageHeight))
+                                path.move(to: CGPoint(x: 0.38 * imageWidth, y: 0.78 * imageHeight))
+                                path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y - 5),
+                                                  controlPoint: CGPoint(x: coord.x, y: 0.77 * imageHeight))
+                            } else if cabGo == "3-14" {
+                                path.addQuadCurve(to: CGPoint(x: 0.38 * imageWidth, y: 0.78 * imageHeight),
+                                                  controlPoint: CGPoint(x: 0.36 * imageWidth, y: 0.77 * imageHeight))
+                                path.move(to: CGPoint(x: 0.38 * imageWidth, y: 0.78 * imageHeight))
+                                path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y + 15),
+                                                  controlPoint: CGPoint(x: coord.x, y: 0.77 * imageHeight))
+                            } else {
+                                path.addLine(to: CGPoint(x: 0.36 * imageWidth, y: coord.y - 5))
+                            }
+                            
+                        }
+                        
+                        if cabGo == "3-22" || cabGo == "3-24" || cabGo == "3-26" || cabGo == "3-30" || cabGo == "3-32" || cabGo == "3-32A" || cabGo == "3-27" {
+                            path.addQuadCurve(to: CGPoint(x: 0.25 * imageWidth, y: 0.5 * imageHeight),
+                                              controlPoint: CGPoint(x: 0.17 * imageWidth, y: 0.51 * imageHeight))
+                            path.move(to: CGPoint(x: 0.25 * imageWidth, y: 0.5 * imageHeight))
+                            
+                            path.addQuadCurve(to: CGPoint(x: 0.7 * imageWidth, y: 0.65 * imageHeight),
+                                              controlPoint: CGPoint(x: 0.65 * imageWidth, y: 0.5 * imageHeight))
+                            
+                            path.move(to: CGPoint(x: 0.7 * imageWidth, y: 0.65 * imageHeight))
+                             
+                            if cabGo == "3-22" || cabGo == "3-24" || cabGo == "3-26" {
+                                path.addCurve(to: CGPoint(x: coord.x, y: coord.y - 5),
+                                              controlPoint1: CGPoint(x: 0.72 * imageWidth, y: 0.75 * imageHeight),
+                                              controlPoint2: CGPoint(x: coord.x, y: 0.75 * imageHeight))
+                            }
+                            
+                            if cabGo == "3-30" || cabGo == "3-32" || cabGo == "3-32A" {
+                                path.addQuadCurve(to: CGPoint(x: 0.85 * imageWidth, y: 0.75 * imageHeight),
+                                                  controlPoint: CGPoint(x: 0.75 * imageWidth, y: 0.75 * imageHeight))
+                                path.move(to: CGPoint(x: 0.85 * imageWidth, y: 0.75 * imageHeight))
+                                if cabGo == "3-30" {
+                                    path.addLine(to: CGPoint(x: coord.x - 7, y: 0.75 * imageHeight))
+                                }
+                                if cabGo == "3-32" || cabGo == "3-32A" {
+                                    //тут остановился
+                                    path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y),
+                                                      controlPoint: CGPoint(x: 0.95 * imageWidth, y: 0.75 * imageHeight))
+                                }
+                                
+                            }
+                            
+                        }
+                        
+                        
                         shapeLayerGreen.fillColor = .none
                         shapeLayerGreen.path = greenPath.cgPath
                         shapeLayerGreen.strokeColor = UIColor.systemGray5.cgColor

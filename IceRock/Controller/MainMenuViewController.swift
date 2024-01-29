@@ -243,7 +243,7 @@ class MainMenuViewController: UIViewController {
                 mainMenuView.selectCabinetButtonGo.backgroundColor = .white
             }
             
-            print(etaz)
+            print("этаж гоу - \(etazGo)")
         }
         
         
@@ -282,6 +282,7 @@ class MainMenuViewController: UIViewController {
         if sender == mainMenuView.selectEtazButtonGo {
             mainMenuView.picker.buttonOK.tag = 333
             mainMenuView.picker.getID(id: "etazGo")
+            
             
             
         }
