@@ -48,7 +48,7 @@ class ViewController: UIViewController {
 
     func createPageController(_ title: String, color: UIColor) -> UIViewController {
         let viewController = UIViewController()
-        viewController.view.backgroundColor = color
+        viewController.view.backgroundColor = .white
         
         if title == "Page 1" {
             
