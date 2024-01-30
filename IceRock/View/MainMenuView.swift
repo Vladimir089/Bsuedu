@@ -3,9 +3,9 @@
 //  IceRock
 //
 //  Created by Владимир on 06.01.2024.
+//  And
+//  Created by Nick on 18.01.2024.
 //
-
-
 
 import UIKit
 
@@ -26,7 +26,7 @@ class MainMenuView: UIView {
     
     let bottomView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+        view.backgroundColor = UIColor(red: 64/255.0, green: 200/255.0, blue: 1/255.0, alpha: 1.0)
         view.layer.cornerRadius = 40
         return view
     }()
@@ -41,8 +41,9 @@ class MainMenuView: UIView {
     let profileButton: UIButton = {
         let buttom = UIButton()
         buttom.setTitle(" Профиль", for: .normal)
-        buttom.backgroundColor = UIColor(red: 0.8235, green: 0.7686, blue: 0.9961, alpha: 1)
+        buttom.backgroundColor = UIColor.white
         buttom.layer.cornerRadius = 15
+        buttom.setTitleColor(UIColor.black, for: .normal) // Добавлен черный цвет текста
         buttom.setImage(UIImage(systemName: "person"), for: .normal)
         return buttom
     }()
@@ -71,13 +72,14 @@ class MainMenuView: UIView {
     }()
     
     let createButton: UIButton = {
-        let buttom = UIButton()
-        buttom.setTitle("Построить маршрут", for: .normal)
-        buttom.backgroundColor = UIColor(red: 0.8235, green: 0.7686, blue: 0.9961, alpha: 1)
-        buttom.layer.cornerRadius = 15
-        return buttom
+        let button = UIButton()
+        button.setTitle("Построить маршрут", for: .normal)
+        button.backgroundColor = UIColor.white
+        button.setTitleColor(UIColor.black, for: .normal) // Добавлен черный цвет текста
+        button.layer.cornerRadius = 15
+        return button
     }()
-    
+
     
     
     let selectCampusButton: UIButton = {
