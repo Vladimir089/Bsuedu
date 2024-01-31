@@ -649,6 +649,93 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
             
         }
         
+        
+        if corpGo == "12" && numbImage == 2 && etazGo == 7 {
+            
+            but1.isEnabled = true
+            but1.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+            but2.isEnabled = false
+            but2.backgroundColor = .systemGray5
+            
+            imageView.image = nil
+            imageView.image = UIImage(named: "12corp7")
+            
+            DispatchQueue.global().async {
+                
+                if let coord = recognizeDigits(imageView: imageView, path: path) {
+                    DispatchQueue.main.async {
+                        
+                        
+                        
+                        
+                        path.addArc(withCenter: CGPoint(x: 0.13 * imageWidth, y: 0.9 * imageHeight), radius: 5, startAngle: 0, endAngle: CGFloat(2 * Double.pi), clockwise: true)
+                        path.move(to: CGPoint(x: 0.13 * imageWidth, y: 0.87 * imageHeight))
+                        path.addLine(to: CGPoint(x: 0.13 * imageWidth, y: 0.8 * imageHeight))
+                        path.move(to: CGPoint(x: 0.13 * imageWidth, y: 0.8 * imageHeight))
+                        
+                        greenPath.move(to: CGPoint(x: 0.16 * imageWidth, y: 0.34 * imageHeight))
+                        
+                        
+                        if cabGo == "7-3" {
+                            path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y + 10),
+                                              controlPoint: CGPoint(x: 0.13 * imageWidth, y: 0.62 * imageHeight))
+                            
+                            
+    
+                            greenPath.addQuadCurve(to: CGPoint(x: 0.1 * imageWidth, y: 0.4 * imageHeight),
+                                              controlPoint: CGPoint(x: 0.15 * imageWidth, y: 0.5 * imageHeight))
+                        } else {
+                            path.addQuadCurve(to: CGPoint(x: 0.15 * imageWidth, y: 0.6 * imageHeight),
+                                              controlPoint: CGPoint(x: 0.13 * imageWidth, y: 0.62 * imageHeight))
+                            path.move(to: CGPoint(x: 0.15 * imageWidth, y: 0.6 * imageHeight))
+                            greenPath.addQuadCurve(to: CGPoint(x: 0.15 * imageWidth, y: 0.6 * imageHeight),
+                                              controlPoint: CGPoint(x: 0.13 * imageWidth, y: 0.5 * imageHeight))
+                            
+                        }
+                        
+                        if cabGo == "7-5" || cabGo == "7-9" || cabGo == "7-11" || cabGo == "7-15" || cabGo == "7-17" || cabGo == "7-13" {
+                            path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y + 14),
+                                              controlPoint: CGPoint(x: coord.x - 5, y: 0.62 * imageHeight))
+                        }
+                        if cabGo == "7-4" || cabGo == "7-6" || cabGo == "7-8" || cabGo == "7-14" {
+                            path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y - 28),
+                                              controlPoint: CGPoint(x: coord.x + 5, y: 0.5 * imageHeight))
+                        }
+                        if cabGo == "7-10" || cabGo == "7-12" {
+                            if cabGo == "7-12" {
+                                path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y - 30),
+                                                  controlPoint: CGPoint(x: coord.x + 5, y: 0.5 * imageHeight))
+                            }
+                            if cabGo == "7-10" {
+                                path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y - 15),
+                                                  controlPoint: CGPoint(x: coord.x + 5, y: 0.5 * imageHeight))
+                            }
+                        }
+                        
+                        if cabGo == "7-16" {
+                            path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y - 10),
+                                              controlPoint: CGPoint(x: coord.x + 15, y: 0.4 * imageHeight))
+                        }
+                        
+                        shapeLayerGreen.fillColor = .none
+                        shapeLayerGreen.path = greenPath.cgPath
+                        shapeLayerGreen.strokeColor = UIColor.systemGray5.cgColor
+                        shapeLayerGreen.lineWidth = 2.0
+                        imageView.layer.addSublayer(shapeLayerGreen)
+                        shapeLayer.path = path.cgPath
+                        shapeLayer.fillColor = .none
+                        shapeLayer.strokeColor = UIColor.systemGreen.cgColor
+                        shapeLayer.lineWidth = 2.0
+                        imageView.layer.addSublayer(shapeLayer)
+                        shapeLayerGreen.add(animation, forKey: "drawLineAnimation")
+                        shapeLayer.add(animation, forKey: "drawLineAnimation")
+                        
+                    }
+                }
+            }
+            
+        }
+        
     } else {
         print("тут пишем от кабинета до кабинета")
     }
