@@ -84,7 +84,10 @@ class ScrollViewPlan: UIScrollView, UIScrollViewDelegate {
         let imageHeight = imageView.frame.size.height
         
         
-        if vhod == "вход 12 корпус" {
+        if vhod == "вход 12 корпус" && isOnlyVhod == 1 {
+            twelverCorpus(path: path, greenPath: greenPath, imageView: imageView, numb: numbImage, but1: but1, but2: but2)
+        }
+        if corp == "12" && corpGo == "12" && isOnlyVhod == 0 {
             twelverCorpus(path: path, greenPath: greenPath, imageView: imageView, numb: numbImage, but1: but1, but2: but2)
         }
         
@@ -94,6 +97,10 @@ class ScrollViewPlan: UIScrollView, UIScrollViewDelegate {
         animation.fromValue = 0.0
         animation.toValue = 1.0
         animation.duration = 1.0 // Длительность анимации в секундах
+        linesLayer.lineJoin = .round
+        linesLayer.lineCap = .round
+        greenLinesLayer.lineJoin = .round
+        greenLinesLayer.lineCap = .round
         linesLayer.add(animation, forKey: "drawLineAnimation")
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {

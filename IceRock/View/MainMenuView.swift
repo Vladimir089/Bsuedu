@@ -404,7 +404,7 @@ class MainMenuView: UIView {
         botViewTwoInView.addSubview(selectEtazButtonGo)
         
         scrollView = ScrollViewPlan()
-        scrollView.backgroundColor = UIColor(red: 0.8235, green: 0.7686, blue: 0.9961, alpha: 1)
+        scrollView.backgroundColor = .white
         
         
 //        addSubview(scrollView)

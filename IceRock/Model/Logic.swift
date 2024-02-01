@@ -97,7 +97,7 @@ func recognizeDigits(imageView: UIImageView, path: UIBezierPath ) -> CGPoint? {
 
             print("Recognized digit: \(recognizedDigit.digit)")
             
-            if recognizedDigit.digit == cabGo {
+            if recognizedDigit.digit == cabGo || recognizedDigit.digit == cab {
 
                 print("Lines drawn for digit: \(recognizedDigit.digit)")
                 
@@ -105,7 +105,7 @@ func recognizeDigits(imageView: UIImageView, path: UIBezierPath ) -> CGPoint? {
                 coordinates = recognizedDigit.coordinates
                 break
             }
-            if recognizedDigit.digit == "2-105" && cabGo == "2-10Б" {
+            if recognizedDigit.digit == "2-105" && (cabGo == "2-10Б" || cab == "2-10Б" ) {
                 coordinates = recognizedDigit.coordinates
                 break
             }
@@ -126,7 +126,56 @@ func recognizeDigits(imageView: UIImageView, path: UIBezierPath ) -> CGPoint? {
 
 
 
+func addLine(greenPath: UIBezierPath, imageView: UIImageView, path: UIBezierPath) {
+    
+    shapeLayerGreen.removeFromSuperlayer()
+       shapeLayer.removeFromSuperlayer()
+    
+    let animation = CABasicAnimation(keyPath: "strokeEnd")
+    animation.fromValue = 0.0
+    animation.toValue = 1.0
+    animation.duration = 1.0 // Длительность анимации в секундах
+    
+    if numbImage == 1 {
+        shapeLayerGreen.fillColor = .none
+           shapeLayerGreen.path = greenPath.cgPath
+           shapeLayerGreen.strokeColor = UIColor.systemGray5.cgColor
+           shapeLayerGreen.lineWidth = 2.0
+           imageView.layer.addSublayer(shapeLayerGreen)
+           
+           shapeLayer.path = path.cgPath
+           shapeLayer.fillColor = .none
+           shapeLayer.strokeColor = UIColor.systemGreen.cgColor
+           shapeLayer.lineWidth = 2.0
+           imageView.layer.addSublayer(shapeLayer)
 
+           let animationGreen = CABasicAnimation(keyPath: "strokeStart")
+           animationGreen.fromValue = 1.0 //  начальное значение как 1 (конец линии)
+           animationGreen.toValue = 0.0 //  конечное значение как 0 (начало линии)
+           animationGreen.duration = 1.0 //  длительность анимации
+           shapeLayerGreen.add(animationGreen, forKey: "drawLineAnimationGreen")
+
+           let animation = CABasicAnimation(keyPath: "strokeStart")
+           animation.fromValue = 1.0
+           animation.toValue = 0.0
+           animation.duration = 1.0
+           shapeLayer.add(animation, forKey: "drawLineAnimation")
+    } else {
+        shapeLayerGreen.fillColor = .none
+        shapeLayerGreen.path = greenPath.cgPath
+        shapeLayerGreen.strokeColor = UIColor.systemGray5.cgColor
+        shapeLayerGreen.lineWidth = 2.0
+        imageView.layer.addSublayer(shapeLayerGreen)
+        shapeLayer.path = path.cgPath
+        shapeLayer.fillColor = .none
+        shapeLayer.strokeColor = UIColor.systemGreen.cgColor
+        shapeLayer.lineWidth = 2.0
+        imageView.layer.addSublayer(shapeLayer)
+        shapeLayerGreen.add(animation, forKey: "drawLineAnimation")
+        shapeLayer.add(animation, forKey: "drawLineAnimation")
+        
+    }
+}
 
 
 

@@ -54,7 +54,10 @@ class MainMenuViewController: UIViewController {
         mainMenuView.selectCabinetButtonGo.backgroundColor = .systemGray5
         mainMenuView.selectEtazButtonGo.isEnabled = false
         mainMenuView.selectEtazButtonGo.backgroundColor = .systemGray5
-        
+        mainMenuView.selectEtazButton.isEnabled = false
+        mainMenuView.selectEtazButton.backgroundColor = .systemGray5
+        mainMenuView.selectCabinetButton.isEnabled = false
+        mainMenuView.selectCabinetButton.backgroundColor = .systemGray5
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -157,6 +160,7 @@ class MainMenuViewController: UIViewController {
                 
                 mainMenuView.selectVhodButton.isEnabled = true
                 mainMenuView.selectVhodButton.backgroundColor = .white
+                
                 isOnlyVhod = 0
                 
                 self.view.layoutIfNeeded()
@@ -215,6 +219,10 @@ class MainMenuViewController: UIViewController {
             etaz = Int(mainMenuView.picker.selectedValue ?? "0") ?? 0
             mainMenuView.labelEtazNumber.text = "\(etaz) этаж"
             print(etaz)
+            UIView.animate(withDuration: 0.5) { [self] in
+                mainMenuView.selectCabinetButton.isEnabled = true
+                mainMenuView.selectCabinetButton.backgroundColor = .white
+            }
         }
         if mainMenuView.picker.buttonOK.tag == 666 {
             vhod = mainMenuView.picker.selectedValue ?? "0"
@@ -250,7 +258,10 @@ class MainMenuViewController: UIViewController {
         if sender == mainMenuView.selectCampusButton {
             mainMenuView.picker.buttonOK.tag = 999
             mainMenuView.picker.getID(id: "corp")
-            
+            UIView.animate(withDuration: 0.5) { [self] in
+                mainMenuView.selectEtazButton.isEnabled = true
+                mainMenuView.selectEtazButton.backgroundColor = .white
+            }
             
             
         }
@@ -261,6 +272,7 @@ class MainMenuViewController: UIViewController {
         if sender == mainMenuView.selectEtazButton {
             mainMenuView.picker.buttonOK.tag = 777
             mainMenuView.picker.getID(id: "etaz")
+            
         }
         if sender == mainMenuView.selectVhodButton {
             UIView.animate(withDuration: 0.5) {
@@ -315,11 +327,10 @@ class MainMenuViewController: UIViewController {
     
     func onButtons() {
         mainMenuView.selectCampusButton.isEnabled = true
-        mainMenuView.selectCabinetButton.isEnabled = true
-        mainMenuView.selectEtazButton.isEnabled = true
+        
         mainMenuView.selectCampusButton.backgroundColor = .white
-        mainMenuView.selectCabinetButton.backgroundColor = .white
-        mainMenuView.selectEtazButton.backgroundColor = .white
+        
+        
     }
 
     @objc func viewTopTapped() {
