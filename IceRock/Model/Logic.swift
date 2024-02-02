@@ -136,7 +136,7 @@ func addLine(greenPath: UIBezierPath, imageView: UIImageView, path: UIBezierPath
     animation.toValue = 1.0
     animation.duration = 1.0 // Длительность анимации в секундах
     
-    if numbImage == 1 {
+    if numbImage == 1 && etaz != 11 && etaz != 12  {
         shapeLayerGreen.fillColor = .none
            shapeLayerGreen.path = greenPath.cgPath
            shapeLayerGreen.strokeColor = UIColor.systemGray5.cgColor

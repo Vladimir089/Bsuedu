@@ -172,17 +172,27 @@ class MainMenuViewController: UIViewController {
         if sender == mainMenuView.createButton {
             mainMenuView.createButton.tag = 222
             numbImage = 1
+            if corp == "12" && etaz == 11 && isOnlyVhod == 0 {
+                numbImage = 0
+            }
             mainMenuView.scrollView.createNav(but1: mainMenuView.prevView, but2: mainMenuView.nextView)
             return
         }
         
         if sender == mainMenuView.nextView {
+            
+            
+            
             numbImage += 1
+            print(numbImage)
             del()
             return
         }
         if sender == mainMenuView.prevView {
+          
+            
             numbImage -= 1
+            print(numbImage)
             del()
             return
         }
