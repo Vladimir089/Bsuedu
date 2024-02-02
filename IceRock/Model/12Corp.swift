@@ -1010,6 +1010,10 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
         but2.backgroundColor = .systemGray5
         
         
+        //ЛОГИКА ДЛЯ 11 ЭТАЖА
+        
+        
+        
         if corp == "12" && etaz == 10 && isOnlyVhod == 0  {
             but1.isEnabled = false
             but1.backgroundColor = .systemGray5
@@ -1036,53 +1040,23 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
                     
                     greenPath.move(to: CGPoint(x: 0.13 * imageWidth, y: 0.34 * imageHeight))
                     
+                    path.addQuadCurve(to: CGPoint(x: 0.17 * imageWidth, y: 0.6 * imageHeight),
+                                      controlPoint: CGPoint(x: 0.13 * imageWidth, y: 0.6 * imageHeight))
+                    
+                    
+                    greenPath.addQuadCurve(to: CGPoint(x: 0.17 * imageWidth, y: 0.6 * imageHeight),
+                                           controlPoint: CGPoint(x: 0.13 * imageWidth, y: 0.45 * imageHeight))
+                    
                     
                     if cabGo == "10-14" || cab == "10-14" {
                         path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y - 7),
-                                          controlPoint: CGPoint(x: 0.1 * imageWidth, y: 0.6 * imageHeight))
-                        
-                        
-                        
-                        greenPath.addQuadCurve(to: CGPoint(x: 0.3 * imageWidth, y: 0.4 * imageHeight),
-                                               controlPoint: CGPoint(x: 0.15 * imageWidth, y: 0.5 * imageHeight))
+                                          controlPoint: CGPoint(x: coord.x, y: 0.6 * imageHeight))
                     }
-                    
-                    
-                    
-//                        else {
-//                        path.addQuadCurve(to: CGPoint(x: 0.15 * imageWidth, y: 0.6 * imageHeight),
-//                                          controlPoint: CGPoint(x: 0.13 * imageWidth, y: 0.62 * imageHeight))
-//                        path.move(to: CGPoint(x: 0.15 * imageWidth, y: 0.6 * imageHeight))
-//                        greenPath.addQuadCurve(to: CGPoint(x: 0.15 * imageWidth, y: 0.6 * imageHeight),
-//                                               controlPoint: CGPoint(x: 0.13 * imageWidth, y: 0.5 * imageHeight))
-//                        
-//                    }
-                    //
-                    //                    if (cabGo == "9-5" || cabGo == "9-7" || cabGo == "9-9" || cabGo == "9-11" || cabGo == "9-13" || cabGo == "9-15") || (cab == "9-5" || cab == "9-7" || cab == "9-9" || cab == "9-11" || cab == "9-13" || cab == "9-15") {
-                    //                        path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y + 14),
-                    //                                          controlPoint: CGPoint(x: coord.x - 5, y: 0.62 * imageHeight))
-                    //                    }
-                    //
-                    //                    if (cabGo == "9-45" || cabGo == "9-44" || cabGo == "9-43" || cabGo == "9-42" || cabGo == "9-41" || cabGo == "9-28" || cabGo == "9-6" || cabGo == "9-8" || cabGo == "9-12") || (cab == "9-45" || cab == "9-44" || cab == "9-43" || cab == "9-42" || cab == "9-41" || cab == "9-28" || cab == "9-6" || cab == "9-8" || cab == "9-12") {
-                    //
-                    //                        if (cabGo == "9-45" || cabGo == "9-41" || cabGo == "9-28" || cabGo == "9-6" || cabGo == "9-8") || (cab == "9-45" || cab == "9-41" || cab == "9-28" || cab == "9-6" || cab == "9-8") {
-                    //                            path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y - 30),
-                    //                                              controlPoint: CGPoint(x: coord.x - 5, y: 0.5 * imageHeight))
-                    //                        }
-                    //                        if (cabGo == "9-44" || cabGo == "9-43" || cabGo == "9-42") || (cab == "9-44" || cab == "9-43" || cab == "9-42") {
-                    //                            path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y - 12),
-                    //                                              controlPoint: CGPoint(x: coord.x - 5, y: 0.5 * imageHeight))
-                    //                        }
-                    //                        if cabGo == "9-12" || cab == "9-12" {
-                    //                            path.addQuadCurve(to: CGPoint(x: coord.x + 10, y: coord.y - 10),
-                    //                                              controlPoint: CGPoint(x: coord.x - 5, y: 0.45 * imageHeight))
-                    //                        }
-                    
-                //}
-            
-                    
-                    
-                    
+                    if cabGo == "10-3" || cab == "10-3" {
+                        path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y - 33),
+                                          controlPoint: CGPoint(x: coord.x , y: 0.4 * imageHeight))
+                    }
+
                     addLine(greenPath: greenPath, imageView: imageView, path: path)
                     
                 }
@@ -1092,16 +1066,7 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
     }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
 }
 
