@@ -26,14 +26,14 @@ class MainMenuView: UIView {
     
     let bottomView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(red: 64/255.0, green: 200/255.0, blue: 1/255.0, alpha: 1.0)
+        view.backgroundColor = UIColor(red: 51/255.0, green: 102/255.0, blue: 51/255.0, alpha: 1.0)
         view.layer.cornerRadius = 40
         return view
     }()
     
     let midView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+        view.backgroundColor = UIColor(red: 51/255.0, green: 102/255.0, blue: 51/255.0, alpha: 1.0)
         view.layer.cornerRadius = 40
         return view
     }()
@@ -160,7 +160,7 @@ class MainMenuView: UIView {
     
     let viewOneInView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+        view.backgroundColor = UIColor(red: 51/255.0, green: 102/255.0, blue: 51/255.0, alpha: 1.0)
        // view.backgroundColor = .red
         view.layer.cornerRadius = 15
         return view
@@ -168,14 +168,14 @@ class MainMenuView: UIView {
     
     let viewTwoInView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+        view.backgroundColor = UIColor(red: 51/255.0, green: 102/255.0, blue: 51/255.0, alpha: 1.0)
         view.layer.cornerRadius = 15
         return view
     }()
     
     let botViewOneInView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+        view.backgroundColor = UIColor(red: 51/255.0, green: 102/255.0, blue: 51/255.0, alpha: 1.0)
        // view.backgroundColor = .red
         view.layer.cornerRadius = 15
         return view
@@ -183,14 +183,14 @@ class MainMenuView: UIView {
     
     let topMiddleView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(red: 0.8235, green: 0.7686, blue: 0.9961, alpha: 1)
+        view.backgroundColor = UIColor(red: 51/255.0, green: 102/255.0, blue: 51/255.0, alpha: 1.0)
         view.layer.cornerRadius = 30
         return view
     }()
     
     let botViewTwoInView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+        view.backgroundColor = UIColor(red: 51/255.0, green: 102/255.0, blue: 51/255.0, alpha: 1.0)
         view.layer.cornerRadius = 15
         return view
     }()
@@ -240,7 +240,7 @@ class MainMenuView: UIView {
     let topView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 30
-        view.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+        view.backgroundColor = UIColor(red: 51/255.0, green: 102/255.0, blue: 51/255.0, alpha: 1.0)
         return view
     }()
     

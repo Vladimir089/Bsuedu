@@ -23,14 +23,10 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
                but1.backgroundColor = .systemGray5
                but2.isEnabled = true
                but2.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
-               
-    
-    
-    
+            
     let imageWidth = imageView.frame.size.width
     let imageHeight = imageView.frame.size.height
     
-   
     if vhod == "вход 12 корпус" && numbImage == 1 && isOnlyVhod == 1 {
             but2.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
             
@@ -68,13 +64,10 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
             
             path.addArc(withCenter: CGPoint(x: 0.12 * imageWidth, y: 0.83 * imageHeight), radius: 5, startAngle: 0, endAngle: CGFloat(2 * Double.pi), clockwise: true)
             path.move(to: CGPoint(x: 0.12 * imageWidth, y: 0.83 * imageHeight))
-            
-            
-            
         }
         
-        //MARK: -2й этаж
-        
+    
+        //MARK: 2й этаж
         if (corpGo == "12" && numbImage == 2 && etazGo == 2 && (isOnlyVhod == 1 || isOnlyVhod == 0))
             || (corp == "12" && etaz == 2 && isOnlyVhod == 0 && numbImage == 1 ) {
             
@@ -201,13 +194,10 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
                     }
                 }
             }
-            
-            
-            
         }
-        
-        //MARK: -3й этаж
-        
+    
+    
+        //MARK: 3й этаж
         if (corpGo == "12" && numbImage == 2 && etazGo == 3) || (corp == "12" && etaz == 3 && isOnlyVhod == 0 && numbImage == 1 )  {
             
             but1.isEnabled = true
@@ -330,9 +320,6 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
                                 path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y + 10),
                                                   controlPoint: CGPoint(x: coord.x - 5, y: 0.45 * imageHeight))
                             }
-                            
-                            
-                            
                         }
                         
                         if (cabGo == "3-4" || cabGo == "3-2") ||
@@ -386,9 +373,6 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
                                 path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y - 5),
                                                   controlPoint: CGPoint(x: coord.x, y: 0.77 * imageHeight))
                             }
-                            
-                            
-                            
                             
                             
                             
@@ -451,7 +435,9 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
         }
         
         
-        
+    
+    
+    //MARK: 4й этаж
         if (corpGo == "12" && numbImage == 2 && etazGo == 4) || (corp == "12" && etaz == 4 && isOnlyVhod == 0 && numbImage == 1 ) {
             
             but1.isEnabled = true
@@ -551,7 +537,7 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
         
         
         
-        
+    //MARK: 5й этаж
         if (corpGo == "12" && numbImage == 2 && etazGo == 5) || (corp == "12" && etaz == 5 && isOnlyVhod == 0 && numbImage == 1 ) {
             
             but1.isEnabled = true
@@ -646,6 +632,9 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
             
         }
         
+    
+    
+    //MARK: 6й этаж
         if (corpGo == "12" && numbImage == 2 && etazGo == 6) || (corp == "12" && etaz == 6 && isOnlyVhod == 0 && numbImage == 1 ) {
             
             but1.isEnabled = true
@@ -747,6 +736,7 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
         }
         
         
+    //MARK: 7й этаж
         if (corpGo == "12" && numbImage == 2 && etazGo == 7) || (corp == "12" && etaz == 7 && isOnlyVhod == 0 && numbImage == 1 ) {
             
             but1.isEnabled = true
@@ -835,6 +825,8 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
         }
         
         
+    
+        //MARK: 8й этаж
         if (corpGo == "12" && numbImage == 2 && etazGo == 8) || (corp == "12" && etaz == 8 && isOnlyVhod == 0 && numbImage == 1 ) {
             
             but1.isEnabled = true
@@ -921,6 +913,8 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
             
         }
         
+    
+        //MARK: 9й этаж
         if (corpGo == "12" && numbImage == 2 && etazGo == 9) || (corp == "12" && etaz == 9 && isOnlyVhod == 0 && numbImage == 1 ) {
             
             but1.isEnabled = true
@@ -1006,6 +1000,104 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
             
         }
         
+    
+    //MARK: 10й этаж
+    if (corpGo == "12" && numbImage == 2 && etazGo == 10) || (corp == "12" && etaz == 10 && isOnlyVhod == 0 && numbImage == 1 ) {
+        
+        but1.isEnabled = true
+        but1.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+        but2.isEnabled = false
+        but2.backgroundColor = .systemGray5
+        
+        
+        if corp == "12" && etaz == 10 && isOnlyVhod == 0  {
+            but1.isEnabled = false
+            but1.backgroundColor = .systemGray5
+            but2.isEnabled = true
+            but2.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+            numbImage = 1
+        }
+        
+        imageView.image = nil
+        imageView.image = UIImage(named: "12corp10")
+        
+        DispatchQueue.global().async {
+            
+            if let coord = recognizeDigits(imageView: imageView, path: path) {
+                DispatchQueue.main.async {
+                    
+                    
+                    
+                    
+                    path.addArc(withCenter: CGPoint(x: 0.13 * imageWidth, y: 0.9 * imageHeight), radius: 5, startAngle: 0, endAngle: CGFloat(2 * Double.pi), clockwise: true)
+                    path.move(to: CGPoint(x: 0.13 * imageWidth, y: 0.87 * imageHeight))
+                    path.addLine(to: CGPoint(x: 0.13 * imageWidth, y: 0.8 * imageHeight))
+                    path.move(to: CGPoint(x: 0.13 * imageWidth, y: 0.8 * imageHeight))
+                    
+                    greenPath.move(to: CGPoint(x: 0.13 * imageWidth, y: 0.34 * imageHeight))
+                    
+                    
+                    if cabGo == "10-14" || cab == "10-14" {
+                        path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y - 7),
+                                          controlPoint: CGPoint(x: 0.1 * imageWidth, y: 0.6 * imageHeight))
+                        
+                        
+                        
+                        greenPath.addQuadCurve(to: CGPoint(x: 0.3 * imageWidth, y: 0.4 * imageHeight),
+                                               controlPoint: CGPoint(x: 0.15 * imageWidth, y: 0.5 * imageHeight))
+                    }
+                    
+                    
+                    
+//                        else {
+//                        path.addQuadCurve(to: CGPoint(x: 0.15 * imageWidth, y: 0.6 * imageHeight),
+//                                          controlPoint: CGPoint(x: 0.13 * imageWidth, y: 0.62 * imageHeight))
+//                        path.move(to: CGPoint(x: 0.15 * imageWidth, y: 0.6 * imageHeight))
+//                        greenPath.addQuadCurve(to: CGPoint(x: 0.15 * imageWidth, y: 0.6 * imageHeight),
+//                                               controlPoint: CGPoint(x: 0.13 * imageWidth, y: 0.5 * imageHeight))
+//                        
+//                    }
+                    //
+                    //                    if (cabGo == "9-5" || cabGo == "9-7" || cabGo == "9-9" || cabGo == "9-11" || cabGo == "9-13" || cabGo == "9-15") || (cab == "9-5" || cab == "9-7" || cab == "9-9" || cab == "9-11" || cab == "9-13" || cab == "9-15") {
+                    //                        path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y + 14),
+                    //                                          controlPoint: CGPoint(x: coord.x - 5, y: 0.62 * imageHeight))
+                    //                    }
+                    //
+                    //                    if (cabGo == "9-45" || cabGo == "9-44" || cabGo == "9-43" || cabGo == "9-42" || cabGo == "9-41" || cabGo == "9-28" || cabGo == "9-6" || cabGo == "9-8" || cabGo == "9-12") || (cab == "9-45" || cab == "9-44" || cab == "9-43" || cab == "9-42" || cab == "9-41" || cab == "9-28" || cab == "9-6" || cab == "9-8" || cab == "9-12") {
+                    //
+                    //                        if (cabGo == "9-45" || cabGo == "9-41" || cabGo == "9-28" || cabGo == "9-6" || cabGo == "9-8") || (cab == "9-45" || cab == "9-41" || cab == "9-28" || cab == "9-6" || cab == "9-8") {
+                    //                            path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y - 30),
+                    //                                              controlPoint: CGPoint(x: coord.x - 5, y: 0.5 * imageHeight))
+                    //                        }
+                    //                        if (cabGo == "9-44" || cabGo == "9-43" || cabGo == "9-42") || (cab == "9-44" || cab == "9-43" || cab == "9-42") {
+                    //                            path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y - 12),
+                    //                                              controlPoint: CGPoint(x: coord.x - 5, y: 0.5 * imageHeight))
+                    //                        }
+                    //                        if cabGo == "9-12" || cab == "9-12" {
+                    //                            path.addQuadCurve(to: CGPoint(x: coord.x + 10, y: coord.y - 10),
+                    //                                              controlPoint: CGPoint(x: coord.x - 5, y: 0.45 * imageHeight))
+                    //                        }
+                    
+                //}
+            
+                    
+                    
+                    
+                    addLine(greenPath: greenPath, imageView: imageView, path: path)
+                    
+                }
+            }
+        }
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
