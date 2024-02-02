@@ -172,10 +172,6 @@ class MainMenuViewController: UIViewController {
         if sender == mainMenuView.createButton {
             mainMenuView.createButton.tag = 222
             numbImage = 1
-            //11 и 12 этажи тут
-            if etaz == 11 {
-                numbImage = 3
-            }
             mainMenuView.scrollView.createNav(but1: mainMenuView.prevView, but2: mainMenuView.nextView)
             return
         }
