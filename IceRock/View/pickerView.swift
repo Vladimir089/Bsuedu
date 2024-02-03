@@ -99,7 +99,7 @@ class pickerView: UIView {
         } else if ID == "etaz" {
             arrName.removeAll()
             buttonOK.tag = 777
-            arrName = (1...12).map { String($0) }
+            arrName = (2...12).map { String($0) }
         } else if ID == "vhod" {
             arrName.removeAll()
             buttonOK.tag = 666
@@ -153,7 +153,7 @@ class pickerView: UIView {
             arrName.removeAll()
             buttonOK.tag = 333
             if corpGo == "12"  {
-                arrName = (1...12).map { String($0) }
+                arrName = (2...12).map { String($0) }
             } else {
                 arrName = ["test", "test", "test"]
             }

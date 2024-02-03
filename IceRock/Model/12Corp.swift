@@ -1257,6 +1257,195 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
         
     }
     
+    //MARK: -12
+    if (corpGo == "12" && numbImage == 3 && etazGo == 12) || (corp == "12" && etaz == 12 && isOnlyVhod == 0 && numbImage == 0 ) || (corpGo == "12" && numbImage == 2 && etazGo == 12) || (corp == "12" && etaz == 12 && isOnlyVhod == 0 && numbImage == 1 ) {
+        
+        let animation = CABasicAnimation(keyPath: "strokeEnd")
+        animation.fromValue = 0.0
+        animation.toValue = 1.0
+        animation.duration = 1.0
+        
+        //НА 12 ЭТАЖ
+        
+        if (corpGo == "12" && numbImage == 3 && etazGo == 12) || (corpGo == "12" && numbImage == 2 && etazGo == 12) {
+            
+            if numbImage == 2 {
+                but1.isEnabled = true
+                but1.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+                but2.isEnabled = true
+                but2.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+                imageView.image = nil
+                imageView.image = UIImage(named: "12corp10")
+                
+                
+            }
+            
+            if numbImage == 3 {
+                but1.isEnabled = true
+                but1.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+                but2.isEnabled = false
+                but2.backgroundColor = .systemGray5
+                imageView.image = nil
+                imageView.image = UIImage(named: "12corp12")
+            }
+            
+            
+        }
+        
+        //С 12 ЭТАЖА
+        
+        if (corp == "12" && etaz == 12 && isOnlyVhod == 0 && numbImage == 0 ) || (corp == "12" && etaz == 12 && isOnlyVhod == 0 && numbImage == 1 ) {
+            
+            
+            
+            if numbImage == 1 {
+                
+                
+                but1.isEnabled = true
+                but1.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+                but2.isEnabled = true
+                but2.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+                imageView.image = nil
+                imageView.image = UIImage(named: "12corp10")
+            }
+            
+            if numbImage == 0 {
+                but1.isEnabled = false
+                but1.backgroundColor =  .systemGray5
+                but2.isEnabled = true
+                but2.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+                imageView.image = nil
+                imageView.image = UIImage(named: "12corp12")
+            }
+            
+            
+        }
+        
+        if imageView.image == UIImage(named: "12corp10") {
+            print(10)
+            
+            //РИСУЕМ МАРШРУТ ДЛЯ 10 ЭТАЖА
+            
+            greenPath.move(to: CGPoint(x: 0.13 * imageWidth, y: 0.34 * imageHeight))
+            greenPath.addQuadCurve(to: CGPoint(x: 0.22 * imageWidth, y: 0.32 * imageHeight),
+                                   controlPoint: CGPoint(x: 0.16 * imageWidth, y: 0.4 * imageHeight))
+            
+            path.addArc(withCenter: CGPoint(x: 0.13 * imageWidth, y: 0.9 * imageHeight), radius: 5, startAngle: 0, endAngle: CGFloat(2 * Double.pi), clockwise: true)
+            path.move(to: CGPoint(x: 0.13 * imageWidth, y: 0.87 * imageHeight))
+            
+            
+            
+            path.addQuadCurve(to: CGPoint(x: 0.22 * imageWidth, y: 0.32 * imageHeight),
+                              controlPoint: CGPoint(x: 0.13 * imageWidth, y: 0.6 * imageHeight))
+            
+            
+            
+            if etaz == 12 && etazGo != 12 {
+                shapeLayerGreen.fillColor = .none
+                   shapeLayerGreen.path = greenPath.cgPath
+                   shapeLayerGreen.strokeColor = UIColor.systemGray5.cgColor
+                   shapeLayerGreen.lineWidth = 2.0
+                   imageView.layer.addSublayer(shapeLayerGreen)
+                   
+                   shapeLayer.path = path.cgPath
+                   shapeLayer.fillColor = .none
+                   shapeLayer.strokeColor = UIColor.systemGreen.cgColor
+                   shapeLayer.lineWidth = 2.0
+                   imageView.layer.addSublayer(shapeLayer)
+
+                   let animationGreen = CABasicAnimation(keyPath: "strokeStart")
+                   animationGreen.fromValue = 1.0 //  начальное значение как 1 (конец линии)
+                   animationGreen.toValue = 0.0 //  конечное значение как 0 (начало линии)
+                   animationGreen.duration = 1.0 //  длительность анимации
+                   shapeLayerGreen.add(animationGreen, forKey: "drawLineAnimationGreen")
+
+                   let animation = CABasicAnimation(keyPath: "strokeStart")
+                   animation.fromValue = 1.0
+                   animation.toValue = 0.0
+                   animation.duration = 1.0
+                   shapeLayer.add(animation, forKey: "drawLineAnimation")
+            } else {
+                shapeLayerGreen.fillColor = .none
+                shapeLayerGreen.path = greenPath.cgPath
+                shapeLayerGreen.strokeColor = UIColor.systemGray5.cgColor
+                shapeLayerGreen.lineWidth = 2.0
+                imageView.layer.addSublayer(shapeLayerGreen)
+                shapeLayer.path = path.cgPath
+                shapeLayer.fillColor = .none
+                shapeLayer.strokeColor = UIColor.systemGreen.cgColor
+                shapeLayer.lineWidth = 2.0
+                imageView.layer.addSublayer(shapeLayer)
+                shapeLayerGreen.add(animation, forKey: "drawLineAnimation")
+                shapeLayer.add(animation, forKey: "drawLineAnimation")
+            }
+            
+
+        }
+        if imageView.image == UIImage(named: "12corp12") {
+            print(11)
+            DispatchQueue.global().async {
+                if let coord = recognizeDigits(imageView: imageView, path: path) {
+                    
+                    
+                    
+                    DispatchQueue.main.async {
+                        path.move(to: CGPoint(x: 0.15 * imageWidth, y: 0.34 * imageHeight))
+                        if (cab == "12-1" || cabGo == "12-1") || (cab == "12-4" || cabGo == "12-4")  {
+                            path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y + 20),
+                                              controlPoint: CGPoint(x: coord.x, y: 0.5 * imageHeight))
+                        } else {
+                            path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y - 10),
+                                              controlPoint: CGPoint(x: coord.x, y: 0.5 * imageHeight))
+                        }
+                        
+                        
+                        if etaz == 12 && etazGo != 12 {
+                            shapeLayerGreen.fillColor = .none
+                            shapeLayerGreen.path = greenPath.cgPath
+                            shapeLayerGreen.strokeColor = UIColor.systemGray5.cgColor
+                            shapeLayerGreen.lineWidth = 2.0
+                            imageView.layer.addSublayer(shapeLayerGreen)
+                            
+                            shapeLayer.path = path.cgPath
+                            shapeLayer.fillColor = .none
+                            shapeLayer.strokeColor = UIColor.systemGreen.cgColor
+                            shapeLayer.lineWidth = 2.0
+                            imageView.layer.addSublayer(shapeLayer)
+                            
+                            let animationGreen = CABasicAnimation(keyPath: "strokeStart")
+                            animationGreen.fromValue = 1.0 //  начальное значение как 1 (конец линии)
+                            animationGreen.toValue = 0.0 //  конечное значение как 0 (начало линии)
+                            animationGreen.duration = 1.0 //  длительность анимации
+                            shapeLayerGreen.add(animationGreen, forKey: "drawLineAnimationGreen")
+                            
+                            let animation = CABasicAnimation(keyPath: "strokeStart")
+                            animation.fromValue = 1.0
+                            animation.toValue = 0.0
+                            animation.duration = 1.0
+                            shapeLayer.add(animation, forKey: "drawLineAnimation")
+                        } else {
+                            shapeLayerGreen.fillColor = .none
+                            shapeLayerGreen.path = greenPath.cgPath
+                            shapeLayerGreen.strokeColor = UIColor.systemGray5.cgColor
+                            shapeLayerGreen.lineWidth = 2.0
+                            imageView.layer.addSublayer(shapeLayerGreen)
+                            shapeLayer.path = path.cgPath
+                            shapeLayer.fillColor = .none
+                            shapeLayer.strokeColor = UIColor.systemGreen.cgColor
+                            shapeLayer.lineWidth = 2.0
+                            imageView.layer.addSublayer(shapeLayer)
+                            shapeLayerGreen.add(animation, forKey: "drawLineAnimation")
+                            shapeLayer.add(animation, forKey: "drawLineAnimation")
+                        }
+                        
+                    }
+                }
+                
+            }
+           
+        }
+        
+    }
     
 
     
