@@ -136,7 +136,7 @@ func addLine(greenPath: UIBezierPath, imageView: UIImageView, path: UIBezierPath
     animation.toValue = 1.0
     animation.duration = 1.0 // Длительность анимации в секундах
     
-    if numbImage == 1 && etaz != 11 && etaz != 12  {
+    if numbImage == 1   { //от лифта
         shapeLayerGreen.fillColor = .none
            shapeLayerGreen.path = greenPath.cgPath
            shapeLayerGreen.strokeColor = UIColor.systemGray5.cgColor
@@ -160,7 +160,7 @@ func addLine(greenPath: UIBezierPath, imageView: UIImageView, path: UIBezierPath
            animation.toValue = 0.0
            animation.duration = 1.0
            shapeLayer.add(animation, forKey: "drawLineAnimation")
-    } else {
+    } else { //от кабинета
         shapeLayerGreen.fillColor = .none
         shapeLayerGreen.path = greenPath.cgPath
         shapeLayerGreen.strokeColor = UIColor.systemGray5.cgColor
@@ -175,6 +175,9 @@ func addLine(greenPath: UIBezierPath, imageView: UIImageView, path: UIBezierPath
         shapeLayer.add(animation, forKey: "drawLineAnimation")
         
     }
+    
+    
+    
 }
 
 

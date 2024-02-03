@@ -1070,6 +1070,10 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
     
     if (corpGo == "12" && numbImage == 3 && etazGo == 11) || (corp == "12" && etaz == 11 && isOnlyVhod == 0 && numbImage == 0 ) || (corpGo == "12" && numbImage == 2 && etazGo == 11) || (corp == "12" && etaz == 11 && isOnlyVhod == 0 && numbImage == 1 ) {
         
+        let animation = CABasicAnimation(keyPath: "strokeEnd")
+        animation.fromValue = 0.0
+        animation.toValue = 1.0
+        animation.duration = 1.0
         
         //НА 11 ЭТАЖ
         
@@ -1102,6 +1106,8 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
         
         if (corp == "12" && etaz == 11 && isOnlyVhod == 0 && numbImage == 0 ) || (corp == "12" && etaz == 11 && isOnlyVhod == 0 && numbImage == 1 ) {
             
+            
+            
             if numbImage == 1 {
                 
                 
@@ -1128,27 +1134,125 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
         if imageView.image == UIImage(named: "12corp10") {
             print(10)
             
-            //РИСУЕМ МАРШРУТ ДЛЯ 10 ЭТАЖА я заебался 
+            //РИСУЕМ МАРШРУТ ДЛЯ 10 ЭТАЖА
+            
+            greenPath.move(to: CGPoint(x: 0.13 * imageWidth, y: 0.34 * imageHeight))
+            greenPath.addQuadCurve(to: CGPoint(x: 0.22 * imageWidth, y: 0.32 * imageHeight),
+                                   controlPoint: CGPoint(x: 0.16 * imageWidth, y: 0.4 * imageHeight))
+            
+            path.addArc(withCenter: CGPoint(x: 0.13 * imageWidth, y: 0.9 * imageHeight), radius: 5, startAngle: 0, endAngle: CGFloat(2 * Double.pi), clockwise: true)
+            path.move(to: CGPoint(x: 0.13 * imageWidth, y: 0.87 * imageHeight))
             
             
             
-//            path.addArc(withCenter: CGPoint(x: 0.13 * imageWidth, y: 0.9 * imageHeight), radius: 5, startAngle: 0, endAngle: CGFloat(2 * Double.pi), clockwise: true)
-//            path.move(to: CGPoint(x: 0.13 * imageWidth, y: 0.87 * imageHeight))
-//            path.addLine(to: CGPoint(x: 0.13 * imageWidth, y: 0.8 * imageHeight))
-//            addLine(greenPath: greenPath, imageView: imageView, path: path)
+            path.addQuadCurve(to: CGPoint(x: 0.22 * imageWidth, y: 0.32 * imageHeight),
+                              controlPoint: CGPoint(x: 0.13 * imageWidth, y: 0.6 * imageHeight))
+            
+            
+            
+            if etaz == 11 && etazGo != 11 {
+                shapeLayerGreen.fillColor = .none
+                   shapeLayerGreen.path = greenPath.cgPath
+                   shapeLayerGreen.strokeColor = UIColor.systemGray5.cgColor
+                   shapeLayerGreen.lineWidth = 2.0
+                   imageView.layer.addSublayer(shapeLayerGreen)
+                   
+                   shapeLayer.path = path.cgPath
+                   shapeLayer.fillColor = .none
+                   shapeLayer.strokeColor = UIColor.systemGreen.cgColor
+                   shapeLayer.lineWidth = 2.0
+                   imageView.layer.addSublayer(shapeLayer)
+
+                   let animationGreen = CABasicAnimation(keyPath: "strokeStart")
+                   animationGreen.fromValue = 1.0 //  начальное значение как 1 (конец линии)
+                   animationGreen.toValue = 0.0 //  конечное значение как 0 (начало линии)
+                   animationGreen.duration = 1.0 //  длительность анимации
+                   shapeLayerGreen.add(animationGreen, forKey: "drawLineAnimationGreen")
+
+                   let animation = CABasicAnimation(keyPath: "strokeStart")
+                   animation.fromValue = 1.0
+                   animation.toValue = 0.0
+                   animation.duration = 1.0
+                   shapeLayer.add(animation, forKey: "drawLineAnimation")
+            } else {
+                shapeLayerGreen.fillColor = .none
+                shapeLayerGreen.path = greenPath.cgPath
+                shapeLayerGreen.strokeColor = UIColor.systemGray5.cgColor
+                shapeLayerGreen.lineWidth = 2.0
+                imageView.layer.addSublayer(shapeLayerGreen)
+                shapeLayer.path = path.cgPath
+                shapeLayer.fillColor = .none
+                shapeLayer.strokeColor = UIColor.systemGreen.cgColor
+                shapeLayer.lineWidth = 2.0
+                imageView.layer.addSublayer(shapeLayer)
+                shapeLayerGreen.add(animation, forKey: "drawLineAnimation")
+                shapeLayer.add(animation, forKey: "drawLineAnimation")
+            }
+            
+
         }
         if imageView.image == UIImage(named: "12corp11") {
             print(11)
-            
-            //РИСУЕМ МАРШРУТ ДЛЯ 11 ЭТАЖА
-            
-            
-            
-            
-//            path.addArc(withCenter: CGPoint(x: 0.13 * imageWidth, y: 0.9 * imageHeight), radius: 5, startAngle: 0, endAngle: CGFloat(2 * Double.pi), clockwise: true)
-//            path.move(to: CGPoint(x: 0.13 * imageWidth, y: 0.87 * imageHeight))
-//            path.addLine(to: CGPoint(x: 0.13 * imageWidth, y: 0.8 * imageHeight))
-//            addLine(greenPath: greenPath, imageView: imageView, path: path)
+            DispatchQueue.global().async {
+                if let coord = recognizeDigits(imageView: imageView, path: path) {
+                    
+                    
+                    
+                    DispatchQueue.main.async {
+                        path.move(to: CGPoint(x: 0.15 * imageWidth, y: 0.34 * imageHeight))
+                        if cab == "11-4" || cabGo == "11-4" {
+                            path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y + 10),
+                                              controlPoint: CGPoint(x: coord.x, y: 0.5 * imageHeight))
+                        } else {
+                            path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y + 20),
+                                              controlPoint: CGPoint(x: coord.x, y: 0.5 * imageHeight))
+                        }
+                        
+                        
+                        if etaz == 11 && etazGo != 11 {
+                            shapeLayerGreen.fillColor = .none
+                            shapeLayerGreen.path = greenPath.cgPath
+                            shapeLayerGreen.strokeColor = UIColor.systemGray5.cgColor
+                            shapeLayerGreen.lineWidth = 2.0
+                            imageView.layer.addSublayer(shapeLayerGreen)
+                            
+                            shapeLayer.path = path.cgPath
+                            shapeLayer.fillColor = .none
+                            shapeLayer.strokeColor = UIColor.systemGreen.cgColor
+                            shapeLayer.lineWidth = 2.0
+                            imageView.layer.addSublayer(shapeLayer)
+                            
+                            let animationGreen = CABasicAnimation(keyPath: "strokeStart")
+                            animationGreen.fromValue = 1.0 //  начальное значение как 1 (конец линии)
+                            animationGreen.toValue = 0.0 //  конечное значение как 0 (начало линии)
+                            animationGreen.duration = 1.0 //  длительность анимации
+                            shapeLayerGreen.add(animationGreen, forKey: "drawLineAnimationGreen")
+                            
+                            let animation = CABasicAnimation(keyPath: "strokeStart")
+                            animation.fromValue = 1.0
+                            animation.toValue = 0.0
+                            animation.duration = 1.0
+                            shapeLayer.add(animation, forKey: "drawLineAnimation")
+                        } else {
+                            shapeLayerGreen.fillColor = .none
+                            shapeLayerGreen.path = greenPath.cgPath
+                            shapeLayerGreen.strokeColor = UIColor.systemGray5.cgColor
+                            shapeLayerGreen.lineWidth = 2.0
+                            imageView.layer.addSublayer(shapeLayerGreen)
+                            shapeLayer.path = path.cgPath
+                            shapeLayer.fillColor = .none
+                            shapeLayer.strokeColor = UIColor.systemGreen.cgColor
+                            shapeLayer.lineWidth = 2.0
+                            imageView.layer.addSublayer(shapeLayer)
+                            shapeLayerGreen.add(animation, forKey: "drawLineAnimation")
+                            shapeLayer.add(animation, forKey: "drawLineAnimation")
+                        }
+                        
+                    }
+                }
+                
+            }
+           
         }
         
     }
