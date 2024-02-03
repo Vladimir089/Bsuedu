@@ -40,7 +40,7 @@ class ScrollViewPlan: UIScrollView, UIScrollViewDelegate {
         contentSize = imageView.frame.size
         imageView.frame = CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height)
         if cabGo == " " && corpGo == " " && etazGo == 0  {
-            planImage = UIImage(systemName: "map.fill")!
+            planImage = UIImage(named: "logoWhite")!
             imageView.image = planImage
             but1.isEnabled = false
             but2.isEnabled = false
