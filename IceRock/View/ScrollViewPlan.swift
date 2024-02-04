@@ -36,9 +36,11 @@ class ScrollViewPlan: UIScrollView, UIScrollViewDelegate {
         imageView.layer.addSublayer(greenLinesLayer)
         
         
+        
         isScrollEnabled = true
         contentSize = imageView.frame.size
         imageView.frame = CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height)
+        
         if cabGo == " " && corpGo == " " && etazGo == 0  {
             planImage = UIImage(named: "logoWhite")!
             imageView.image = planImage

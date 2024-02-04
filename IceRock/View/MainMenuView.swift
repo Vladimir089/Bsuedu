@@ -13,6 +13,7 @@ class MainMenuView: UIView {
     
     var topViewBotContraints = NSLayoutConstraint()
     var botViewToContraints = NSLayoutConstraint()
+    var topMiddleViewBotConstraints = NSLayoutConstraint()
     var picker: pickerView!
     var topPickerContraints = NSLayoutConstraint()
     var scrollView: ScrollViewPlan!
@@ -418,7 +419,6 @@ class MainMenuView: UIView {
         topMiddleView.addSubview(scrollView)
         
         
-        
     }
     
     //MARK: -Add constr
@@ -625,17 +625,17 @@ class MainMenuView: UIView {
         topMiddleView.topAnchor.constraint(equalTo: midView.topAnchor, constant: 10).isActive = true
         topMiddleView.leftAnchor.constraint(equalTo: midView.leftAnchor, constant: 10).isActive = true
         topMiddleView.rightAnchor.constraint(equalTo: midView.rightAnchor, constant: -10).isActive = true
-        topMiddleView.bottomAnchor.constraint(equalTo: midView.bottomAnchor, constant: -230).isActive = true
-        
-        
+        topMiddleViewBotConstraints = topMiddleView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 0)
+        topMiddleViewBotConstraints.isActive = true
+        topMiddleView.clipsToBounds = true
         
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.topAnchor.constraint(equalTo: topMiddleView.topAnchor, constant: 0).isActive = true
         scrollView.leftAnchor.constraint(equalTo: topMiddleView.leftAnchor, constant: 0).isActive = true
         scrollView.rightAnchor.constraint(equalTo: topMiddleView.rightAnchor, constant: 0).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: nextView.topAnchor, constant: -5).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: midView.bottomAnchor, constant: -273).isActive = true
         scrollView.layer.cornerRadius = 30
-        
+
         
     }
     

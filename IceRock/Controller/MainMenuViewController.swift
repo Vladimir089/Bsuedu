@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+
 var corp = " "
 var cab = " "
 var etaz = Int()
@@ -20,12 +22,15 @@ var isOnlyVhod = 0 //проверка на то будет ли вход тол�
 
 var numbImage = 1
 
+var isHideNavButtons = true
+
 
 class MainMenuViewController: UIViewController {
     
     var mainMenuView: MainMenuView!
     var pickeRview: pickerView!
     var scrollView: ScrollViewPlan!
+    var timer: Timer?
     
     var topView = 0
     var botView = 0
@@ -58,7 +63,12 @@ class MainMenuViewController: UIViewController {
         mainMenuView.selectEtazButton.backgroundColor = .systemGray5
         mainMenuView.selectCabinetButton.isEnabled = false
         mainMenuView.selectCabinetButton.backgroundColor = .systemGray5
+        setupScrollViewTimer()
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleScrollViewTap(_:)))
+            mainMenuView.scrollView.addGestureRecognizer(tapGestureRecognizer)
     }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -73,7 +83,26 @@ class MainMenuViewController: UIViewController {
         }
     }
     
+    func setupScrollViewTimer() {
+            timer = Timer.scheduledTimer(timeInterval: 15.0, target: self, selector: #selector(handleTimer), userInfo: nil, repeats: false)
+        }
     
+    @objc func handleTimer() {
+            mainMenuView.topMiddleViewBotConstraints.constant = 0
+            UIView.animate(withDuration: 0.5) {
+                self.view.layoutIfNeeded()
+            }
+        }
+    
+    func handleScrollViewTouch() {
+            timer?.invalidate()
+            mainMenuView.topMiddleViewBotConstraints.constant = 40
+            UIView.animate(withDuration: 0.5) {
+                self.view.layoutIfNeeded()
+            }
+            setupScrollViewTimer()
+        }
+
     
     func setupButtonAnimationBotView(button: UIButton) {
         button.addTarget(self, action: #selector(buttonTouchDown(_:)), for: .touchDown)
@@ -95,7 +124,9 @@ class MainMenuViewController: UIViewController {
     
     
     
-    
+    @objc func handleScrollViewTap(_ sender: UITapGestureRecognizer) {
+        handleScrollViewTouch()
+    }
     
     func settingsTopView() {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(viewTopTapped))
@@ -175,25 +206,46 @@ class MainMenuViewController: UIViewController {
             if corp == "12" && etaz == 11 && isOnlyVhod == 0 {
                 numbImage = 0
             }
+            timer?.invalidate()
             mainMenuView.scrollView.createNav(but1: mainMenuView.prevView, but2: mainMenuView.nextView)
+            let botConstMidView = mainMenuView.topMiddleViewBotConstraints
+            if ((corp == " " && etaz == nil && cab == " ") || vhod == " ") && corpGo == " " && etazGo == nil && cabGo == " "  {
+                UIView.animate(withDuration: 0.5) {
+                    botConstMidView.constant = 0
+                    self.view.layoutIfNeeded()
+                }
+                
+                
+            }
+            if ((corp != " " && etaz != nil && cab != " ") || vhod != " ") && corpGo != " " && etazGo != nil && cabGo != " "  {
+                UIView.animate(withDuration: 0.5) {
+                    botConstMidView.constant = 40
+                    self.view.layoutIfNeeded()
+                }
+                
+                
+            }
+            setupScrollViewTimer()
             return
         }
         
         if sender == mainMenuView.nextView {
-            
+            timer?.invalidate()
             
             
             numbImage += 1
             print(numbImage)
             del()
+            setupScrollViewTimer()
             return
         }
         if sender == mainMenuView.prevView {
-          
+            timer?.invalidate()
             
             numbImage -= 1
             print(numbImage)
             del()
+            setupScrollViewTimer()
             return
         }
         
