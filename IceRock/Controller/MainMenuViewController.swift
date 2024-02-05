@@ -56,13 +56,13 @@ class MainMenuViewController: UIViewController {
         animateButtons()
         settingBottonBotView()
         mainMenuView.selectCabinetButtonGo.isEnabled = false
-        mainMenuView.selectCabinetButtonGo.backgroundColor = .systemGray5
+        mainMenuView.selectCabinetButtonGo.backgroundColor = UIColor(named: "grayColorBut")
         mainMenuView.selectEtazButtonGo.isEnabled = false
-        mainMenuView.selectEtazButtonGo.backgroundColor = .systemGray5
+        mainMenuView.selectEtazButtonGo.backgroundColor = UIColor(named: "grayColorBut")
         mainMenuView.selectEtazButton.isEnabled = false
-        mainMenuView.selectEtazButton.backgroundColor = .systemGray5
+        mainMenuView.selectEtazButton.backgroundColor = UIColor(named: "grayColorBut")
         mainMenuView.selectCabinetButton.isEnabled = false
-        mainMenuView.selectCabinetButton.backgroundColor = .systemGray5
+        mainMenuView.selectCabinetButton.backgroundColor = UIColor(named: "grayColorBut")
         setupScrollViewTimer()
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleScrollViewTap(_:)))
@@ -190,7 +190,7 @@ class MainMenuViewController: UIViewController {
             UIView.animate(withDuration: 0.5) { [self] in
                 
                 mainMenuView.selectVhodButton.isEnabled = true
-                mainMenuView.selectVhodButton.backgroundColor = .white
+                mainMenuView.selectVhodButton.backgroundColor = UIColor(named: "viewColor")
                 
                 isOnlyVhod = 0
                 
@@ -209,6 +209,11 @@ class MainMenuViewController: UIViewController {
             timer?.invalidate()
             mainMenuView.scrollView.createNav(but1: mainMenuView.prevView, but2: mainMenuView.nextView)
             let botConstMidView = mainMenuView.topMiddleViewBotConstraints
+            
+            if (corp == "12" && etaz == 12  && corpGo == "12" && etazGo == 11 && cab != " " && cabGo != " ") || (corp == "12" && etaz == 11  && corpGo == "12" && etazGo == 12 && cab != " " && cabGo != " ") {
+                numbImage = 1
+            }
+            
             if ((corp == " " && etaz == nil && cab == " ") || vhod == " ") && corpGo == " " && etazGo == nil && cabGo == " "  {
                 UIView.animate(withDuration: 0.5) {
                     botConstMidView.constant = 0
@@ -283,7 +288,7 @@ class MainMenuViewController: UIViewController {
             print(etaz)
             UIView.animate(withDuration: 0.5) { [self] in
                 mainMenuView.selectCabinetButton.isEnabled = true
-                mainMenuView.selectCabinetButton.backgroundColor = .white
+                mainMenuView.selectCabinetButton.backgroundColor = UIColor(named: "viewColor")
             }
         }
         if mainMenuView.picker.buttonOK.tag == 666 {
@@ -295,7 +300,7 @@ class MainMenuViewController: UIViewController {
             mainMenuView.labelCampusNumberGo.text = "\(corpGo) корпус"
             UIView.animate(withDuration: 0.5) { [self] in
                 mainMenuView.selectEtazButtonGo.isEnabled = true
-                mainMenuView.selectEtazButtonGo.backgroundColor = .white
+                mainMenuView.selectEtazButtonGo.backgroundColor = UIColor(named: "viewColor")
             }
             
             print(corpGo)
@@ -310,7 +315,7 @@ class MainMenuViewController: UIViewController {
             mainMenuView.labelEtazNumbeGo.text = "\(etazGo) этаж"
             UIView.animate(withDuration: 0.5) { [self] in
                 mainMenuView.selectCabinetButtonGo.isEnabled = true
-                mainMenuView.selectCabinetButtonGo.backgroundColor = .white
+                mainMenuView.selectCabinetButtonGo.backgroundColor = UIColor(named: "viewColor")
             }
             
             print("этаж гоу - \(etazGo)")
@@ -322,7 +327,7 @@ class MainMenuViewController: UIViewController {
             mainMenuView.picker.getID(id: "corp")
             UIView.animate(withDuration: 0.5) { [self] in
                 mainMenuView.selectEtazButton.isEnabled = true
-                mainMenuView.selectEtazButton.backgroundColor = .white
+                mainMenuView.selectEtazButton.backgroundColor = UIColor(named: "viewColor")
             }
             
             
@@ -365,7 +370,7 @@ class MainMenuViewController: UIViewController {
             isOnlyVhod = 0
             UIView.animate(withDuration: 0.5) { [self] in
                 mainMenuView.selectVhodButton.isEnabled = false
-                mainMenuView.selectVhodButton.backgroundColor = .systemGray5
+                mainMenuView.selectVhodButton.backgroundColor = UIColor(named: "grayColorBut")
             }
         }
         
@@ -382,15 +387,15 @@ class MainMenuViewController: UIViewController {
         mainMenuView.selectCampusButton.isEnabled = false
         mainMenuView.selectCabinetButton.isEnabled = false
         mainMenuView.selectEtazButton.isEnabled = false
-        mainMenuView.selectCampusButton.backgroundColor = .systemGray5
-        mainMenuView.selectCabinetButton.backgroundColor = .systemGray5
-        mainMenuView.selectEtazButton.backgroundColor = .systemGray5
+        mainMenuView.selectCampusButton.backgroundColor = UIColor(named: "grayColorBut")
+        mainMenuView.selectCabinetButton.backgroundColor = UIColor(named: "grayColorBut")
+        mainMenuView.selectEtazButton.backgroundColor = UIColor(named: "grayColorBut")
     }
     
     func onButtons() {
         mainMenuView.selectCampusButton.isEnabled = true
         
-        mainMenuView.selectCampusButton.backgroundColor = .white
+        mainMenuView.selectCampusButton.backgroundColor = UIColor(named: "viewColor")
         
         
     }

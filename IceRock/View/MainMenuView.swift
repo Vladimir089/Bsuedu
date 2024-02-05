@@ -42,7 +42,7 @@ class MainMenuView: UIView {
     let profileButton: UIButton = {
         let buttom = UIButton()
         buttom.setTitle(" Профиль", for: .normal)
-        buttom.backgroundColor = UIColor.white
+        buttom.backgroundColor = UIColor(named: "viewColor")
         buttom.layer.cornerRadius = 15
         buttom.setTitleColor(UIColor.black, for: .normal) // Добавлен черный цвет текста
         buttom.setImage(UIImage(systemName: "person"), for: .normal)
@@ -75,7 +75,7 @@ class MainMenuView: UIView {
     let createButton: UIButton = {
         let button = UIButton()
         button.setTitle("Построить маршрут", for: .normal)
-        button.backgroundColor = UIColor.white
+        button.backgroundColor = UIColor(named: "viewColor")
         button.setTitleColor(UIColor.black, for: .normal) // Добавлен черный цвет текста
         button.layer.cornerRadius = 15
         return button
@@ -85,7 +85,7 @@ class MainMenuView: UIView {
     
     let selectCampusButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .white
+        button.backgroundColor = UIColor(named: "viewColor")
         button.setTitle("выбрать корпус", for: .normal)
         button.contentEdgeInsets = UIEdgeInsets(top: 3, left: 5, bottom: 3, right: 5)
         button.setTitleColor(.black, for: .normal)
@@ -95,7 +95,7 @@ class MainMenuView: UIView {
     
     let selectCampusButtonGo: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .white
+        button.backgroundColor = UIColor(named: "viewColor")
         button.setTitle("выбрать корпус", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.layer.cornerRadius = 12
@@ -106,7 +106,7 @@ class MainMenuView: UIView {
     
     let selectCabinetButtonGo: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .white
+        button.backgroundColor = UIColor(named: "viewColor")
         button.setTitle("выбрать кабинет", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.layer.cornerRadius = 12
@@ -117,7 +117,7 @@ class MainMenuView: UIView {
     
     let selectEtazButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .white
+        button.backgroundColor = UIColor(named: "viewColor")
         button.setTitle("выбрать этаж", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.layer.cornerRadius = 12
@@ -128,7 +128,7 @@ class MainMenuView: UIView {
     
     let selectEtazButtonGo: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .white
+        button.backgroundColor = UIColor(named: "viewColor")
         button.setTitle("выбрать этаж", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.layer.cornerRadius = 12
@@ -139,7 +139,7 @@ class MainMenuView: UIView {
     
     let selectVhodButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .white
+        button.backgroundColor = UIColor(named: "viewColor")
         button.setTitle("выбрать место входа", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.layer.cornerRadius = 12
@@ -150,7 +150,7 @@ class MainMenuView: UIView {
     
     let selectCabinetButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .white
+        button.backgroundColor = UIColor(named: "viewColor")
         button.setTitle("выбрать кабинет", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.layer.cornerRadius = 12
@@ -171,6 +171,7 @@ class MainMenuView: UIView {
         let view = UIView()
         view.backgroundColor = UIColor(red: 51/255.0, green: 102/255.0, blue: 51/255.0, alpha: 1.0)
         view.layer.cornerRadius = 15
+        
         return view
     }()
     
@@ -200,40 +201,40 @@ class MainMenuView: UIView {
     let topViewOne: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 15
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: "viewColor")
         return view
     }()
     let topViewTwo: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 15
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: "viewColor")
         return view
     }()
     
     let topViewThree: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 15
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: "viewColor")
         return view
     }()
     
     let botViewOne: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 15
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: "viewColor")
         return view
     }()
     let botViewTwo: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 15
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: "viewColor")
         return view
     }()
     
     let botViewThree: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 15
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: "viewColor")
         return view
     }()
     
@@ -247,14 +248,14 @@ class MainMenuView: UIView {
     
     let topViewInView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(red: 0.8235, green: 0.7686, blue: 0.9961, alpha: 1)
+        view.backgroundColor = UIColor(named: "twoTopView")
         view.layer.cornerRadius = 25
         return view
     }()
     
     let botViewInView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(red: 0.8235, green: 0.7686, blue: 0.9961, alpha: 1)
+        view.backgroundColor = UIColor(named: "twoTopView")
         view.layer.cornerRadius = 25
         return view
     }()
@@ -262,7 +263,7 @@ class MainMenuView: UIView {
     let labelInTopView: UILabel = {
         let label = UILabel()
         label.text = "Откуда:"
-        label.textColor = .systemGray
+        label.textColor = UIColor(named: "twoLabelColor")
         label.font = .systemFont(ofSize: 16, weight: .medium)
         return label
     }()
@@ -270,7 +271,7 @@ class MainMenuView: UIView {
     let labelInBotView: UILabel = {
         let label = UILabel()
         label.text = "Куда:"
-        label.textColor = .systemGray
+        label.textColor = UIColor(named: "twoLabelColor")
         label.font = .systemFont(ofSize: 16, weight: .medium)
         return label
     }()
@@ -279,6 +280,7 @@ class MainMenuView: UIView {
         let label = UILabel()
         label.text = "\(corp) корпус"
         label.font = .systemFont(ofSize: 16, weight: .ultraLight)
+        label.textColor = UIColor(named: "labelColor")
         return label
     }()
     
@@ -286,6 +288,7 @@ class MainMenuView: UIView {
         let label = UILabel()
         label.text = "\(cab) кабинет"
         label.font = .systemFont(ofSize: 16, weight: .ultraLight)
+        label.textColor = UIColor(named: "labelColor")
         return label
     }()
     
@@ -293,6 +296,7 @@ class MainMenuView: UIView {
         let label = UILabel()
         label.text = "\(etaz) этаж"
         label.font = .systemFont(ofSize: 16, weight: .ultraLight)
+        label.textColor = UIColor(named: "labelColor")
         return label
     }()
     
@@ -301,6 +305,7 @@ class MainMenuView: UIView {
         let label = UILabel()
         label.text = "\(corpGo) корпус"
         label.font = .systemFont(ofSize: 16, weight: .ultraLight)
+        label.textColor = UIColor(named: "labelColor")
         return label
     }()
     
@@ -308,6 +313,7 @@ class MainMenuView: UIView {
         let label = UILabel()
         label.text = "\(cabGo) кабинет"
         label.font = .systemFont(ofSize: 16, weight: .ultraLight)
+        label.textColor = UIColor(named: "labelColor")
         return label
     }()
     
@@ -315,13 +321,14 @@ class MainMenuView: UIView {
         let label = UILabel()
         label.text = "\(etazGo) этаж"
         label.font = .systemFont(ofSize: 16, weight: .ultraLight)
+        label.textColor = UIColor(named: "labelColor")
         return label
     }()
     
     //MARK: -Add view
     
     func addComponents() {
-        backgroundColor = .white
+        backgroundColor = UIColor(named: "backgroundColor")
         addSubview(topView)
         
         addSubview(bottomView)
@@ -366,7 +373,7 @@ class MainMenuView: UIView {
         
         topViewInView.addSubview(viewTwoInView)
         viewTwoInView.translatesAutoresizingMaskIntoConstraints = false
-        
+       
         
         topViewInView.addSubview(selectCampusButton)
         selectCampusButton.translatesAutoresizingMaskIntoConstraints = false
@@ -382,9 +389,9 @@ class MainMenuView: UIView {
         selectVhodButton.translatesAutoresizingMaskIntoConstraints = false
         
         picker = pickerView()
-        picker.layer.borderColor = UIColor(red: 0.8235, green: 0.7686, blue: 0.9961, alpha: 1).cgColor
+        picker.layer.borderColor = UIColor(named: "twoLabelColor")?.cgColor
         picker.layer.borderWidth = 3
-        picker.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+        picker.backgroundColor = UIColor(named: "twoTopView")
         picker.layer.cornerRadius = 30
         picker.translatesAutoresizingMaskIntoConstraints = false
         addSubview(picker)

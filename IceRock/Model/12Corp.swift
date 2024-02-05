@@ -20,15 +20,15 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
     imageView.contentMode = .scaleAspectFill
     
     but1.isEnabled = false
-               but1.backgroundColor = .systemGray5
+               but1.backgroundColor = UIColor(named: "grayColorBut") //
                but2.isEnabled = true
-               but2.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+               but2.backgroundColor = UIColor(named: "butNextandPrev")
             
     let imageWidth = imageView.frame.size.width
     let imageHeight = imageView.frame.size.height
     
     if vhod == "вход 12 корпус" && numbImage == 1 && isOnlyVhod == 1 {
-            but2.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+            but2.backgroundColor = UIColor(named: "butNextandPrev")
             
             imageView.image = nil
             imageView.image = UIImage(named: "12corpHoll")
@@ -72,16 +72,16 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
             || (corp == "12" && etaz == 2 && isOnlyVhod == 0 && numbImage == 1 ) {
             
             but1.isEnabled = true
-            but1.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+            but1.backgroundColor = UIColor(named: "butNextandPrev")
             but2.isEnabled = false
-            but2.backgroundColor = .systemGray5
+            but2.backgroundColor = UIColor(named: "grayColorBut")
             
             
             if corp == "12" && etaz == 2 && isOnlyVhod == 0  {
                 but1.isEnabled = false
-                but1.backgroundColor = .systemGray5
+                but1.backgroundColor = UIColor(named: "grayColorBut")
                 but2.isEnabled = true
-                but2.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+                but2.backgroundColor = UIColor(named: "butNextandPrev")
                 numbImage = 1
             }
             
@@ -201,16 +201,16 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
         if (corpGo == "12" && numbImage == 2 && etazGo == 3) || (corp == "12" && etaz == 3 && isOnlyVhod == 0 && numbImage == 1 )  {
             
             but1.isEnabled = true
-            but1.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+            but1.backgroundColor = UIColor(named: "butNextandPrev")
             but2.isEnabled = false
-            but2.backgroundColor = .systemGray5
+            but2.backgroundColor = UIColor(named: "grayColorBut")
             
             
             if corp == "12" && etaz == 3 && isOnlyVhod == 0  {
                 but1.isEnabled = false
-                but1.backgroundColor = .systemGray5
+                but1.backgroundColor = UIColor(named: "grayColorBut")
                 but2.isEnabled = true
-                but2.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+                but2.backgroundColor = UIColor(named: "butNextandPrev")
                 numbImage = 1
             }
             
@@ -441,16 +441,16 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
         if (corpGo == "12" && numbImage == 2 && etazGo == 4) || (corp == "12" && etaz == 4 && isOnlyVhod == 0 && numbImage == 1 ) {
             
             but1.isEnabled = true
-            but1.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+            but1.backgroundColor = UIColor(named: "butNextandPrev")
             but2.isEnabled = false
-            but2.backgroundColor = .systemGray5
+            but2.backgroundColor = UIColor(named: "grayColorBut")
             
             
             if corp == "12" && etaz == 4 && isOnlyVhod == 0  {
                 but1.isEnabled = false
-                but1.backgroundColor = .systemGray5
+                but1.backgroundColor = UIColor(named: "grayColorBut")
                 but2.isEnabled = true
-                but2.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+                but2.backgroundColor = UIColor(named: "butNextandPrev")
                 numbImage = 1
             }
             
@@ -541,16 +541,16 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
         if (corpGo == "12" && numbImage == 2 && etazGo == 5) || (corp == "12" && etaz == 5 && isOnlyVhod == 0 && numbImage == 1 ) {
             
             but1.isEnabled = true
-            but1.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+            but1.backgroundColor = UIColor(named: "butNextandPrev")
             but2.isEnabled = false
-            but2.backgroundColor = .systemGray5
+            but2.backgroundColor = UIColor(named: "grayColorBut")
             
             
             if corp == "12" && etaz == 5 && isOnlyVhod == 0  {
                 but1.isEnabled = false
-                but1.backgroundColor = .systemGray5
+                but1.backgroundColor = UIColor(named: "grayColorBut")
                 but2.isEnabled = true
-                but2.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+                but2.backgroundColor = UIColor(named: "butNextandPrev")
                 numbImage = 1
             }
             
@@ -638,16 +638,16 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
         if (corpGo == "12" && numbImage == 2 && etazGo == 6) || (corp == "12" && etaz == 6 && isOnlyVhod == 0 && numbImage == 1 ) {
             
             but1.isEnabled = true
-            but1.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+            but1.backgroundColor = UIColor(named: "butNextandPrev")
             but2.isEnabled = false
-            but2.backgroundColor = .systemGray5
+            but2.backgroundColor = UIColor(named: "grayColorBut")
             
             
             if corp == "12" && etaz == 6 && isOnlyVhod == 0  {
                 but1.isEnabled = false
-                but1.backgroundColor = .systemGray5
+                but1.backgroundColor = UIColor(named: "grayColorBut")
                 but2.isEnabled = true
-                but2.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+                but2.backgroundColor = UIColor(named: "butNextandPrev")
                 numbImage = 1
             }
             
@@ -740,16 +740,16 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
         if (corpGo == "12" && numbImage == 2 && etazGo == 7) || (corp == "12" && etaz == 7 && isOnlyVhod == 0 && numbImage == 1 ) {
             
             but1.isEnabled = true
-            but1.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+            but1.backgroundColor = UIColor(named: "butNextandPrev")
             but2.isEnabled = false
-            but2.backgroundColor = .systemGray5
+            but2.backgroundColor = UIColor(named: "grayColorBut")
             
             
             if corp == "12" && etaz == 7 && isOnlyVhod == 0  {
                 but1.isEnabled = false
-                but1.backgroundColor = .systemGray5
+                but1.backgroundColor = UIColor(named: "grayColorBut")
                 but2.isEnabled = true
-                but2.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+                but2.backgroundColor = UIColor(named: "butNextandPrev")
                 numbImage = 1
             }
             
@@ -830,16 +830,16 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
         if (corpGo == "12" && numbImage == 2 && etazGo == 8) || (corp == "12" && etaz == 8 && isOnlyVhod == 0 && numbImage == 1 ) {
             
             but1.isEnabled = true
-            but1.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+            but1.backgroundColor = UIColor(named: "butNextandPrev")
             but2.isEnabled = false
-            but2.backgroundColor = .systemGray5
+            but2.backgroundColor = UIColor(named: "grayColorBut")
             
             
             if corp == "12" && etaz == 8 && isOnlyVhod == 0  {
                 but1.isEnabled = false
-                but1.backgroundColor = .systemGray5
+                but1.backgroundColor = UIColor(named: "grayColorBut")
                 but2.isEnabled = true
-                but2.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+                but2.backgroundColor = UIColor(named: "butNextandPrev")
                 numbImage = 1
             }
             
@@ -918,16 +918,16 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
         if (corpGo == "12" && numbImage == 2 && etazGo == 9) || (corp == "12" && etaz == 9 && isOnlyVhod == 0 && numbImage == 1 ) {
             
             but1.isEnabled = true
-            but1.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+            but1.backgroundColor = UIColor(named: "butNextandPrev")
             but2.isEnabled = false
-            but2.backgroundColor = .systemGray5
+            but2.backgroundColor = UIColor(named: "grayColorBut")
             
             
             if corp == "12" && etaz == 9 && isOnlyVhod == 0  {
                 but1.isEnabled = false
-                but1.backgroundColor = .systemGray5
+                but1.backgroundColor = UIColor(named: "grayColorBut")
                 but2.isEnabled = true
-                but2.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+                but2.backgroundColor = UIColor(named: "butNextandPrev")
                 numbImage = 1
             }
             
@@ -1011,16 +1011,16 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
         //10 ЭТАЖ
         
         but1.isEnabled = true
-        but1.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+        but1.backgroundColor = UIColor(named: "butNextandPrev")
         but2.isEnabled = false
-        but2.backgroundColor = .systemGray5
+        but2.backgroundColor = UIColor(named: "grayColorBut")
         
         
         if corp == "12" && etaz == 10 && isOnlyVhod == 0  {
             but1.isEnabled = false
-            but1.backgroundColor = .systemGray5
+            but1.backgroundColor = UIColor(named: "grayColorBut")
             but2.isEnabled = true
-            but2.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+            but2.backgroundColor = UIColor(named: "butNextandPrev")
             numbImage = 1
         }
         
@@ -1067,6 +1067,176 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
         
     }
     
+    if (corp == "12" && etaz == 12  && corpGo == "12" && etazGo == 11) || (corp == "12" && etaz == 11  && corpGo == "12" && etazGo == 12) {
+        
+        let animation = CABasicAnimation(keyPath: "strokeEnd")
+        animation.fromValue = 0.0
+        animation.toValue = 1.0
+        animation.duration = 1.0
+        
+        if numbImage == 1 {
+            
+            
+            but1.isEnabled = false
+            but1.backgroundColor = UIColor(named: "grayColorBut")
+            but2.isEnabled = true
+            but2.backgroundColor = UIColor(named: "butNextandPrev")
+            imageView.image = nil
+            if etaz == 12 {
+                imageView.image = UIImage(named: "12corp12")
+            } else {
+                imageView.image = UIImage(named: "12corp11")
+            }
+            
+            print(12)
+        }
+        
+        if numbImage == 2 {
+            but1.isEnabled = true
+            but1.backgroundColor = UIColor(named: "butNextandPrev")
+            but2.isEnabled = false
+            but2.backgroundColor = UIColor(named: "grayColorBut")
+            imageView.image = nil
+            if etazGo == 11 {
+                imageView.image = UIImage(named: "12corp11")
+            } else {
+                imageView.image = UIImage(named: "12corp12")
+            }
+            
+            print(11)
+        }
+        
+        if imageView.image == UIImage(named: "12corp12") {
+            print(11)
+            DispatchQueue.global().async {
+                if let coord = recognizeDigits(imageView: imageView, path: path) {
+                    
+                    
+                    
+                    DispatchQueue.main.async {
+                        path.move(to: CGPoint(x: 0.15 * imageWidth, y: 0.34 * imageHeight))
+                        if (cab == "12-1" || cabGo == "12-1") || (cab == "12-4" || cabGo == "12-4")  {
+                            path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y + 20),
+                                              controlPoint: CGPoint(x: coord.x, y: 0.5 * imageHeight))
+                        } else {
+                            path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y - 10),
+                                              controlPoint: CGPoint(x: coord.x, y: 0.5 * imageHeight))
+                        }
+                        
+                        
+                        if etaz == 12 && etazGo != 12 {
+                            shapeLayerGreen.fillColor = .none
+                            shapeLayerGreen.path = greenPath.cgPath
+                            shapeLayerGreen.strokeColor = UIColor.systemGray5.cgColor
+                            shapeLayerGreen.lineWidth = 2.0
+                            imageView.layer.addSublayer(shapeLayerGreen)
+                            
+                            shapeLayer.path = path.cgPath
+                            shapeLayer.fillColor = .none
+                            shapeLayer.strokeColor = UIColor.systemGreen.cgColor
+                            shapeLayer.lineWidth = 2.0
+                            imageView.layer.addSublayer(shapeLayer)
+                            
+                            let animationGreen = CABasicAnimation(keyPath: "strokeStart")
+                            animationGreen.fromValue = 1.0 //  начальное значение как 1 (конец линии)
+                            animationGreen.toValue = 0.0 //  конечное значение как 0 (начало линии)
+                            animationGreen.duration = 1.0 //  длительность анимации
+                            shapeLayerGreen.add(animationGreen, forKey: "drawLineAnimationGreen")
+                            
+                            let animation = CABasicAnimation(keyPath: "strokeStart")
+                            animation.fromValue = 1.0
+                            animation.toValue = 0.0
+                            animation.duration = 1.0
+                            shapeLayer.add(animation, forKey: "drawLineAnimation")
+                        } else {
+                            shapeLayerGreen.fillColor = .none
+                            shapeLayerGreen.path = greenPath.cgPath
+                            shapeLayerGreen.strokeColor = UIColor.systemGray5.cgColor
+                            shapeLayerGreen.lineWidth = 2.0
+                            imageView.layer.addSublayer(shapeLayerGreen)
+                            shapeLayer.path = path.cgPath
+                            shapeLayer.fillColor = .none
+                            shapeLayer.strokeColor = UIColor.systemGreen.cgColor
+                            shapeLayer.lineWidth = 2.0
+                            imageView.layer.addSublayer(shapeLayer)
+                            shapeLayerGreen.add(animation, forKey: "drawLineAnimation")
+                            shapeLayer.add(animation, forKey: "drawLineAnimation")
+                        }
+                        
+                    }
+                }
+                
+            }
+           
+        }
+        
+        if imageView.image == UIImage(named: "12corp11") {
+            print(11)
+            DispatchQueue.global().async {
+                if let coord = recognizeDigits(imageView: imageView, path: path) {
+                    
+                    
+                    
+                    DispatchQueue.main.async {
+                        path.move(to: CGPoint(x: 0.15 * imageWidth, y: 0.34 * imageHeight))
+                        if cab == "11-4" || cabGo == "11-4" {
+                            path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y + 10),
+                                              controlPoint: CGPoint(x: coord.x, y: 0.5 * imageHeight))
+                        } else {
+                            path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y + 20),
+                                              controlPoint: CGPoint(x: coord.x, y: 0.5 * imageHeight))
+                        }
+                        
+                        
+                        if etaz == 11 && etazGo != 11 {
+                            shapeLayerGreen.fillColor = .none
+                            shapeLayerGreen.path = greenPath.cgPath
+                            shapeLayerGreen.strokeColor = UIColor.systemGray5.cgColor
+                            shapeLayerGreen.lineWidth = 2.0
+                            imageView.layer.addSublayer(shapeLayerGreen)
+                            
+                            shapeLayer.path = path.cgPath
+                            shapeLayer.fillColor = .none
+                            shapeLayer.strokeColor = UIColor.systemGreen.cgColor
+                            shapeLayer.lineWidth = 2.0
+                            imageView.layer.addSublayer(shapeLayer)
+                            
+                            let animationGreen = CABasicAnimation(keyPath: "strokeStart")
+                            animationGreen.fromValue = 1.0 //  начальное значение как 1 (конец линии)
+                            animationGreen.toValue = 0.0 //  конечное значение как 0 (начало линии)
+                            animationGreen.duration = 1.0 //  длительность анимации
+                            shapeLayerGreen.add(animationGreen, forKey: "drawLineAnimationGreen")
+                            
+                            let animation = CABasicAnimation(keyPath: "strokeStart")
+                            animation.fromValue = 1.0
+                            animation.toValue = 0.0
+                            animation.duration = 1.0
+                            shapeLayer.add(animation, forKey: "drawLineAnimation")
+                        } else {
+                            shapeLayerGreen.fillColor = .none
+                            shapeLayerGreen.path = greenPath.cgPath
+                            shapeLayerGreen.strokeColor = UIColor.systemGray5.cgColor
+                            shapeLayerGreen.lineWidth = 2.0
+                            imageView.layer.addSublayer(shapeLayerGreen)
+                            shapeLayer.path = path.cgPath
+                            shapeLayer.fillColor = .none
+                            shapeLayer.strokeColor = UIColor.systemGreen.cgColor
+                            shapeLayer.lineWidth = 2.0
+                            imageView.layer.addSublayer(shapeLayer)
+                            shapeLayerGreen.add(animation, forKey: "drawLineAnimation")
+                            shapeLayer.add(animation, forKey: "drawLineAnimation")
+                        }
+                        
+                    }
+                }
+                
+            }
+           
+        }
+        
+        return
+    }
+    
     
     if (corpGo == "12" && numbImage == 3 && etazGo == 11) || (corp == "12" && etaz == 11 && isOnlyVhod == 0 && numbImage == 0 ) || (corpGo == "12" && numbImage == 2 && etazGo == 11) || (corp == "12" && etaz == 11 && isOnlyVhod == 0 && numbImage == 1 ) {
         
@@ -1081,9 +1251,9 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
             
             if numbImage == 2 {
                 but1.isEnabled = true
-                but1.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+                but1.backgroundColor = UIColor(named: "butNextandPrev")
                 but2.isEnabled = true
-                but2.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+                but2.backgroundColor = UIColor(named: "butNextandPrev")
                 imageView.image = nil
                 imageView.image = UIImage(named: "12corp10")
                 
@@ -1092,9 +1262,9 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
             
             if numbImage == 3 {
                 but1.isEnabled = true
-                but1.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+                but1.backgroundColor = UIColor(named: "butNextandPrev")
                 but2.isEnabled = false
-                but2.backgroundColor = .systemGray5
+                but2.backgroundColor = UIColor(named: "grayColorBut")
                 imageView.image = nil
                 imageView.image = UIImage(named: "12corp11")
             }
@@ -1112,18 +1282,18 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
                 
                 
                 but1.isEnabled = true
-                but1.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+                but1.backgroundColor = UIColor(named: "butNextandPrev")
                 but2.isEnabled = true
-                but2.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+                but2.backgroundColor = UIColor(named: "butNextandPrev")
                 imageView.image = nil
                 imageView.image = UIImage(named: "12corp10")
             }
             
             if numbImage == 0 {
                 but1.isEnabled = false
-                but1.backgroundColor =  .systemGray5
+                but1.backgroundColor =  UIColor(named: "grayColorBut")
                 but2.isEnabled = true
-                but2.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+                but2.backgroundColor = UIColor(named: "butNextandPrev")
                 imageView.image = nil
                 imageView.image = UIImage(named: "12corp11")
             }
@@ -1271,9 +1441,9 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
             
             if numbImage == 2 {
                 but1.isEnabled = true
-                but1.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+                but1.backgroundColor = UIColor(named: "butNextandPrev")
                 but2.isEnabled = true
-                but2.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+                but2.backgroundColor = UIColor(named: "butNextandPrev")
                 imageView.image = nil
                 imageView.image = UIImage(named: "12corp10")
                 
@@ -1282,9 +1452,9 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
             
             if numbImage == 3 {
                 but1.isEnabled = true
-                but1.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+                but1.backgroundColor = UIColor(named: "butNextandPrev")
                 but2.isEnabled = false
-                but2.backgroundColor = .systemGray5
+                but2.backgroundColor = UIColor(named: "grayColorBut")
                 imageView.image = nil
                 imageView.image = UIImage(named: "12corp12")
             }
@@ -1302,18 +1472,18 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
                 
                 
                 but1.isEnabled = true
-                but1.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+                but1.backgroundColor = UIColor(named: "butNextandPrev")
                 but2.isEnabled = true
-                but2.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+                but2.backgroundColor = UIColor(named: "butNextandPrev")
                 imageView.image = nil
                 imageView.image = UIImage(named: "12corp10")
             }
             
             if numbImage == 0 {
                 but1.isEnabled = false
-                but1.backgroundColor =  .systemGray5
+                but1.backgroundColor =  UIColor(named: "grayColorBut")
                 but2.isEnabled = true
-                but2.backgroundColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+                but2.backgroundColor = UIColor(named: "butNextandPrev")
                 imageView.image = nil
                 imageView.image = UIImage(named: "12corp12")
             }
@@ -1446,6 +1616,7 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
         }
         
     }
+    
     
 
     

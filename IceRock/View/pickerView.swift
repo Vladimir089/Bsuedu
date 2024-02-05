@@ -29,8 +29,9 @@ class pickerView: UIView {
     
     let buttonOK: UIButton = {
         let but = UIButton()
-        but.backgroundColor = UIColor(red: 0.8235, green: 0.7686, blue: 0.9961, alpha: 1)
+        but.backgroundColor = UIColor(named: "pickerButtonOKButton")
         but.setTitle("Выбрать", for: .normal)
+        but.titleLabel?.textColor = UIColor(named: "pickerButtonOKtext")
         but.layer.cornerRadius = 20
         return but
     }()
