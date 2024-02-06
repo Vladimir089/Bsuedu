@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         let hasVisitedMainMenu = UserDefaults.standard.bool(forKey: "hasVisitedMainMenu")
         if hasVisitedMainMenu {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "Second") as! MainMenuViewController
+            let vc = storyboard.instantiateViewController(withIdentifier: "New") as! NewDesignViewController
             navigationController?.pushViewController(vc, animated: false)
         } else {
             setupPageViewController()
@@ -160,7 +160,7 @@ class ViewController: UIViewController {
     @objc func nextPage() {
         UserDefaults.standard.set(true, forKey: "hasVisitedMainMenu")
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "Second") as! MainMenuViewController
+        let vc = storyboard.instantiateViewController(withIdentifier: "New") as! NewDesignViewController
         navigationController?.pushViewController(vc, animated: true)
         print(1)
     }

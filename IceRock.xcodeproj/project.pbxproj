@@ -24,6 +24,8 @@
 		E7834D512B4622EE004930DF /* IceRockUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7834D502B4622EE004930DF /* IceRockUITestsLaunchTests.swift */; };
 		E7834D612B465F4F004930DF /* 12Corp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7834D602B465F4F004930DF /* 12Corp.swift */; };
 		E7B22EDA2B725B0E00D65EF1 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B22ED92B725B0E00D65EF1 /* CollectionViewController.swift */; };
+		E7B22EDC2B72830400D65EF1 /* NewDesignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B22EDB2B72830400D65EF1 /* NewDesignView.swift */; };
+		E7B22EDF2B72887800D65EF1 /* NewDesignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B22EDE2B72887800D65EF1 /* NewDesignViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		E7834D502B4622EE004930DF /* IceRockUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceRockUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E7834D602B465F4F004930DF /* 12Corp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 12Corp.swift; sourceTree = "<group>"; };
 		E7B22ED92B725B0E00D65EF1 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		E7B22EDB2B72830400D65EF1 /* NewDesignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDesignView.swift; sourceTree = "<group>"; };
+		E7B22EDE2B72887800D65EF1 /* NewDesignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDesignViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,10 +160,12 @@
 		E7834D5E2B46231E004930DF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E7B22EE02B72A18600D65EF1 /* SearchControllers */,
 				E732C87A2B4A3A8A00EE1D52 /* MainMenuView.swift */,
 				E7834D332B4622EB004930DF /* Main.storyboard */,
 				E732C87D2B4E416C00EE1D52 /* pickerView.swift */,
 				E732C8852B56065F00EE1D52 /* ScrollViewPlan.swift */,
+				E7B22EDB2B72830400D65EF1 /* NewDesignView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -167,12 +173,28 @@
 		E7834D5F2B462325004930DF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E7B22EDD2B72885900D65EF1 /* New Design */,
 				E7834D312B4622EB004930DF /* ViewController.swift */,
 				E732C8722B4A1E0100EE1D52 /* MainMenuViewController.swift */,
 				E732C87F2B5113E800EE1D52 /* ProfileViewController.swift */,
 				E7B22ED92B725B0E00D65EF1 /* CollectionViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		E7B22EDD2B72885900D65EF1 /* New Design */ = {
+			isa = PBXGroup;
+			children = (
+				E7B22EDE2B72887800D65EF1 /* NewDesignViewController.swift */,
+			);
+			path = "New Design";
+			sourceTree = "<group>";
+		};
+		E7B22EE02B72A18600D65EF1 /* SearchControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SearchControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,8 +334,10 @@
 				E7834D322B4622EB004930DF /* ViewController.swift in Sources */,
 				E732C87E2B4E416C00EE1D52 /* pickerView.swift in Sources */,
 				E7834D2E2B4622EB004930DF /* AppDelegate.swift in Sources */,
+				E7B22EDC2B72830400D65EF1 /* NewDesignView.swift in Sources */,
 				E732C8802B5113E800EE1D52 /* ProfileViewController.swift in Sources */,
 				E77287A02B5CEE7B003B4684 /* Logic.swift in Sources */,
+				E7B22EDF2B72887800D65EF1 /* NewDesignViewController.swift in Sources */,
 				E7834D612B465F4F004930DF /* 12Corp.swift in Sources */,
 				E732C8862B56065F00EE1D52 /* ScrollViewPlan.swift in Sources */,
 				E7834D302B4622EB004930DF /* SceneDelegate.swift in Sources */,
