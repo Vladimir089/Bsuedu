@@ -17,7 +17,7 @@ class MainMenuView: UIView {
     var picker: pickerView!
     var topPickerContraints = NSLayoutConstraint()
     var scrollView: ScrollViewPlan!
-    
+    var collectionView: CollectionViewController!
     
     let campusPicker: UIPickerView = {
         let picker = UIPickerView()
@@ -425,6 +425,11 @@ class MainMenuView: UIView {
         
         topMiddleView.addSubview(scrollView)
         
+        collectionView = CollectionViewController()
+        
+        midView.addSubview(collectionView.view)
+        
+       
         
     }
     
@@ -643,6 +648,12 @@ class MainMenuView: UIView {
         scrollView.bottomAnchor.constraint(equalTo: midView.bottomAnchor, constant: -273).isActive = true
         scrollView.layer.cornerRadius = 30
 
+        
+        collectionView.view.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.view.topAnchor.constraint(equalTo: topMiddleView.bottomAnchor, constant: 10).isActive = true
+        collectionView.view.leftAnchor.constraint(equalTo: midView.leftAnchor, constant: 10).isActive = true
+        collectionView.view.rightAnchor.constraint(equalTo: midView.rightAnchor, constant: -10).isActive = true
+        collectionView.view.bottomAnchor.constraint(equalTo: midView.bottomAnchor, constant: -10).isActive = true
         
     }
     

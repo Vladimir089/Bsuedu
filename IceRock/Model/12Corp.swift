@@ -1110,9 +1110,7 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
             print(11)
             DispatchQueue.global().async {
                 if let coord = recognizeDigits(imageView: imageView, path: path) {
-                    
-                    
-                    
+
                     DispatchQueue.main.async {
                         path.move(to: CGPoint(x: 0.15 * imageWidth, y: 0.34 * imageHeight))
                         if (cab == "12-1" || cabGo == "12-1") || (cab == "12-4" || cabGo == "12-4")  {

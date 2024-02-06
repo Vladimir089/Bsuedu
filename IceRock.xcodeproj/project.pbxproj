@@ -23,6 +23,7 @@
 		E7834D4F2B4622EE004930DF /* IceRockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7834D4E2B4622EE004930DF /* IceRockUITests.swift */; };
 		E7834D512B4622EE004930DF /* IceRockUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7834D502B4622EE004930DF /* IceRockUITestsLaunchTests.swift */; };
 		E7834D612B465F4F004930DF /* 12Corp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7834D602B465F4F004930DF /* 12Corp.swift */; };
+		E7B22EDA2B725B0E00D65EF1 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B22ED92B725B0E00D65EF1 /* CollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		E7834D4E2B4622EE004930DF /* IceRockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceRockUITests.swift; sourceTree = "<group>"; };
 		E7834D502B4622EE004930DF /* IceRockUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceRockUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E7834D602B465F4F004930DF /* 12Corp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 12Corp.swift; sourceTree = "<group>"; };
+		E7B22ED92B725B0E00D65EF1 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 				E7834D312B4622EB004930DF /* ViewController.swift */,
 				E732C8722B4A1E0100EE1D52 /* MainMenuViewController.swift */,
 				E732C87F2B5113E800EE1D52 /* ProfileViewController.swift */,
+				E7B22ED92B725B0E00D65EF1 /* CollectionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				E7834D612B465F4F004930DF /* 12Corp.swift in Sources */,
 				E732C8862B56065F00EE1D52 /* ScrollViewPlan.swift in Sources */,
 				E7834D302B4622EB004930DF /* SceneDelegate.swift in Sources */,
+				E7B22EDA2B725B0E00D65EF1 /* CollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

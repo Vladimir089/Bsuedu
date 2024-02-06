@@ -25,6 +25,7 @@ var numbImage = 1
 var isHideNavButtons = true
 
 
+
 class MainMenuViewController: UIViewController {
     
     var mainMenuView: MainMenuView!
@@ -36,6 +37,7 @@ class MainMenuViewController: UIViewController {
     var botView = 0
     var botPickerView = 0
     var selectetButton = 0
+    
     
     override func loadView() {
         mainMenuView = MainMenuView()
@@ -96,7 +98,13 @@ class MainMenuViewController: UIViewController {
     
     func handleScrollViewTouch() {
             timer?.invalidate()
+        if mainMenuView.scrollView.imageView.image != UIImage(named: "logoWhite") {
             mainMenuView.topMiddleViewBotConstraints.constant = 40
+        } 
+        if mainMenuView.scrollView.imageView.image == UIImage(named: "logoWhite") {
+            mainMenuView.topMiddleViewBotConstraints.constant = 0
+        }
+            
             UIView.animate(withDuration: 0.5) {
                 self.view.layoutIfNeeded()
             }
@@ -214,7 +222,7 @@ class MainMenuViewController: UIViewController {
                 numbImage = 1
             }
             
-            if ((corp == " " && etaz == nil && cab == " ") || vhod == " ") && corpGo == " " && etazGo == nil && cabGo == " "  {
+            if ((corp == " " && etaz == nil && cab == " ") || vhod == " ") && corpGo == " " && etazGo == nil && cabGo == " " && scrollView.imageView.image == UIImage(named: "logoWhite")!  {
                 UIView.animate(withDuration: 0.5) {
                     botConstMidView.constant = 0
                     self.view.layoutIfNeeded()
@@ -231,6 +239,7 @@ class MainMenuViewController: UIViewController {
                 
             }
             setupScrollViewTimer()
+            addItemsForArray()
             return
         }
         
