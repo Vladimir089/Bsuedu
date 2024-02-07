@@ -1,6 +1,13 @@
+//
+//  NewDesignScroll.swift
+//  IceRock
+//
+//  Created by Владимир on 07.02.2024.
+//
+
 import UIKit
 
-class ScrollViewPlan: UIScrollView, UIScrollViewDelegate {
+class NewDesignScroll: UIScrollView, UIScrollViewDelegate {
     
     var imageView: UIImageView!
     var linesLayer: CAShapeLayer!
@@ -16,6 +23,9 @@ class ScrollViewPlan: UIScrollView, UIScrollViewDelegate {
         
         imageView = UIImageView(image: planImage)
         imageView.contentMode = .scaleAspectFit
+        
+        removeAllSubviews()
+
         
         
         addSubview(imageView)
@@ -36,19 +46,24 @@ class ScrollViewPlan: UIScrollView, UIScrollViewDelegate {
         imageView.layer.addSublayer(greenLinesLayer)
         
         
-        print(imageView.frame.size)
+        
         isScrollEnabled = true
         contentSize = imageView.frame.size
-        imageView.frame = CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height)
+        let imageViewHeight: CGFloat = 255
+        let scrollViewHeight = frame.size.height
+        let y = (scrollViewHeight - imageViewHeight) / 2.0
+        
+        imageView.frame = CGRect(x: 0, y: y, width: frame.size.width, height: 255)
         imageView.backgroundColor = .red
+        
         if cabGo == " " && corpGo == " " && etazGo == 0  {
-            planImage = UIImage(named: "12corpHoll")!
+            planImage = UIImage(named: "12corp2")!
             imageView.image = planImage
             but1.isEnabled = false
             but2.isEnabled = false
             imageView.tintColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
-            but2.backgroundColor = .systemGray5
-            but1.backgroundColor = .systemGray5
+            but2.backgroundColor = .systemGray5 //
+            but1.backgroundColor = .systemGray5 //
             print(imageView.frame.size)
             return
         }
@@ -59,15 +74,15 @@ class ScrollViewPlan: UIScrollView, UIScrollViewDelegate {
         
         
         // Настройка масштабирования
-        minimumZoomScale = 1.0
+        minimumZoomScale = 1.0 //менять на 2
         maximumZoomScale = 3.0
-        zoomScale = 1.0
+        zoomScale = 1.0 //менять на 2
         
         
         self.delegate = self
         adjustContentInset()
         drawLines(but1: but1, but2: but2)
-        zoomScale = 1.0
+        zoomScale = 1.0 //менять на 2
         
         
     }
@@ -81,9 +96,7 @@ class ScrollViewPlan: UIScrollView, UIScrollViewDelegate {
     func drawLines(but1: UIButton, but2: UIButton) {
         let path = UIBezierPath()
         let greenPath = UIBezierPath()
-        // Относительные координаты в процентах от размеров изображения
-        let imageWidth = imageView.frame.size.width
-        let imageHeight = imageView.frame.size.height
+        
         
         
         if vhod == "вход 12 корпус" && isOnlyVhod == 1 {
@@ -112,6 +125,12 @@ class ScrollViewPlan: UIScrollView, UIScrollViewDelegate {
         
     }
     
+    func removeAllSubviews() {
+        for subview in self.subviews {
+            subview.removeFromSuperview()
+        }
+    }
+
     
     
     func scrollViewDidZoom(_ scrollView: UIScrollView) {

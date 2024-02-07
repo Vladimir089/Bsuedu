@@ -17,7 +17,7 @@ let shapeLayer = CAShapeLayer()
 
 func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIImageView, numb: Int, but1: UIButton, but2: UIButton)  {
     mainMenuView = MainMenuView()
-    imageView.contentMode = .scaleAspectFill
+    imageView.contentMode = .scaleAspectFit
     
     but1.isEnabled = false
                but1.backgroundColor = UIColor(named: "grayColorBut") //
@@ -32,6 +32,8 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
             
             imageView.image = nil
             imageView.image = UIImage(named: "12corpHoll")
+
+
             
             greenPath.move(to: CGPoint(x: 0.3 * imageWidth, y: 0.6 * imageHeight))
             
@@ -49,8 +51,8 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
                                    controlPoint: CGPoint(x: 0.12 * imageWidth, y: 0.36 * imageHeight))
             
             
-            path.addArc(withCenter: CGPoint(x: 0.498 * imageWidth, y: 0.95 * imageHeight), radius: 10, startAngle: 0, endAngle: CGFloat(2 * Double.pi), clockwise: true)
-            path.move(to: CGPoint(x: 0.498 * imageWidth, y: 0.9 * imageHeight))
+            path.addArc(withCenter: CGPoint(x: 0.498 * imageWidth, y: 0.9 * imageHeight), radius: 10, startAngle: 0, endAngle: CGFloat(2 * Double.pi), clockwise: true)
+            path.move(to: CGPoint(x: 0.498 * imageWidth, y: 0.85 * imageHeight))
             path.addLine(to: CGPoint(x: 0.498 * imageWidth, y: 0.8 * imageHeight))
             path.move(to: CGPoint(x: 0.498 * imageWidth, y: 0.8 * imageHeight))
             path.addQuadCurve(to: CGPoint(x: 0.3 * imageWidth, y: 0.6 * imageHeight),
@@ -97,10 +99,10 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
                         
                         greenPath.move(to: CGPoint(x: 0.14 * imageWidth, y: 0.47 * imageHeight))
                         
-                        path.addArc(withCenter: CGPoint(x: 0.175 * imageWidth, y: 0.85 * imageHeight), radius: 5, startAngle: 0, endAngle: CGFloat(2 * Double.pi), clockwise: true)
-                        path.move(to: CGPoint(x: 0.175 * imageWidth, y: 0.83 * imageHeight))
-                        path.addLine(to: CGPoint(x: 0.175 * imageWidth, y: 0.8 * imageHeight))
-                        path.move(to: CGPoint(x: 0.175 * imageWidth, y: 0.8 * imageHeight))
+                        path.addArc(withCenter: CGPoint(x: 0.175 * imageWidth, y: 0.8 * imageHeight), radius: 5, startAngle: 0, endAngle: CGFloat(2 * Double.pi), clockwise: true)
+                        path.move(to: CGPoint(x: 0.175 * imageWidth, y: 0.78 * imageHeight))
+                        path.addLine(to: CGPoint(x: 0.175 * imageWidth, y: 0.78 * imageHeight))
+                        path.move(to: CGPoint(x: 0.175 * imageWidth, y: 0.78 * imageHeight))
                         
                         if (cabGo == "2-7" || cabGo == "2-9" || cabGo == "2-11" || cabGo == "2-13") ||
                             (cab == "2-7" || cab == "2-9" || cab == "2-11" || cab == "2-13") {
@@ -108,7 +110,7 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
                                               controlPoint: CGPoint(x: 0.175 * imageWidth, y: 0.35 * imageHeight))
                             path.move(to: CGPoint(x: 0.25 * imageWidth, y: 0.35 * imageHeight))
                             
-                            path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y),
+                            path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y + 7),
                                               controlPoint: CGPoint(x: (coord.x) , y: 0.35 * imageHeight))
                             
                             
@@ -126,19 +128,19 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
                             path.move(to: CGPoint(x: 0.2 * imageWidth, y: 0.7 * imageHeight))
                             
                             if cabGo == "2-4" || cab == "2-4"  {
-                                path.addQuadCurve(to: CGPoint(x: coord.x + 13 , y: coord.y),
+                                path.addQuadCurve(to: CGPoint(x: coord.x + 13 , y: coord.y - 10),
                                                   controlPoint: CGPoint(x: (coord.x) + 30 , y: 0.6 * imageHeight))
                             }
                             if cabGo == "2-2" || cab == "2-2" {
-                                path.addQuadCurve(to: CGPoint(x: coord.x , y: coord.y),
+                                path.addQuadCurve(to: CGPoint(x: coord.x , y: coord.y - 10),
                                                   controlPoint: CGPoint(x: (coord.x)  , y: 0.7 * imageHeight))
                             }
                             if cabGo == "2-6" || cab == "2-6" {
-                                path.addQuadCurve(to: CGPoint(x: coord.x , y: coord.y),
+                                path.addQuadCurve(to: CGPoint(x: coord.x , y: coord.y - 10),
                                                   controlPoint: CGPoint(x: (coord.x)  , y: 0.7 * imageHeight))
                             }
                             if cabGo == "2-8" || cab == "2-8" {
-                                path.addQuadCurve(to: CGPoint(x: coord.x , y: coord.y),
+                                path.addQuadCurve(to: CGPoint(x: coord.x , y: coord.y - 10),
                                                   controlPoint: CGPoint(x: (coord.x)  , y: 0.7 * imageHeight))
                             }
                             
@@ -163,7 +165,7 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
                             } else if cabGo == "2-10Б" || cab == "2-10Б"{
                                 path.addLine(to: CGPoint(x: 0.6 * imageWidth, y: 0.7 * imageHeight))
                                 path.move(to: CGPoint(x: 0.6 * imageWidth, y: 0.7 * imageHeight))
-                                path.addQuadCurve(to: CGPoint(x: coord.x  , y: coord.y - 15  ),
+                                path.addQuadCurve(to: CGPoint(x: coord.x - 10  , y: coord.y - 10  ),
                                                   controlPoint: CGPoint(x: 0.8 * imageWidth, y: 0.7 * imageHeight))
                             } else if cabGo == "2-10B" || cab == "2-10B" {
                                 path.addLine(to: CGPoint(x: 0.6 * imageWidth, y: 0.7 * imageHeight))
@@ -173,14 +175,18 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
                             } else if cabGo == "2-26" || cab == "2-26" {
                                 path.addLine(to: CGPoint(x: 0.4 * imageWidth, y: 0.7 * imageHeight))
                                 path.move(to: CGPoint(x: 0.4 * imageWidth, y: 0.7 * imageHeight))
-                                path.addQuadCurve(to: CGPoint(x: coord.x  , y: coord.y + 25 ),
+                                path.addQuadCurve(to: CGPoint(x: coord.x  , y: coord.y + 30 ),
                                                   controlPoint: CGPoint(x: 0.45 * imageWidth, y: 0.7 * imageHeight))
                                 
-                            }
-                            else {
+                            } else if cabGo == "2-10Г" || cab == "2-10Г" {
                                 path.addLine(to: CGPoint(x: 0.6 * imageWidth, y: 0.7 * imageHeight))
                                 path.move(to: CGPoint(x: 0.6 * imageWidth, y: 0.7 * imageHeight))
-                                path.addQuadCurve(to: CGPoint(x: coord.x  , y: coord.y  ),
+                                path.addQuadCurve(to: CGPoint(x: coord.x - 20  , y: coord.y + 15  ),
+                                                  controlPoint: CGPoint(x: 0.67 * imageWidth, y: 0.7 * imageHeight))
+                            } else {
+                                path.addLine(to: CGPoint(x: 0.6 * imageWidth, y: 0.7 * imageHeight))
+                                path.move(to: CGPoint(x: 0.6 * imageWidth, y: 0.7 * imageHeight))
+                                path.addQuadCurve(to: CGPoint(x: coord.x  , y: coord.y - 20  ),
                                                   controlPoint: CGPoint(x: 0.67 * imageWidth, y: 0.7 * imageHeight))
                             }
                             greenPath.addQuadCurve(to: CGPoint(x: 0.2 * imageWidth, y: 0.7 * imageHeight),
@@ -227,7 +233,7 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
                         
                         
                         path.addArc(withCenter: CGPoint(x: 0.17 * imageWidth, y: 0.8 * imageHeight), radius: 5, startAngle: 0, endAngle: CGFloat(2 * Double.pi), clockwise: true)
-                        path.move(to: CGPoint(x: 0.17 * imageWidth, y: 0.77 * imageHeight))
+                        path.move(to: CGPoint(x: 0.17 * imageWidth, y: 0.78 * imageHeight))
                         path.addLine(to: CGPoint(x: 0.17 * imageWidth, y: 0.7 * imageHeight))
                         path.move(to: CGPoint(x: 0.17 * imageWidth, y: 0.7 * imageHeight))
                         
@@ -238,7 +244,7 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
                                 greenPath.addQuadCurve(to: CGPoint(x: 0.1 * imageWidth, y: 0.45 * imageHeight),
                                                        controlPoint: CGPoint(x: 0.16 * imageWidth, y: 0.44 * imageHeight))
                                 
-                                path.addQuadCurve(to: CGPoint(x: coord.x + 6, y: 0.45 * imageHeight),
+                                path.addQuadCurve(to: CGPoint(x: coord.x + 8, y: 0.45 * imageHeight),
                                                   controlPoint: CGPoint(x: 0.16 * imageWidth, y: 0.44 * imageHeight))
                                 print(1)
                             }
@@ -251,7 +257,7 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
                                                   controlPoint: CGPoint(x: 0.17 * imageWidth, y: 0.48 * imageHeight))
                                 
                                 path.move(to: CGPoint(x: 0.25 * imageWidth, y: 0.45 * imageHeight))
-                                path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y + 10),
+                                path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y + 13),
                                                   controlPoint: CGPoint(x: coord.x - 5, y: 0.45 * imageHeight))
                             }
                             if cabGo == "3-5" || cab == "3-5" {
@@ -262,7 +268,7 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
                                                   controlPoint: CGPoint(x: 0.17 * imageWidth, y: 0.48 * imageHeight))
                                 
                                 path.move(to: CGPoint(x: 0.25 * imageWidth, y: 0.45 * imageHeight))
-                                path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y + 10),
+                                path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y + 13),
                                                   controlPoint: CGPoint(x: coord.x - 5, y: 0.45 * imageHeight))
                             }
                             if cabGo == "3-7" || cab == "3-7" {
@@ -273,7 +279,7 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
                                                   controlPoint: CGPoint(x: 0.17 * imageWidth, y: 0.48 * imageHeight))
                                 
                                 path.move(to: CGPoint(x: 0.25 * imageWidth, y: 0.45 * imageHeight))
-                                path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y + 10),
+                                path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y + 13),
                                                   controlPoint: CGPoint(x: coord.x - 5, y: 0.45 * imageHeight))
                             }
                             if cabGo == "3-9" || cab == "3-9" {
@@ -284,7 +290,7 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
                                                   controlPoint: CGPoint(x: 0.17 * imageWidth, y: 0.48 * imageHeight))
                                 
                                 path.move(to: CGPoint(x: 0.25 * imageWidth, y: 0.45 * imageHeight))
-                                path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y + 10),
+                                path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y + 13),
                                                   controlPoint: CGPoint(x: coord.x - 5, y: 0.45 * imageHeight))
                             }
                             if cabGo == "3-11" || cab == "3-11" {
@@ -295,7 +301,7 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
                                                   controlPoint: CGPoint(x: 0.17 * imageWidth, y: 0.48 * imageHeight))
                                 
                                 path.move(to: CGPoint(x: 0.25 * imageWidth, y: 0.45 * imageHeight))
-                                path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y + 10),
+                                path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y + 13),
                                                   controlPoint: CGPoint(x: coord.x - 5, y: 0.45 * imageHeight))
                             }
                             if cabGo == "3-13" || cab == "3-13" {
@@ -306,7 +312,7 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
                                                   controlPoint: CGPoint(x: 0.17 * imageWidth, y: 0.48 * imageHeight))
                                 
                                 path.move(to: CGPoint(x: 0.25 * imageWidth, y: 0.45 * imageHeight))
-                                path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y + 10),
+                                path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y + 13),
                                                   controlPoint: CGPoint(x: coord.x - 5, y: 0.45 * imageHeight))
                             }
                             if cabGo == "3-15" || cab == "3-15" {
@@ -317,7 +323,7 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
                                                   controlPoint: CGPoint(x: 0.17 * imageWidth, y: 0.48 * imageHeight))
                                 
                                 path.move(to: CGPoint(x: 0.25 * imageWidth, y: 0.45 * imageHeight))
-                                path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y + 10),
+                                path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y + 13),
                                                   controlPoint: CGPoint(x: coord.x - 5, y: 0.45 * imageHeight))
                             }
                         }
@@ -336,7 +342,7 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
                                               controlPoint: CGPoint(x: 0.22 * imageWidth, y: 0.65 * imageHeight))
                             path.move(to: CGPoint(x: 0.24 * imageWidth, y: 0.75 * imageHeight))
                             
-                            path.addQuadCurve(to: CGPoint(x: cabGo == "3-4" ? coord.x - 12 : coord.x + 12 , y: coord.y + 10),
+                            path.addQuadCurve(to: CGPoint(x: cabGo == "3-4" ? coord.x - 15 : coord.x + 15 , y: coord.y + 5),
                                               controlPoint: CGPoint(x: 0.24 * imageWidth, y: coord.y ))
                         }
                         
@@ -364,13 +370,13 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
                                                   controlPoint: CGPoint(x: coord.x, y: 0.77 * imageHeight))
                             }
                             if cabGo == "3-16" || cab == "3-16" {
-                                path.addLine(to: CGPoint(x: 0.36 * imageWidth, y: coord.y - 5))
+                                path.addLine(to: CGPoint(x: 0.36 * imageWidth, y: coord.y - 15))
                             }
                             if (cabGo == "3-18" || cab == "3-18") || (cabGo == "3-20" || cab == "3-20") {
-                                path.addQuadCurve(to: CGPoint(x: 0.38 * imageWidth, y: 0.78 * imageHeight),
+                                path.addQuadCurve(to: CGPoint(x: 0.38 * imageWidth, y: 0.77 * imageHeight),
                                                   controlPoint: CGPoint(x: 0.36 * imageWidth, y: 0.77 * imageHeight))
-                                path.move(to: CGPoint(x: 0.38 * imageWidth, y: 0.78 * imageHeight))
-                                path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y - 5),
+                                path.move(to: CGPoint(x: 0.38 * imageWidth, y: 0.77 * imageHeight))
+                                path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y - 15),
                                                   controlPoint: CGPoint(x: coord.x, y: 0.77 * imageHeight))
                             }
                             
@@ -395,23 +401,23 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
                             
                             if (cabGo == "3-22" || cabGo == "3-24" || cabGo == "3-26") ||
                                 (cab == "3-22" || cab == "3-24" || cab == "3-26") {
-                                path.addCurve(to: CGPoint(x: coord.x, y: coord.y - 5),
-                                              controlPoint1: CGPoint(x: 0.72 * imageWidth, y: 0.75 * imageHeight),
+                                path.addCurve(to: CGPoint(x: coord.x, y: coord.y - 15),
+                                              controlPoint1: CGPoint(x: 0.75 * imageWidth, y: 0.75 * imageHeight),
                                               controlPoint2: CGPoint(x: coord.x, y: 0.75 * imageHeight))
                             }
                             
                             if (cabGo == "3-30" || cabGo == "3-32" || cabGo == "3-32A") ||
                             (cab == "3-30" || cab == "3-32" || cab == "3-32A") {
-                                path.addQuadCurve(to: CGPoint(x: 0.85 * imageWidth, y: 0.75 * imageHeight),
-                                                  controlPoint: CGPoint(x: 0.75 * imageWidth, y: 0.75 * imageHeight))
+                                path.addQuadCurve(to: CGPoint(x: 0.85 * imageWidth, y: 0.70 * imageHeight),
+                                                  controlPoint: CGPoint(x: 0.73 * imageWidth, y: 0.7 * imageHeight))
                                 
-                                path.move(to: CGPoint(x: 0.85 * imageWidth, y: 0.75 * imageHeight))
+                                path.move(to: CGPoint(x: 0.85 * imageWidth, y: 0.7 * imageHeight))
                                 if cabGo == "3-30" || cab == "3-30" {
-                                    path.addLine(to: CGPoint(x: coord.x - 7, y: 0.75 * imageHeight))
+                                    path.addLine(to: CGPoint(x: coord.x - 7, y: 0.7 * imageHeight))
                                 }
                                 if (cabGo == "3-32" || cabGo == "3-32A") || (cab == "3-32" || cab == "3-32A") {
                                     path.addCurve(to: CGPoint(x: coord.x - 7, y: coord.y),
-                                                  controlPoint1: CGPoint(x: 0.95 * imageWidth, y: 0.75 * imageHeight),
+                                                  controlPoint1: CGPoint(x: 0.95 * imageWidth, y: 0.7 * imageHeight),
                                                   controlPoint2: CGPoint(x: coord.x - 20, y: coord.y ))
                                     
                                 }
@@ -419,7 +425,7 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
                             }
                             if cabGo == "3-27" || cab == "3-27" {
                                 path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y + 15),
-                                                  controlPoint: CGPoint(x: 0.73 * imageWidth, y: 0.4 * imageWidth))
+                                                  controlPoint: CGPoint(x: 0.75 * imageWidth, y: 0.45 * imageWidth))
                                 
                             }
                             
@@ -469,7 +475,7 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
                         
                         
                         path.addArc(withCenter: CGPoint(x: 0.14 * imageWidth, y: 0.9 * imageHeight), radius: 5, startAngle: 0, endAngle: CGFloat(2 * Double.pi), clockwise: true)
-                        path.move(to: CGPoint(x: 0.14 * imageWidth, y: 0.87 * imageHeight))
+                        path.move(to: CGPoint(x: 0.14 * imageWidth, y: 0.88 * imageHeight))
                         path.addLine(to: CGPoint(x: 0.14 * imageWidth, y: 0.8 * imageHeight))
                         path.move(to: CGPoint(x: 0.14 * imageWidth, y: 0.8 * imageHeight))
                         path.addQuadCurve(to: CGPoint(x: 0.2 * imageWidth, y: 0.6 * imageHeight),
@@ -483,29 +489,29 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
                             (cab == "4-4" || cab == "4-10" || cab == "4-12" || cab == "4-14" || cab == "4-6" || cab == "4-20" || cab == "4-18" || cab == "4-23" || cab == "4-8") {
                             
                             if cabGo == "4-4"  || cab == "4-4"  {
-                                path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y - 5),
+                                path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y - 15),
                                                   controlPoint: CGPoint(x: coord.x + 5, y: 0.62 * imageHeight))
                             }
                             if cabGo == "4-10" || cab == "4-10" {
-                                path.addQuadCurve(to: CGPoint(x: coord.x + 20, y: coord.y - 5),
+                                path.addQuadCurve(to: CGPoint(x: coord.x + 20, y: coord.y - 16),
                                                   controlPoint: CGPoint(x: coord.x + 5, y: 0.62 * imageHeight))
                             }
                             
                             if cabGo == "4-12" || cab == "4-12" {
-                                path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y - 10),
+                                path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y - 20),
                                                   controlPoint: CGPoint(x: coord.x + 5, y: 0.62 * imageHeight))
                             }
                             
                             if cabGo == "4-14" || cab == "4-14" {
-                                path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y - 27),
+                                path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y - 40),
                                                   controlPoint: CGPoint(x: coord.x + 5, y: 0.62 * imageHeight))
                             }
                             if cabGo == "4-6" || cab == "4-6" {
-                                path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y - 17),
+                                path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y - 27),
                                                   controlPoint: CGPoint(x: coord.x + 5, y: 0.62 * imageHeight))
                             }
                             if cabGo == "4-20" || cab == "4-20" {
-                                path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y - 5),
+                                path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y - 15),
                                                   controlPoint: CGPoint(x: coord.x + 5 , y: 0.5 * imageHeight))
                             }
                             if cabGo == "4-18" || cab == "4-18" {
@@ -513,17 +519,16 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
                                                   controlPoint: CGPoint(x: coord.x + 35 , y: 0.5 * imageHeight))
                             }
                             if cabGo == "4-23" || cab == "4-23" {
-                                path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y + 28),
+                                path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y + 35),
                                                   controlPoint: CGPoint(x: coord.x - 5, y: 0.62 * imageHeight))
-                                
                             }
                             if cabGo == "4-8" || cab == "4-8" {
-                                path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y - 10),
-                                                  controlPoint: CGPoint(x: coord.x - 5, y: 0.62 * imageHeight))
+                                path.addQuadCurve(to: CGPoint(x: coord.x - 5, y: coord.y - 20),
+                                                  controlPoint: CGPoint(x: coord.x - 15, y: 0.62 * imageHeight))
                                 
                             }
                         } else {
-                            path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y + 10),
+                            path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y + 13),
                                               controlPoint: CGPoint(x: coord.x - 5, y: 0.62 * imageHeight))
                         }
                         
@@ -573,7 +578,7 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
                         greenPath.move(to: CGPoint(x: 0.13 * imageWidth, y: 0.34 * imageHeight))
                         
                         if cabGo == "5-3" || cab == "5-3" {
-                            path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y + 10),
+                            path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y + 21),
                                               controlPoint: CGPoint(x: 0.13 * imageWidth, y: 0.62 * imageHeight))
                             
                             
