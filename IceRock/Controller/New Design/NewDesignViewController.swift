@@ -9,6 +9,17 @@ import UIKit
 
 var arr12CorpRU = [String]()
 
+var corp = " "
+var cab = " "
+var etaz = Int()
+var vhod = " "
+var isOnlyVhod = 1 
+var corpGo = " "
+var cabGo = " "
+var etazGo = Int()
+
+var numbImage = 1
+
 class NewDesignViewController: UIViewController {
     var mainView: NewDesignView!
     var filteredData = [String]()
@@ -38,6 +49,9 @@ class NewDesignViewController: UIViewController {
         super.viewDidLoad()
         createArray12Corp()
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        mainView.nextView.isHidden = true
+        mainView.prevView.isHidden = true
+        
         
     }
     
@@ -90,42 +104,32 @@ class NewDesignViewController: UIViewController {
             if corp == "12" && etaz == 11 && isOnlyVhod == 0 {
                 numbImage = 0
             }
-            mainView.scrollView.createNav(but1: mainView.prevView, but2: mainView.nextView)
+            
+            if (cabGo == " " && corpGo == " " && etazGo == 0) || (cab == " " && corp == " " && etaz == 0)  {
+                mainView.nextView.isHidden = true
+                mainView.prevView.isHidden = true
+                print(1)
+            } else {
+                print(2)
+                mainView.nextView.isHidden = false
+                mainView.prevView.isHidden = false
+                mainView.scrollView.createNav(but1: mainView.prevView, but2: mainView.nextView)
+            }
+            
+           
+          
+            
+            
+            
             
             
             if (corp == "12" && etaz == 12  && corpGo == "12" && etazGo == 11 && cab != " " && cabGo != " ") || (corp == "12" && etaz == 11  && corpGo == "12" && etazGo == 12 && cab != " " && cabGo != " ") {
                 numbImage = 1
             }
-            
-            if ((corp == " " && etaz == nil && cab == " ") || vhod == " ") && corpGo == " " && etazGo == nil && cabGo == " " && mainView.scrollView.imageView.image == UIImage(named: "logoWhite")!  {
-                UIView.animate(withDuration: 0.5) {
-//                    botConstMidView.constant = 0
-                    self.view.layoutIfNeeded()
-                }
-                
-                
-            }
-            if ((corp != " " && etaz != nil && cab != " ") || vhod != " ") && corpGo != " " && etazGo != nil && cabGo != " "  {
-                UIView.animate(withDuration: 0.5) {
-//                    botConstMidView.constant = 40
-                    self.view.layoutIfNeeded()
-                }
-                
-                
-            }
-//            setupScrollViewTimer()
-
             return
         }
         
-       
         
-        
-        
-        
-        UIView.animate(withDuration: 0.5) {
-            self.view.layoutIfNeeded()
-        }
         
         if sender == mainView.nextView {
             numbImage += 1

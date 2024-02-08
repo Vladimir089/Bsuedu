@@ -18,7 +18,7 @@ class NewDesignView: UIView {
     
     let tableView: UITableView = {
         let table = UITableView()
-        table.backgroundColor = .red
+        table.backgroundColor = UIColor(named: "bacColor")
         return table
     }()
     
@@ -86,40 +86,52 @@ class NewDesignView: UIView {
     //MARK: -Nav But
     let nextView: UIButton = {
         let buttom = UIButton()
-        buttom.setImage(UIImage(named: "arrow.turn.right.up"), for: .normal)
+        buttom.setImage(UIImage(named: "arrow.right"), for: .normal)
         buttom.layer.cornerRadius = 15
-        buttom.backgroundColor = .red
+        buttom.backgroundColor = UIColor(named: "navButColor")
+        buttom.tintColor = UIColor(named: "labelColors")
         return buttom
     }()
     
     let prevView: UIButton = {
         let buttom = UIButton()
-        buttom.setImage(UIImage(named: "arrow.turn.right.down"), for: .normal)
+        buttom.setImage(UIImage(named: "arrow.backward"), for: .normal)
         buttom.layer.cornerRadius = 15
-        buttom.backgroundColor = .red
+        buttom.backgroundColor = UIColor(named: "navButColor")
+        buttom.tintColor = UIColor(named: "labelColors")
         return buttom
     }()
     
     //test but
     let createButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Построить маршрут", for: .normal)
-        button.backgroundColor = UIColor(named: "viewColor")
-        button.setTitleColor(UIColor.black, for: .normal) // Добавлен черный цвет текста
-        button.layer.cornerRadius = 15
+        button.setTitle("   Start", for: .normal)
+        button.backgroundColor = .systemBlue
+        button.setImage(UIImage(named: "location.north.fill"), for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 20, weight: .medium)
+        button.layer.cornerRadius = 20
         return button
     }()
     //test but
 
+    //MARK: -Bot VIew
+    
+    let botView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(named: "topViewColor")
+        return view
+    }()
+    
     
     //MARK: -Other methods
     
     func addComponents() {
         backgroundColor = UIColor(named: "bacColor")
         addSubview(topView)
+        addSubview(botView)
         
         scrollView = NewDesignScroll()
-        scrollView.backgroundColor = UIColor(named: "bacColor")
+        scrollView.backgroundColor = UIColor(named: "scrollBac")
         addSubview(scrollView)
         addSubview(nextView)
         addSubview(prevView)
@@ -135,6 +147,7 @@ class NewDesignView: UIView {
         firstTextField.isUserInteractionEnabled = true
         
         addSubview(tableView)
+        botView.addSubview(createButton)
         
        
     }
@@ -166,7 +179,7 @@ class NewDesignView: UIView {
         
         firstTextField.translatesAutoresizingMaskIntoConstraints = false
         firstTextField.leftAnchor.constraint(equalTo: topView.leftAnchor, constant: 75).isActive = true
-        firstTextField.rightAnchor.constraint(equalTo: topView.rightAnchor, constant: -70).isActive = true
+        firstTextField.rightAnchor.constraint(equalTo: topView.rightAnchor, constant: -30).isActive = true
         firstTextField.topAnchor.constraint(equalTo: myCoordImageView.topAnchor, constant: -15).isActive = true
         firstTextField.bottomAnchor.constraint(equalTo: myCoordImageView.bottomAnchor, constant: 15).isActive = true
         
@@ -182,7 +195,7 @@ class NewDesignView: UIView {
         
         secondTextField.translatesAutoresizingMaskIntoConstraints = false
         secondTextField.leftAnchor.constraint(equalTo: topView.leftAnchor, constant: 75).isActive = true
-        secondTextField.rightAnchor.constraint(equalTo: topView.rightAnchor, constant: -70).isActive = true
+        secondTextField.rightAnchor.constraint(equalTo: topView.rightAnchor, constant: -30).isActive = true
         secondTextField.topAnchor.constraint(equalTo: topView.bottomAnchor, constant: -60).isActive = true
         secondTextField.bottomAnchor.constraint(equalTo: topView.bottomAnchor, constant: -10).isActive = true
         
@@ -192,25 +205,31 @@ class NewDesignView: UIView {
         scrollView.rightAnchor.constraint(equalTo: rightAnchor, constant: 0).isActive = true
         scrollView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -200).isActive = true
         
-        addSubview(createButton)
-        createButton.backgroundColor = .green
+        
+        
         createButton.translatesAutoresizingMaskIntoConstraints = false
-        createButton.topAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 50).isActive = true
-        createButton.leftAnchor.constraint(equalTo: leftAnchor, constant: 0).isActive = true
-        createButton.rightAnchor.constraint(equalTo: rightAnchor, constant: 0).isActive = true
-        createButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0).isActive = true
+        createButton.topAnchor.constraint(equalTo: botView.topAnchor, constant: 120).isActive = true
+        createButton.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
+        createButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -10).isActive = true
+        createButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -30).isActive = true
         
         nextView.translatesAutoresizingMaskIntoConstraints = false
         nextView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         nextView.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        nextView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor, constant: -100).isActive = true //30
-        nextView.rightAnchor.constraint(equalTo: scrollView.rightAnchor, constant: -5).isActive = true
+        nextView.rightAnchor.constraint(equalTo: rightAnchor, constant: -20).isActive = true
+        nextView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -20).isActive = true
         
         prevView.translatesAutoresizingMaskIntoConstraints = false
         prevView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         prevView.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        prevView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor, constant: 100).isActive = true //30
-        prevView.rightAnchor.constraint(equalTo: scrollView.rightAnchor, constant: -5).isActive = true
+        prevView.leftAnchor.constraint(equalTo: leftAnchor, constant: 20).isActive = true
+        prevView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -20).isActive = true
+        
+        botView.translatesAutoresizingMaskIntoConstraints = false
+        botView.topAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
+        botView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        botView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        botView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         
     }
 

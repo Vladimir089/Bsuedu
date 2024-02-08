@@ -35,13 +35,13 @@ class NewDesignScroll: UIScrollView, UIScrollViewDelegate {
         
         linesLayer = CAShapeLayer()
         linesLayer.fillColor = .none
-        linesLayer.strokeColor = UIColor.systemGreen.cgColor
+        linesLayer.strokeColor = UIColor.systemBlue.cgColor
         linesLayer.lineWidth = 2.0
         imageView.layer.addSublayer(linesLayer)
         
         greenLinesLayer = CAShapeLayer()
         greenLinesLayer.fillColor = .none
-        greenLinesLayer.strokeColor = UIColor.systemGray5.cgColor
+        greenLinesLayer.strokeColor = UIColor.systemGray.cgColor
         greenLinesLayer.lineWidth = 2.0
         imageView.layer.addSublayer(greenLinesLayer)
         
@@ -54,16 +54,12 @@ class NewDesignScroll: UIScrollView, UIScrollViewDelegate {
         let y = (scrollViewHeight - imageViewHeight) / 2.0
         
         imageView.frame = CGRect(x: 0, y: y, width: frame.size.width, height: 255)
-        imageView.backgroundColor = .red
-        
+
         if cabGo == " " && corpGo == " " && etazGo == 0  {
             planImage = UIImage(named: "12corp2")!
             imageView.image = planImage
-            but1.isEnabled = false
-            but2.isEnabled = false
             imageView.tintColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
-            but2.backgroundColor = .systemGray5 //
-            but1.backgroundColor = .systemGray5 //
+
             print(imageView.frame.size)
             return
         }
@@ -78,6 +74,7 @@ class NewDesignScroll: UIScrollView, UIScrollViewDelegate {
         maximumZoomScale = 3.0
         zoomScale = 1.0 //менять на 2
         
+
         
         self.delegate = self
         adjustContentInset()

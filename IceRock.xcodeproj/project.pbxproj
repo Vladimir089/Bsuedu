@@ -8,11 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E72D76042B73B1790020D4E9 /* NewDesignScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72D76032B73B1790020D4E9 /* NewDesignScroll.swift */; };
-		E732C8732B4A1E0100EE1D52 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732C8722B4A1E0100EE1D52 /* MainMenuViewController.swift */; };
-		E732C87B2B4A3A8A00EE1D52 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732C87A2B4A3A8A00EE1D52 /* MainMenuView.swift */; };
-		E732C87E2B4E416C00EE1D52 /* pickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732C87D2B4E416C00EE1D52 /* pickerView.swift */; };
-		E732C8802B5113E800EE1D52 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732C87F2B5113E800EE1D52 /* ProfileViewController.swift */; };
-		E732C8862B56065F00EE1D52 /* ScrollViewPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732C8852B56065F00EE1D52 /* ScrollViewPlan.swift */; };
 		E77287A02B5CEE7B003B4684 /* Logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E772879F2B5CEE7B003B4684 /* Logic.swift */; };
 		E7834D2E2B4622EB004930DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7834D2D2B4622EB004930DF /* AppDelegate.swift */; };
 		E7834D302B4622EB004930DF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7834D2F2B4622EB004930DF /* SceneDelegate.swift */; };
@@ -24,7 +19,6 @@
 		E7834D4F2B4622EE004930DF /* IceRockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7834D4E2B4622EE004930DF /* IceRockUITests.swift */; };
 		E7834D512B4622EE004930DF /* IceRockUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7834D502B4622EE004930DF /* IceRockUITestsLaunchTests.swift */; };
 		E7834D612B465F4F004930DF /* 12Corp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7834D602B465F4F004930DF /* 12Corp.swift */; };
-		E7B22EDA2B725B0E00D65EF1 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B22ED92B725B0E00D65EF1 /* CollectionViewController.swift */; };
 		E7B22EDC2B72830400D65EF1 /* NewDesignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B22EDB2B72830400D65EF1 /* NewDesignView.swift */; };
 		E7B22EDF2B72887800D65EF1 /* NewDesignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B22EDE2B72887800D65EF1 /* NewDesignViewController.swift */; };
 /* End PBXBuildFile section */
@@ -48,11 +42,6 @@
 
 /* Begin PBXFileReference section */
 		E72D76032B73B1790020D4E9 /* NewDesignScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDesignScroll.swift; sourceTree = "<group>"; };
-		E732C8722B4A1E0100EE1D52 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
-		E732C87A2B4A3A8A00EE1D52 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
-		E732C87D2B4E416C00EE1D52 /* pickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pickerView.swift; sourceTree = "<group>"; };
-		E732C87F2B5113E800EE1D52 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		E732C8852B56065F00EE1D52 /* ScrollViewPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewPlan.swift; sourceTree = "<group>"; };
 		E772879F2B5CEE7B003B4684 /* Logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logic.swift; sourceTree = "<group>"; };
 		E7834D2A2B4622EB004930DF /* IceRock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IceRock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7834D2D2B4622EB004930DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,7 +57,6 @@
 		E7834D4E2B4622EE004930DF /* IceRockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceRockUITests.swift; sourceTree = "<group>"; };
 		E7834D502B4622EE004930DF /* IceRockUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceRockUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E7834D602B465F4F004930DF /* 12Corp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 12Corp.swift; sourceTree = "<group>"; };
-		E7B22ED92B725B0E00D65EF1 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		E7B22EDB2B72830400D65EF1 /* NewDesignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDesignView.swift; sourceTree = "<group>"; };
 		E7B22EDE2B72887800D65EF1 /* NewDesignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDesignViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -171,10 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				E72D76022B73B1480020D4E9 /* NewDesignScroll */,
-				E732C87A2B4A3A8A00EE1D52 /* MainMenuView.swift */,
 				E7834D332B4622EB004930DF /* Main.storyboard */,
-				E732C87D2B4E416C00EE1D52 /* pickerView.swift */,
-				E732C8852B56065F00EE1D52 /* ScrollViewPlan.swift */,
 				E7B22EDB2B72830400D65EF1 /* NewDesignView.swift */,
 			);
 			path = View;
@@ -185,9 +170,6 @@
 			children = (
 				E7B22EDD2B72885900D65EF1 /* New Design */,
 				E7834D312B4622EB004930DF /* ViewController.swift */,
-				E732C8722B4A1E0100EE1D52 /* MainMenuViewController.swift */,
-				E732C87F2B5113E800EE1D52 /* ProfileViewController.swift */,
-				E7B22ED92B725B0E00D65EF1 /* CollectionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -332,20 +314,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E732C8732B4A1E0100EE1D52 /* MainMenuViewController.swift in Sources */,
-				E732C87B2B4A3A8A00EE1D52 /* MainMenuView.swift in Sources */,
 				E7834D322B4622EB004930DF /* ViewController.swift in Sources */,
-				E732C87E2B4E416C00EE1D52 /* pickerView.swift in Sources */,
 				E7834D2E2B4622EB004930DF /* AppDelegate.swift in Sources */,
 				E7B22EDC2B72830400D65EF1 /* NewDesignView.swift in Sources */,
-				E732C8802B5113E800EE1D52 /* ProfileViewController.swift in Sources */,
 				E77287A02B5CEE7B003B4684 /* Logic.swift in Sources */,
 				E7B22EDF2B72887800D65EF1 /* NewDesignViewController.swift in Sources */,
 				E72D76042B73B1790020D4E9 /* NewDesignScroll.swift in Sources */,
 				E7834D612B465F4F004930DF /* 12Corp.swift in Sources */,
-				E732C8862B56065F00EE1D52 /* ScrollViewPlan.swift in Sources */,
 				E7834D302B4622EB004930DF /* SceneDelegate.swift in Sources */,
-				E7B22EDA2B725B0E00D65EF1 /* CollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

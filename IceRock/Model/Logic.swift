@@ -139,13 +139,13 @@ func addLine(greenPath: UIBezierPath, imageView: UIImageView, path: UIBezierPath
     if numbImage == 1   { //от лифта
         shapeLayerGreen.fillColor = .none
            shapeLayerGreen.path = greenPath.cgPath
-           shapeLayerGreen.strokeColor = UIColor.systemGray5.cgColor
+            shapeLayerGreen.strokeColor = UIColor(red: 188/255, green: 213/255, blue: 250/255, alpha: 1).cgColor
            shapeLayerGreen.lineWidth = 2.0
            imageView.layer.addSublayer(shapeLayerGreen)
            
            shapeLayer.path = path.cgPath
            shapeLayer.fillColor = .none
-           shapeLayer.strokeColor = UIColor.systemGreen.cgColor
+           shapeLayer.strokeColor = UIColor(red: 23/255, green: 88/255, blue: 226/255, alpha: 1).cgColor
            shapeLayer.lineWidth = 2.0
            imageView.layer.addSublayer(shapeLayer)
 
@@ -163,12 +163,12 @@ func addLine(greenPath: UIBezierPath, imageView: UIImageView, path: UIBezierPath
     } else { //от кабинета
         shapeLayerGreen.fillColor = .none
         shapeLayerGreen.path = greenPath.cgPath
-        shapeLayerGreen.strokeColor = UIColor.systemGray5.cgColor
+        shapeLayerGreen.strokeColor = UIColor(red: 188/255, green: 213/255, blue: 250/255, alpha: 1).cgColor
         shapeLayerGreen.lineWidth = 2.0
         imageView.layer.addSublayer(shapeLayerGreen)
         shapeLayer.path = path.cgPath
         shapeLayer.fillColor = .none
-        shapeLayer.strokeColor = UIColor.systemGreen.cgColor
+        shapeLayer.strokeColor = UIColor(red: 23/255, green: 88/255, blue: 226/255, alpha: 1).cgColor
         shapeLayer.lineWidth = 2.0
         imageView.layer.addSublayer(shapeLayer)
         shapeLayerGreen.add(animation, forKey: "drawLineAnimation")
