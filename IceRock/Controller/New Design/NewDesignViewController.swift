@@ -24,7 +24,8 @@ class NewDesignViewController: UIViewController {
     var mainView: NewDesignView!
     var filteredData = [String]()
     var textFieldNumber = 1
-    
+    let schedule = [("08:30", "10:05"), ("10:15", "11:50"), ("12:00", "13:35"), ("14:00", "15:35"), ("15:45", "17:20"), ("17:30", "19:05")]
+    var timer: Timer?
     
     override func loadView() {
         mainView = NewDesignView()
@@ -51,8 +52,54 @@ class NewDesignViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         mainView.nextView.isHidden = true
         mainView.prevView.isHidden = true
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateLabel), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateLabel() {
+        // Получение текущего времени
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        let currentTimeString = dateFormatter.string(from: Date())
         
+        // Преобразование строки времени в объект типа Date
+        guard let currentTime = dateFormatter.date(from: currentTimeString) else {
+            return
+        }
         
+        var timeRemaining: (String, Int)?
+        
+        // Поиск текущей пары
+        for (start, end) in schedule {
+            guard let startDate = dateFormatter.date(from: start),
+                  let endDate = dateFormatter.date(from: end) else {
+                continue
+            }
+            
+            // Если текущее время находится в пределах начала и конца пары
+            if currentTime >= startDate && currentTime <= endDate {
+                let timeDifference = Calendar.current.dateComponents([.hour, .minute], from: currentTime, to: endDate)
+                if let hours = timeDifference.hour, let minutes = timeDifference.minute {
+                    mainView.labelTime.text = "До конца пары \(hours) часов \(minutes) минут"
+                }
+                return
+            }
+            
+            // Если текущее время еще не начало пары
+            if currentTime < startDate {
+                let timeDifference = Calendar.current.dateComponents([.minute], from: currentTime, to: startDate)
+                if let minutes = timeDifference.minute {
+                    timeRemaining = ("До начала пары", minutes)
+                    break
+                }
+            }
+        }
+        
+        // Если текущее время уже после окончания последней пары
+        if let timeRemaining = timeRemaining {
+            mainView.labelTime.text = "\(timeRemaining.0) \(timeRemaining.1) минут "
+        } else {
+            mainView.labelTime.text = "Вне пары"
+        }
     }
     
     func createArray12Corp() {
@@ -105,7 +152,7 @@ class NewDesignViewController: UIViewController {
                 numbImage = 0
             }
             
-            if (cabGo == " " && corpGo == " " && etazGo == 0) || (cab == " " && corp == " " && etaz == 0)  {
+            if (cabGo == " " && corpGo == " " && etazGo == 0) || ((cab == " " && corp == " " && etaz == 0 ) && isOnlyVhod != 1)   {
                 mainView.nextView.isHidden = true
                 mainView.prevView.isHidden = true
                 print(1)

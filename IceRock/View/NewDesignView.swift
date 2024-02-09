@@ -102,7 +102,7 @@ class NewDesignView: UIView {
         return buttom
     }()
     
-    //test but
+
     let createButton: UIButton = {
         let button = UIButton()
         button.setTitle("   Start", for: .normal)
@@ -112,7 +112,7 @@ class NewDesignView: UIView {
         button.layer.cornerRadius = 20
         return button
     }()
-    //test but
+
 
     //MARK: -Bot VIew
     
@@ -122,6 +122,57 @@ class NewDesignView: UIView {
         return view
     }()
     
+    
+    let oneLineView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(named: "greenSet")
+        view.layer.cornerRadius = 15
+        return view
+    }()
+    
+    let twoLineView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(named: "greenSet")
+        view.layer.cornerRadius = 15
+        return view
+    }()
+    
+    let oneLineCircle: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 23/255, green: 88/255, blue: 226/255, alpha: 1)
+        view.layer.cornerRadius = 15
+        return view
+    }()
+    
+    let twoLineCircle: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 188/255, green: 213/255, blue: 250/255, alpha: 1)
+        view.layer.cornerRadius = 15
+        return view
+    }()
+    
+    let oneLineLabel: UILabel = {
+        let label = UILabel()
+        label.text = "основной путь"
+        label.textColor = UIColor(named: "LinesLabel")
+        label.font = .systemFont(ofSize: 17, weight: .medium)
+        return label
+    }()
+    
+    let twoLineLabel: UILabel = {
+        let label = UILabel()
+        label.text = "запасной путь"
+        label.textColor = UIColor(named: "LinesLabel")
+        label.font = .systemFont(ofSize: 17, weight: .medium)
+        return label
+    }()
+    
+    let labelTime: UILabel = {
+        let label = UILabel()
+        label.text = "Время"
+        label.font = .systemFont(ofSize: 28, weight: .ultraLight)
+        return label
+    }()
     
     //MARK: -Other methods
     
@@ -148,6 +199,13 @@ class NewDesignView: UIView {
         
         addSubview(tableView)
         botView.addSubview(createButton)
+        botView.addSubview(oneLineView)
+        botView.addSubview(twoLineView)
+        oneLineView.addSubview(oneLineCircle)
+        twoLineView.addSubview(twoLineCircle)
+        oneLineView.addSubview(oneLineLabel)
+        twoLineView.addSubview(twoLineLabel)
+        botView.addSubview(labelTime)
         
        
     }
@@ -230,6 +288,42 @@ class NewDesignView: UIView {
         botView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         botView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         botView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        
+        oneLineView.translatesAutoresizingMaskIntoConstraints = false
+        oneLineView.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
+        oneLineView.rightAnchor.constraint(equalTo: botView.centerXAnchor, constant: -5).isActive = true
+        oneLineView.bottomAnchor.constraint(equalTo: createButton.topAnchor, constant: -10).isActive = true
+        oneLineView.topAnchor.constraint(equalTo: botView.topAnchor, constant: 70).isActive = true
+        
+        twoLineView.translatesAutoresizingMaskIntoConstraints = false
+        twoLineView.leftAnchor.constraint(equalTo: botView.centerXAnchor, constant: 5).isActive = true
+        twoLineView.rightAnchor.constraint(equalTo: rightAnchor, constant: -10).isActive = true
+        twoLineView.topAnchor.constraint(equalTo: botView.topAnchor, constant: 70).isActive = true
+        twoLineView.bottomAnchor.constraint(equalTo: createButton.topAnchor, constant: -10).isActive = true
+        
+        oneLineCircle.translatesAutoresizingMaskIntoConstraints = false
+        oneLineCircle.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        oneLineCircle.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        oneLineCircle.leftAnchor.constraint(equalTo: oneLineView.leftAnchor, constant: 5).isActive = true
+        oneLineCircle.centerYAnchor.constraint(equalTo: oneLineView.centerYAnchor).isActive = true
+        
+        twoLineCircle.translatesAutoresizingMaskIntoConstraints = false
+        twoLineCircle.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        twoLineCircle.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        twoLineCircle.leftAnchor.constraint(equalTo: twoLineView.leftAnchor, constant: 5).isActive = true
+        twoLineCircle.centerYAnchor.constraint(equalTo: twoLineView.centerYAnchor).isActive = true
+        
+        oneLineLabel.translatesAutoresizingMaskIntoConstraints = false
+        oneLineLabel.centerYAnchor.constraint(equalTo: oneLineView.centerYAnchor).isActive = true
+        oneLineLabel.centerXAnchor.constraint(equalTo: oneLineView.centerXAnchor, constant: 10).isActive = true
+        
+        twoLineLabel.translatesAutoresizingMaskIntoConstraints = false
+        twoLineLabel.centerYAnchor.constraint(equalTo: twoLineView.centerYAnchor).isActive = true
+        twoLineLabel.centerXAnchor.constraint(equalTo: twoLineView.centerXAnchor, constant: 10).isActive = true
+        
+        labelTime.translatesAutoresizingMaskIntoConstraints = false
+        labelTime.topAnchor.constraint(equalTo: botView.topAnchor, constant: 20).isActive = true
+        labelTime.leftAnchor.constraint(equalTo: botView.leftAnchor, constant: 10).isActive = true
         
     }
 

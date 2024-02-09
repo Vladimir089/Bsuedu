@@ -35,13 +35,13 @@ class NewDesignScroll: UIScrollView, UIScrollViewDelegate {
         
         linesLayer = CAShapeLayer()
         linesLayer.fillColor = .none
-        linesLayer.strokeColor = UIColor.systemBlue.cgColor
+        linesLayer.strokeColor = UIColor(red: 23/255, green: 88/255, blue: 226/255, alpha: 1).cgColor
         linesLayer.lineWidth = 2.0
         imageView.layer.addSublayer(linesLayer)
         
         greenLinesLayer = CAShapeLayer()
         greenLinesLayer.fillColor = .none
-        greenLinesLayer.strokeColor = UIColor.systemGray.cgColor
+        greenLinesLayer.strokeColor = UIColor(red: 188/255, green: 213/255, blue: 250/255, alpha: 1).cgColor
         greenLinesLayer.lineWidth = 2.0
         imageView.layer.addSublayer(greenLinesLayer)
         
