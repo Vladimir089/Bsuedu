@@ -27,6 +27,15 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
     let imageWidth = imageView.frame.size.width
     let imageHeight = imageView.frame.size.height
     
+    if etaz == 1 && etazGo == 1 {
+        imageView.image = UIImage(named: "12corpHoll")
+        return
+    }
+    if etaz == etazGo {
+        imageView.image = UIImage(named: "12corp\(etaz)")
+        return
+    }
+    
     if vhod == "вход 12 корпус" && numbImage == 1 && isOnlyVhod == 1 {
             but2.backgroundColor = UIColor(named: "navButColor")
             
@@ -802,16 +811,16 @@ func twelverCorpus(path: UIBezierPath, greenPath: UIBezierPath, imageView: UIIma
                         }
                         if (cabGo == "7-4" || cabGo == "7-6" || cabGo == "7-8" || cabGo == "7-14") ||
                             (cab == "7-4" || cab == "7-6" || cab == "7-8" || cab == "7-14") {
-                            path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y - 35),
+                            path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y - 25),
                                               controlPoint: CGPoint(x: coord.x + 5, y: 0.5 * imageHeight))
                         }
                         if (cabGo == "7-10" || cabGo == "7-12") || (cab == "7-10" || cab == "7-12")  {
                             if cabGo == "7-12" || cab == "7-12" {
-                                path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y - 45),
+                                path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y - 40),
                                                   controlPoint: CGPoint(x: coord.x + 5, y: 0.5 * imageHeight))
                             }
                             if cabGo == "7-10" || cab == "7-10" {
-                                path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y - 20),
+                                path.addQuadCurve(to: CGPoint(x: coord.x, y: coord.y - 5),
                                                   controlPoint: CGPoint(x: coord.x + 5, y: 0.5 * imageHeight))
                             }
                         }

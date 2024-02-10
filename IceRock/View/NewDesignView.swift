@@ -108,8 +108,13 @@ class NewDesignView: UIView {
         button.setTitle("   Start", for: .normal)
         button.backgroundColor = .systemBlue
         button.setImage(UIImage(named: "location.north.fill"), for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 20, weight: .medium)
+        button.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
+        button.imageView?.contentMode = .scaleAspectFit
         button.layer.cornerRadius = 20
+        let inset: CGFloat = 9
+        button.contentEdgeInsets = UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
+        button.imageEdgeInsets = UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
+        
         return button
     }()
 

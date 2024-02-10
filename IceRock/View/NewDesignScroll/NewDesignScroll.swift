@@ -56,9 +56,9 @@ class NewDesignScroll: UIScrollView, UIScrollViewDelegate {
         imageView.frame = CGRect(x: 0, y: y, width: frame.size.width, height: 255)
 
         if cabGo == " " && corpGo == " " && etazGo == 0  {
-            planImage = UIImage(named: "12corp2")!
+            planImage = UIImage(systemName: "map" )!
             imageView.image = planImage
-            imageView.tintColor = UIColor(red: 0.9608, green: 0.8706, blue: 0.702, alpha: 1.0)
+            imageView.tintColor = UIColor(named: "topViewColor")
 
             print(imageView.frame.size)
             return
@@ -79,7 +79,8 @@ class NewDesignScroll: UIScrollView, UIScrollViewDelegate {
         self.delegate = self
         adjustContentInset()
         drawLines(but1: but1, but2: but2)
-        zoomScale = 1.0 //менять на 2
+        minimumZoomScale = 2.0
+        zoomScale = 2.0 //менять на 2
         
         
     }
@@ -137,11 +138,16 @@ class NewDesignScroll: UIScrollView, UIScrollViewDelegate {
     // MARK: - Private Methods
     
     private func adjustContentInset() {
-        let contentWidth = max(bounds.width, contentSize.width * zoomScale)
-        let contentHeight = max(bounds.height, contentSize.height * zoomScale)
+        
+        let imageViewHeight: CGFloat = 255
+        let scrollViewHeight = frame.size.height
+        let y = (scrollViewHeight - imageViewHeight) / 2.0
+        
+        let contentWidth = max(bounds.width, contentSize.width )
+        let contentHeight = max(bounds.height, contentSize.height )
         
         let offsetX = max((contentWidth - bounds.width) * 0, 0)
-        let offsetY = max((contentHeight - bounds.height) * 0, 0)
+        let offsetY = max((contentHeight + bounds.height) * 0.5, 0)
         
         contentInset = UIEdgeInsets(top: offsetY, left: offsetX, bottom: offsetY, right: offsetX)
     }
