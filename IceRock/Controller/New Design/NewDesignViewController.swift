@@ -232,7 +232,7 @@ extension NewDesignViewController: UITextFieldDelegate {
         }
         UIView.animate(withDuration: 0.5) { [self] in
             mainView.tableViewTopConstraints.constant = -720
-            mainView.tableViewBotConstraints.constant = -350
+            mainView.tableViewBotConstraints.constant = -345
             self.mainView.layoutIfNeeded()
         }
         

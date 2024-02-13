@@ -32,6 +32,11 @@ class NewDesignScroll: UIScrollView, UIScrollViewDelegate {
         showsHorizontalScrollIndicator = false
         showsVerticalScrollIndicator = false
        
+        greenLinesLayer = CAShapeLayer()
+        greenLinesLayer.fillColor = .none
+        greenLinesLayer.strokeColor = UIColor(red: 188/255, green: 213/255, blue: 250/255, alpha: 1).cgColor
+        greenLinesLayer.lineWidth = 2.0
+        imageView.layer.addSublayer(greenLinesLayer)
         
         linesLayer = CAShapeLayer()
         linesLayer.fillColor = .none
@@ -39,11 +44,7 @@ class NewDesignScroll: UIScrollView, UIScrollViewDelegate {
         linesLayer.lineWidth = 2.0
         imageView.layer.addSublayer(linesLayer)
         
-        greenLinesLayer = CAShapeLayer()
-        greenLinesLayer.fillColor = .none
-        greenLinesLayer.strokeColor = UIColor(red: 188/255, green: 213/255, blue: 250/255, alpha: 1).cgColor
-        greenLinesLayer.lineWidth = 2.0
-        imageView.layer.addSublayer(greenLinesLayer)
+        
         
         
         
@@ -56,7 +57,7 @@ class NewDesignScroll: UIScrollView, UIScrollViewDelegate {
         imageView.frame = CGRect(x: 0, y: y, width: frame.size.width, height: 255)
 
         if cabGo == " " && corpGo == " " && etazGo == 0  {
-            planImage = UIImage(systemName: "map" )!
+            planImage = UIImage(systemName: "map" )!  
             imageView.image = planImage
             imageView.tintColor = UIColor(named: "topViewColor")
 
@@ -79,8 +80,7 @@ class NewDesignScroll: UIScrollView, UIScrollViewDelegate {
         self.delegate = self
         adjustContentInset()
         drawLines(but1: but1, but2: but2)
-        minimumZoomScale = 2.0
-        zoomScale = 2.0 //менять на 2
+        zoomScale = 1.0 //менять на 2
         
         
     }

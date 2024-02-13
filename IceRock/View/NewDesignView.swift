@@ -158,7 +158,7 @@ class NewDesignView: UIView {
     
     let oneLineLabel: UILabel = {
         let label = UILabel()
-        label.text = "основной путь"
+        label.text = "лифтовой путь"
         label.textColor = UIColor(named: "LinesLabel")
         label.font = .systemFont(ofSize: 17, weight: .medium)
         return label
@@ -166,7 +166,7 @@ class NewDesignView: UIView {
     
     let twoLineLabel: UILabel = {
         let label = UILabel()
-        label.text = "запасной путь"
+        label.text = " лестничный путь"
         label.textColor = UIColor(named: "LinesLabel")
         label.font = .systemFont(ofSize: 17, weight: .medium)
         return label
