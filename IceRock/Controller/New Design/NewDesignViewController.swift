@@ -17,7 +17,7 @@ var isOnlyVhod = 1
 var corpGo = " "
 var cabGo = " "
 var etazGo = Int()
-
+var key: CGFloat = 0
 var numbImage = 1
 
 class NewDesignViewController: UIViewController {
@@ -26,6 +26,7 @@ class NewDesignViewController: UIViewController {
     var textFieldNumber = 1
     let schedule = [("08:30", "10:05"), ("10:15", "11:50"), ("12:00", "13:35"), ("14:00", "15:35"), ("15:45", "17:20"), ("17:30", "19:05")]
     var timer: Timer?
+    
     
     override func loadView() {
         mainView = NewDesignView()
@@ -43,6 +44,7 @@ class NewDesignViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         mainView.scrollView.createNav(but1: mainView.prevView, but2: mainView.nextView)
+        
     }
     
     
@@ -54,6 +56,8 @@ class NewDesignViewController: UIViewController {
         mainView.prevView.isHidden = true
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateLabel), userInfo: nil, repeats: true)
     }
+    
+    
     
     @objc func updateLabel() {
         // Получение текущего времени
@@ -231,8 +235,8 @@ extension NewDesignViewController: UITextFieldDelegate {
             arr12CorpRU.removeAll { $0 == "вход 12 корпус" }
         }
         UIView.animate(withDuration: 0.5) { [self] in
-            mainView.tableViewTopConstraints.constant = -720
-            mainView.tableViewBotConstraints.constant = -345
+            mainView.tableView.isHidden = false
+            mainView.tableViewBotConstraints.constant = -216
             self.mainView.layoutIfNeeded()
         }
         
@@ -240,7 +244,7 @@ extension NewDesignViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         UIView.animate(withDuration: 0.3) { [self] in
-            mainView.tableViewTopConstraints.constant = 0
+            mainView.tableView.isHidden = true
             mainView.tableViewBotConstraints.constant = 0
             self.mainView.layoutIfNeeded()
         }
@@ -283,7 +287,6 @@ extension NewDesignViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         UIView.animate(withDuration: 0.3) { [self] in
-            mainView.tableViewTopConstraints.constant = 0
             mainView.tableViewBotConstraints.constant = 0
             self.mainView.layoutIfNeeded()
         }

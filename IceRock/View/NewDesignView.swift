@@ -158,9 +158,11 @@ class NewDesignView: UIView {
     
     let oneLineLabel: UILabel = {
         let label = UILabel()
-        label.text = "лифтовой путь"
+        label.text = " лифтовой путь"
         label.textColor = UIColor(named: "LinesLabel")
         label.font = .systemFont(ofSize: 17, weight: .medium)
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.5
         return label
     }()
     
@@ -169,6 +171,8 @@ class NewDesignView: UIView {
         label.text = " лестничный путь"
         label.textColor = UIColor(named: "LinesLabel")
         label.font = .systemFont(ofSize: 17, weight: .medium)
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.5
         return label
     }()
     
@@ -176,8 +180,11 @@ class NewDesignView: UIView {
         let label = UILabel()
         label.text = "Время"
         label.font = .systemFont(ofSize: 28, weight: .ultraLight)
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.5
         return label
     }()
+
     
     //MARK: -Other methods
     
@@ -217,11 +224,16 @@ class NewDesignView: UIView {
     
     func addConstrints() {
         
+        let screenHeight = UIScreen.main.bounds.height
+
+        
+        
+        
         topView.translatesAutoresizingMaskIntoConstraints = false
         topView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         topView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         topView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-        topViewBotConstraints = topView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -720)
+        topViewBotConstraints = topView.bottomAnchor.constraint(equalTo: secondTextField.bottomAnchor, constant: 5) //-720
         topViewBotConstraints.isActive = true
         
         myCoordImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -251,16 +263,17 @@ class NewDesignView: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         tableView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-        tableViewBotConstraints = tableView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0)
+        tableViewBotConstraints = tableView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: key)
         tableViewBotConstraints.isActive = true
-        tableViewTopConstraints = tableView.topAnchor.constraint(equalTo: bottomAnchor, constant: 0)
+        tableViewTopConstraints = tableView.topAnchor.constraint(equalTo: topView.bottomAnchor, constant: 0)
+        tableView.isHidden = true
         tableViewTopConstraints.isActive = true
         
         secondTextField.translatesAutoresizingMaskIntoConstraints = false
         secondTextField.leftAnchor.constraint(equalTo: topView.leftAnchor, constant: 75).isActive = true
         secondTextField.rightAnchor.constraint(equalTo: topView.rightAnchor, constant: -30).isActive = true
-        secondTextField.topAnchor.constraint(equalTo: topView.bottomAnchor, constant: -60).isActive = true
-        secondTextField.bottomAnchor.constraint(equalTo: topView.bottomAnchor, constant: -10).isActive = true
+        secondTextField.topAnchor.constraint(equalTo: firstTextField.bottomAnchor, constant: 5).isActive = true
+        secondTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.topAnchor.constraint(equalTo: topView.bottomAnchor, constant: 0).isActive = true
@@ -321,14 +334,19 @@ class NewDesignView: UIView {
         oneLineLabel.translatesAutoresizingMaskIntoConstraints = false
         oneLineLabel.centerYAnchor.constraint(equalTo: oneLineView.centerYAnchor).isActive = true
         oneLineLabel.centerXAnchor.constraint(equalTo: oneLineView.centerXAnchor, constant: 10).isActive = true
+        oneLineLabel.leftAnchor.constraint(equalTo: oneLineView.leftAnchor, constant: 35).isActive = true
+        oneLineLabel.rightAnchor.constraint(equalTo: oneLineView.rightAnchor, constant: -5).isActive = true
         
         twoLineLabel.translatesAutoresizingMaskIntoConstraints = false
         twoLineLabel.centerYAnchor.constraint(equalTo: twoLineView.centerYAnchor).isActive = true
         twoLineLabel.centerXAnchor.constraint(equalTo: twoLineView.centerXAnchor, constant: 10).isActive = true
+        twoLineLabel.leftAnchor.constraint(equalTo: twoLineView.leftAnchor, constant: 35).isActive = true
+        twoLineLabel.rightAnchor.constraint(equalTo: twoLineView.rightAnchor, constant: -5).isActive = true
         
         labelTime.translatesAutoresizingMaskIntoConstraints = false
         labelTime.topAnchor.constraint(equalTo: botView.topAnchor, constant: 20).isActive = true
         labelTime.leftAnchor.constraint(equalTo: botView.leftAnchor, constant: 10).isActive = true
+        labelTime.rightAnchor.constraint(equalTo: botView.rightAnchor, constant: -10).isActive = true
         
     }
 

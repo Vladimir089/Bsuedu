@@ -51,10 +51,16 @@ class NewDesignScroll: UIScrollView, UIScrollViewDelegate {
         isScrollEnabled = true
         contentSize = imageView.frame.size
         let imageViewHeight: CGFloat = 255
-        let scrollViewHeight = frame.size.height
-        let y = (scrollViewHeight - imageViewHeight) / 2.0
+        let imageViewWidth: CGFloat = 414
         
-        imageView.frame = CGRect(x: 0, y: y, width: frame.size.width, height: 255)
+        let scrollViewHeight = frame.size.height
+        let scrollViewWidth = frame.size.width
+        
+        let y = (scrollViewHeight - imageViewHeight) / 2.0
+        let x = (scrollViewWidth - imageViewWidth) / 2.0
+        
+        
+        imageView.frame = CGRect(x: x, y: y, width: 414, height: 255)
 
         if cabGo == " " && corpGo == " " && etazGo == 0  {
             planImage = UIImage(systemName: "map" )!  
@@ -133,15 +139,15 @@ class NewDesignScroll: UIScrollView, UIScrollViewDelegate {
     
     func scrollViewDidZoom(_ scrollView: UIScrollView) {
         adjustContentInset()
+        print(imageView.frame.size)
     }
     
     // MARK: - Private Methods
     
-    private func adjustContentInset() {
+    private func adjustContentInset() { //414
         
-        let imageViewHeight: CGFloat = 255
-        let scrollViewHeight = frame.size.height
-        let y = (scrollViewHeight - imageViewHeight) / 2.0
+
+        
         
         let contentWidth = max(bounds.width, contentSize.width )
         let contentHeight = max(bounds.height, contentSize.height )
