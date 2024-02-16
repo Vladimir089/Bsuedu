@@ -166,14 +166,7 @@ class NewDesignViewController: UIViewController {
                 mainView.prevView.isHidden = false
                 mainView.scrollView.createNav(but1: mainView.prevView, but2: mainView.nextView)
             }
-            
-           
-          
-            
-            
-            
-            
-            
+                       
             if (corp == "12" && etaz == 12  && corpGo == "12" && etazGo == 11 && cab != " " && cabGo != " ") || (corp == "12" && etaz == 11  && corpGo == "12" && etazGo == 12 && cab != " " && cabGo != " ") {
                 numbImage = 1
             }
@@ -185,35 +178,21 @@ class NewDesignViewController: UIViewController {
         if sender == mainView.nextView {
             numbImage += 1
             print(numbImage)
-            del()
+            mainView.scrollView.createNav(but1: mainView.prevView, but2: mainView.nextView)
             
             return
         }
         if sender == mainView.prevView {
             numbImage -= 1
             print(numbImage)
-            del()
+            mainView.scrollView.createNav(but1: mainView.prevView, but2: mainView.nextView)
             
             return
         }
     }
     
     
-    func del() {
-        mainView.scrollView.imageView.image = nil
-        if let sublayers = mainView.scrollView.imageView.layer.sublayers {
-                for sublayer in sublayers {
-                    if let shapeLayer = sublayer as? CAShapeLayer, shapeLayer.strokeColor == UIColor.red.cgColor {
-                        shapeLayer.removeFromSuperlayer()
-                    }
-                    if let shapeLayerGreen = sublayer as? CAShapeLayer, shapeLayerGreen.strokeColor == UIColor.green.cgColor {
-                        shapeLayerGreen.removeFromSuperlayer()
-                    }
-                }
-            }
-        mainView.scrollView.createNav(but1: mainView.prevView, but2: mainView.nextView)
-        mainView.setNeedsLayout()
-    }
+    
     
     
 }
